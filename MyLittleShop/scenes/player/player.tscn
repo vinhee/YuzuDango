@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://hjb3ec7ff3r0"]
 
+[ext_resource type="Script" uid="uid://dbxth7552x458" path="res://scenes/player/player.gd" id="1_75vfm"]
 [ext_resource type="Texture2D" uid="uid://b67is5rswp66b" path="res://assests/Characters/Basic Charakter Spritesheet.png" id="1_agfs1"]
 [ext_resource type="Texture2D" uid="uid://bf321axh3p4ak" path="res://assests/Characters/Basic Charakter Actions.png" id="2_lrhn5"]
 [ext_resource type="Script" uid="uid://dciff3fc3a72g" path="res://scripts/stateMachine/node_state_machine.gd" id="4_dp8ca"]
-[ext_resource type="Script" uid="uid://b8l2i2ldn1chf" path="res://scenes/idle.gd" id="5_0lw5n"]
-[ext_resource type="Script" uid="uid://cocod64tlia8x" path="res://scenes/walk.gd" id="5_dp8ca"]
+[ext_resource type="Script" uid="uid://b8l2i2ldn1chf" path="res://scenes/player/idle.gd" id="5_0lw5n"]
+[ext_resource type="Script" uid="uid://cocod64tlia8x" path="res://scenes/player/walk.gd" id="5_dp8ca"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_my7n2"]
 atlas = ExtResource("2_lrhn5")
@@ -341,7 +342,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ofy33")
 }],
 "loop": true,
-"name": &"walk_forward",
+"name": &"walk_front",
 "speed": 2.0
 }, {
 "frames": [{
@@ -420,13 +421,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_agfs1"]
 radius = 8.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=343638103]
+[sub_resource type="CircleShape2D" id="CircleShape2D_dp8ca"]
+radius = 21.023796
+
+[node name="player" type="CharacterBody2D" unique_id=343638103]
+script = ExtResource("1_75vfm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189949753]
 sprite_frames = SubResource("SpriteFrames_dp8ca")
-animation = &"idle_front"
+animation = &"walk_front"
 autoplay = "idle_front"
-frame_progress = 0.026476588
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439124738]
 shape = SubResource("CircleShape2D_agfs1")
@@ -449,3 +453,8 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("5_dp8ca")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="pickable_area" type="Area2D" parent="." unique_id=772126863]
+
+[node name="pickable_range" type="CollisionShape2D" parent="pickable_area" unique_id=2119425004]
+shape = SubResource("CircleShape2D_dp8ca")
