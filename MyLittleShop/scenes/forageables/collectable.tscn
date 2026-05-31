@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://be71m75of5dsn"]
+
+[ext_resource type="Script" uid="uid://b605uib4saa7j" path="res://scenes/forageables/collectable.gd" id="1_sfhbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfhbh"]
+resource_local_to_scene = true
+
+[node name="Collectable" type="Area2D" unique_id=983578827]
+script = ExtResource("1_sfhbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1949827064]
+shape = SubResource("RectangleShape2D_sfhbh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=881390091]

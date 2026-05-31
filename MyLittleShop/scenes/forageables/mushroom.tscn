@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqcpjgjvopj4r"]
 
 [ext_resource type="Script" uid="uid://xr7raigr6t8c" path="res://scripts/forageables/mushroom.gd" id="1_tqmm2"]
-[ext_resource type="Texture2D" uid="uid://b5coit2j2hlfr" path="res://assests/Crops/Crops.png" id="2_g0dh5"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="2_g0dh5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tmht"]
 atlas = ExtResource("2_g0dh5")

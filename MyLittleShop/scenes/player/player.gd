@@ -5,6 +5,8 @@ var direction: Vector2
 var speed := 50
 var forageable_in_area = null
 
+@export var inventory: Inventory
+
 func _physics_process(delta: float) -> void:
 	move()
 	
@@ -19,7 +21,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
-		if forageable_in_area != null and forageable_in_area.state == "mushroom":
+		if forageable_in_area != null: #and forageable_in_area.state == "mushroom"
 			forageable_in_area.pickup()
 
 func _on_area_entered(area):
@@ -31,3 +33,8 @@ func _on_area_exited(area):
 	if area == forageable_in_area:
 		forageable_in_area = null
 		print("Left pickup range")
+
+func _on_pickable_area_entered(area):
+	print("Collect item")
+	if area.has_method("collect"):
+		area.collect(inventory)

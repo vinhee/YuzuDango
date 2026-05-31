@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://hjb3ec7ff3r0"]
+[gd_scene format=3 uid="uid://cjiqo7h1qxefl"]
 
-[ext_resource type="Script" uid="uid://dbxth7552x458" path="res://scenes/player/player.gd" id="1_75vfm"]
+[ext_resource type="Script" path="res://scenes/character.gd" id="1_2cgup"]
 [ext_resource type="Texture2D" uid="uid://b67is5rswp66b" path="res://assests/Characters/Basic Charakter Spritesheet.png" id="1_agfs1"]
-[ext_resource type="Resource" uid="uid://buudd87g587sk" path="res://scenes/player/playerInventory.tres" id="2_0owmy"]
+[ext_resource type="Resource" path="res://inventory/playerInventory.tres" id="2_a5ia6"]
 [ext_resource type="Texture2D" uid="uid://bf321axh3p4ak" path="res://assests/Characters/Basic Charakter Actions.png" id="2_lrhn5"]
 [ext_resource type="Script" uid="uid://dciff3fc3a72g" path="res://scripts/stateMachine/node_state_machine.gd" id="4_dp8ca"]
-[ext_resource type="Script" uid="uid://b8l2i2ldn1chf" path="res://scenes/player/idle.gd" id="5_0lw5n"]
-[ext_resource type="Script" uid="uid://cocod64tlia8x" path="res://scenes/player/walk.gd" id="5_dp8ca"]
+[ext_resource type="Script" path="res://scenes/idle.gd" id="5_0lw5n"]
+[ext_resource type="Script" path="res://scenes/walk.gd" id="5_dp8ca"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2cgup"]
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_my7n2"]
 atlas = ExtResource("2_lrhn5")
@@ -343,7 +346,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ofy33")
 }],
 "loop": true,
-"name": &"walk_front",
+"name": &"walk_forward",
 "speed": 2.0
 }, {
 "frames": [{
@@ -419,28 +422,18 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_agfs1"]
-radius = 8.0
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=343638103]
+script = ExtResource("1_2cgup")
+inventory = ExtResource("2_a5ia6")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dp8ca"]
-radius = 21.023796
-
-[node name="player" type="CharacterBody2D" unique_id=343638103]
-script = ExtResource("1_75vfm")
-inventory = ExtResource("2_0owmy")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=583222258]
+shape = SubResource("CircleShape2D_2cgup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189949753]
 sprite_frames = SubResource("SpriteFrames_dp8ca")
-animation = &"walk_front"
+animation = &"idle_front"
 autoplay = "idle_front"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439124738]
-shape = SubResource("CircleShape2D_agfs1")
-debug_color = Color(0, 0.5959784, 0.7244664, 0.41960785)
-
-[node name="Animation" type="Node" parent="." unique_id=1812418443]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=846878906]
+frame_progress = 0.026476588
 
 [node name="StateMachine" type="Node" parent="." unique_id=2035981075 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("4_dp8ca")
@@ -456,10 +449,4 @@ script = ExtResource("5_dp8ca")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="pickable_area" type="Area2D" parent="." unique_id=772126863]
-collision_mask = 3
-
-[node name="pickable_range" type="CollisionShape2D" parent="pickable_area" unique_id=2119425004]
-shape = SubResource("CircleShape2D_dp8ca")
-
-[connection signal="area_entered" from="pickable_area" to="." method="_on_pickable_area_entered"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1246769626]
