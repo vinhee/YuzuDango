@@ -145,6 +145,13 @@ The design includes the ideation process and creating rough sketches of how we w
 
 ### [Proposed]
 
+## Process
+| Step | Description |
+|------|-------------|
+| 1. Notice Board | Players can interact with the notice board to view and accept the requests made by NPCs |
+| 2. Crafting Items / Making Produce | Players would craft/produce the required items/produce to complete the NPCs request |
+| 3. Completing the Request | Once players have all the required items/produce, they can complete the request with a click of a button and receive their rewards |
+
 ### [Current Progress]
 
 ### [Additional Features]
