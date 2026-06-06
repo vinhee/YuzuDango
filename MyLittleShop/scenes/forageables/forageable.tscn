@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ybh4rn5lfe12"]
+
+[ext_resource type="Script" uid="uid://dbama16duvko5" path="res://scenes/forageables/forageable.gd" id="1_pm1b3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mnmn0"]
+
+[node name="Forageable" type="Area2D" unique_id=1981697517]
+script = ExtResource("1_pm1b3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=537154582]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=80805564]
+shape = SubResource("CircleShape2D_mnmn0")
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=999933237]

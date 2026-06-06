@@ -1,19 +1,10 @@
-[gd_scene format=3 uid="uid://bs6mctvj183yr"]
+[gd_scene format=3 uid="uid://dog4dptgxyvcx"]
 
-[ext_resource type="PackedScene" uid="uid://be71m75of5dsn" path="res://scenes/forageables/collectable.tscn" id="1_scqb5"]
+[ext_resource type="PackedScene" uid="uid://ybh4rn5lfe12" path="res://scenes/forageables/forageable.tscn" id="1_scqb5"]
 [ext_resource type="Texture2D" uid="uid://dq7el8ageyxwg" path="res://assests/Crops/hazelnut.png" id="2_pbgmh"]
-[ext_resource type="Script" uid="uid://c3tgrfg61omkh" path="res://scenes/forageables/hazelnut.gd" id="2_w6qjs"]
-[ext_resource type="Resource" uid="uid://dp7phjaa1t6dc" path="res://assests/Inventory/InventoryItems/hazelnut.tres" id="3_w6qjs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbgmh"]
-resource_local_to_scene = true
+[node name="Forageable" unique_id=1981697517 instance=ExtResource("1_scqb5")]
+item_id = "hazlenut"
 
-[node name="hazelnut" unique_id=983578827 instance=ExtResource("1_scqb5")]
-script = ExtResource("2_w6qjs")
-itemRes = ExtResource("3_w6qjs")
-
-[node name="CollisionShape2D" parent="." index="0" unique_id=1949827064]
-shape = SubResource("RectangleShape2D_pbgmh")
-
-[node name="Sprite2D" parent="." index="1" unique_id=881390091]
+[node name="Sprite2D" parent="." index="0" unique_id=537154582]
 texture = ExtResource("2_pbgmh")

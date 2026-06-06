@@ -1,11 +1,13 @@
 [gd_scene format=4 uid="uid://dydo20fa036lw"]
 
-[ext_resource type="PackedScene" uid="uid://cqcpjgjvopj4r" path="res://scenes/forageables/mushroom.tscn" id="1_dlvpu"]
+[ext_resource type="PackedScene" uid="uid://cqcpjgjvopj4r" path="res://scenes/forageables/mushroom_old.tscn" id="1_dlvpu"]
 [ext_resource type="TileSet" uid="uid://dnyqm2i3ystxa" path="res://Tilesets/game_tile_sets.tres" id="1_q64gb"]
 [ext_resource type="PackedScene" uid="uid://hjb3ec7ff3r0" path="res://scenes/player/player.tscn" id="2_dlvpu"]
-[ext_resource type="PackedScene" uid="uid://bs6mctvj183yr" path="res://scenes/forageables/hazelnut.tscn" id="3_2b1kr"]
+[ext_resource type="PackedScene" uid="uid://bs6mctvj183yr" path="res://scenes/forageables/hazelnut_old.tscn" id="3_2b1kr"]
 [ext_resource type="Script" uid="uid://cms7dakrhg6a6" path="res://scenes/test/canvas_layer.gd" id="4_8n3o6"]
-[ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory_gui.tscn" id="4_dlvpu"]
+[ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory/inventory_gui.tscn" id="4_dlvpu"]
+[ext_resource type="PackedScene" uid="uid://dog4dptgxyvcx" path="res://scenes/forageables/hazelnut.tscn" id="5_gqesb"]
+[ext_resource type="PackedScene" uid="uid://bu3d2oaq6b5er" path="res://scenes/forageables/mushroom.tscn" id="6_vn5id"]
 
 [sub_resource type="GDScript" id="GDScript_8n3o6"]
 script/source = "extends Node2D
@@ -53,15 +55,21 @@ tile_map_data = PackedByteArray("AAASAA0AAQABAAEAAAASAAwAAQABAAEAAAASAAsAAQABAAE
 tile_set = ExtResource("1_q64gb")
 
 [node name="Forageable" type="TileMapLayer" parent="GameTileMap" unique_id=240853723]
-tile_map_data = PackedByteArray("AAAFABQAAAAAAAAAAQAOABQAAAAAAAAAAQAZAA4AAAAAAAAAAQAFAAsAAAAAAAAAAQALAAgAAAAAAAAAAQAYAAAAAAAAAAAAAQAeAAoAAAAAAAAAAQAgAAIAAAAAAAAAAQAhAAQAAAAAAAAAAQAhAAgAAAAAAAAAAQAjAA0AAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAFABQAAAAAAAAAAQAOABQAAAAAAAAAAQAFAAsAAAAAAAAAAQAYAAAAAAAAAAAAAQAgAAIAAAAAAAAAAQAhAAQAAAAAAAAAAQAhAAgAAAAAAAAAAQAjAA0AAAAAAAAAAQA=")
 tile_set = SubResource("TileSet_x0o2t")
 
-[node name="CharacterBody2D" parent="." unique_id=343638103 instance=ExtResource("2_dlvpu")]
+[node name="Player" parent="." unique_id=343638103 instance=ExtResource("2_dlvpu")]
 position = Vector2(320, 184)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1824442041]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1824442041]
 
 [node name="Forageables" type="Node" parent="." unique_id=1989389595]
+
+[node name="Hazelnut1" parent="Forageables" unique_id=1981697517 instance=ExtResource("5_gqesb")]
+position = Vector2(301, 118)
+
+[node name="Mushroom1" parent="Forageables" unique_id=1096838893 instance=ExtResource("6_vn5id")]
+position = Vector2(239, 204)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=235907968]
 process_mode = 3

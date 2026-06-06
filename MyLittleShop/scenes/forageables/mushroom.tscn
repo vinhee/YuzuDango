@@ -1,47 +1,9 @@
-[gd_scene format=3 uid="uid://cqcpjgjvopj4r"]
+[gd_scene format=3 uid="uid://bu3d2oaq6b5er"]
 
-[ext_resource type="Script" uid="uid://xr7raigr6t8c" path="res://scripts/forageables/mushroom.gd" id="1_tqmm2"]
-[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="2_g0dh5"]
+[ext_resource type="PackedScene" uid="uid://ybh4rn5lfe12" path="res://scenes/forageables/forageable.tscn" id="1_276i1"]
+[ext_resource type="Texture2D" uid="uid://mr00kufjxr7i" path="res://assests/Crops/mushroom.png" id="2_a5ops"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3tmht"]
-atlas = ExtResource("2_g0dh5")
-region = Rect2(0, 240, 16, 16)
+[node name="Forageable" unique_id=1981697517 instance=ExtResource("1_276i1")]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uyfo6"]
-atlas = ExtResource("2_g0dh5")
-region = Rect2(0, 256, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ncvb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3tmht")
-}],
-"loop": true,
-"name": &"mushroom",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uyfo6")
-}],
-"loop": true,
-"name": &"no mushroom",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_s2rck"]
-radius = 5.0990195
-
-[node name="Mushroom" type="Area2D" unique_id=1499288061]
-script = ExtResource("1_tqmm2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1674579008]
-sprite_frames = SubResource("SpriteFrames_8ncvb")
-animation = &"mushroom"
-
-[node name="spawn_timer" type="Timer" parent="." unique_id=1305792128]
-wait_time = 5.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=351289552]
-shape = SubResource("CircleShape2D_s2rck")
+[node name="Sprite2D" parent="." index="0" unique_id=537154582]
+texture = ExtResource("2_a5ops")

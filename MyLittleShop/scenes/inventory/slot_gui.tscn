@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://uhmcjpcc8p4"]
 
-[ext_resource type="Script" uid="uid://baxym5xjutaih" path="res://scenes/slot_gui.gd" id="1_inl3j"]
+[ext_resource type="Script" uid="uid://baxym5xjutaih" path="res://scenes/inventory/slot_gui.gd" id="1_inl3j"]
 [ext_resource type="Texture2D" uid="uid://dx7as8xqmcbfd" path="res://assests/Inventory/InventorySlot.png" id="1_uwo2y"]
 [ext_resource type="FontFile" uid="uid://bky6ik2decnnj" path="res://assests/font/NoraFields-G30XG.ttf" id="3_78og1"]
 
