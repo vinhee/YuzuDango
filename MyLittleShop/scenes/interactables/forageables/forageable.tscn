@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ybh4rn5lfe12"]
 
-[ext_resource type="Script" uid="uid://dbama16duvko5" path="res://scenes/forageables/forageable.gd" id="1_pm1b3"]
+[ext_resource type="Script" uid="uid://dbama16duvko5" path="res://scenes/interactables/forageables/forageable.gd" id="1_pm1b3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mnmn0"]
 

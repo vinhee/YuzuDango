@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://vf4e78w4c0sj" path="res://assests/Tilesets/Water.png" id="1_qpay5"]
 [ext_resource type="Texture2D" uid="uid://dm3ok2uixer5l" path="res://assests/Tilesets/Grass.png" id="2_c1ng1"]
+[ext_resource type="PackedScene" uid="uid://c1o47tsac0o8u" path="res://scenes/houses/ShopHouse.tscn" id="3_ivovd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kco6d"]
 texture = ExtResource("1_qpay5")
@@ -227,9 +228,13 @@ texture = ExtResource("2_c1ng1")
 7:0/0/terrains_peering_bit/bottom_side = 0
 7:0/0/terrains_peering_bit/left_side = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_c4lya"]
+scenes/1/scene = ExtResource("3_ivovd")
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_kco6d")
 sources/1 = SubResource("TileSetAtlasSource_ivovd")
+sources/2 = SubResource("TileSetScenesCollectionSource_c4lya")

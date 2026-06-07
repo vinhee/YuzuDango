@@ -1,4 +1,4 @@
-extends Area2D
+extends Interactable
 class_name Forageable
 
 @export var item_id: String = "mushroom"
@@ -13,6 +13,9 @@ var available := true
 
 func _ready():
 	timer.timeout.connect(_on_respawn)
+
+func interact():
+	try_pickup()
 
 func try_pickup():
 	print("DEBUG: try_pickup called, available =", available)

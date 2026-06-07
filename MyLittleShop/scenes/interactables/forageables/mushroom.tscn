@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bu3d2oaq6b5er"]
 
-[ext_resource type="PackedScene" uid="uid://ybh4rn5lfe12" path="res://scenes/forageables/forageable.tscn" id="1_276i1"]
+[ext_resource type="PackedScene" uid="uid://ybh4rn5lfe12" path="res://scenes/interactables/forageables/forageable.tscn" id="1_276i1"]
 [ext_resource type="Texture2D" uid="uid://mr00kufjxr7i" path="res://assests/Crops/mushroom.png" id="2_a5ops"]
 
 [node name="Forageable" unique_id=1981697517 instance=ExtResource("1_276i1")]

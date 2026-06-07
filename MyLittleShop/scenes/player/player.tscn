@@ -456,10 +456,12 @@ script = ExtResource("5_dp8ca")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="pickable_area" type="Area2D" parent="." unique_id=772126863]
+[node name="InteractionArea" type="Area2D" parent="." unique_id=772126863]
 collision_mask = 3
 
-[node name="pickable_range" type="CollisionShape2D" parent="pickable_area" unique_id=2119425004]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2119425004]
 shape = SubResource("CircleShape2D_dp8ca")
 
-[connection signal="area_entered" from="pickable_area" to="." method="_on_pickable_area_entered"]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1185323]
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_pickable_area_entered"]
