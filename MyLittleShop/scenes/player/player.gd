@@ -28,7 +28,7 @@ func _process(delta):
 		var interactable = get_interactable()
 		if interactable:
 			print("DEBUG: trying interacting on =", interactable)
-			interactable.interact()
+			interactable.interact(self)
 		else:
 			print("DEBUG: no interactable in range")
 
