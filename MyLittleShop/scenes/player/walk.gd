@@ -4,11 +4,8 @@ extends NodeState
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var speed: int = 50
 
-var direction: Vector2 
-
 func _on_process(_delta : float) -> void:
-	pass 
-
+	pass
 
 func _on_physics_process(_delta : float) -> void:
 	var direction: Vector2 = GameInputEvents.movement_input()
@@ -21,20 +18,23 @@ func _on_physics_process(_delta : float) -> void:
 		animated_sprite_2d.play("walk_front")
 	elif direction == Vector2.LEFT:
 		animated_sprite_2d.play("walk_left")
-	else:
-		animated_sprite_2d.play("idle_front")
-	
+
+	if direction != Vector2.ZERO:
+		player.player_direction = direction
+		
 	player.velocity = direction * speed
 	player.move_and_slide()
 
-
 func _on_next_transitions() -> void:
-	pass
-
-
+	if GameInputEvents.is_movement_input():
+		transition.emit("Walk")
+	else:
+		#if no mvt input, emit Idle state
+		transition.emit("Idle")
+	
 func _on_enter() -> void:
 	pass
 
-
 func _on_exit() -> void:
-	animated_sprite_2d.stop()
+	pass
+	#animated_sprite_2d.stop()

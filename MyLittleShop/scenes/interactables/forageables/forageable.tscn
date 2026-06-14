@@ -5,6 +5,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_mnmn0"]
 
 [node name="Forageable" type="Area2D" unique_id=1981697517]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_pm1b3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=537154582]

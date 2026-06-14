@@ -1,28 +1,27 @@
 class_name Player
 extends CharacterBody2D
 
-var direction: Vector2
+# default facing front
+var player_direction: Vector2 = Vector2.DOWN
 var speed := 50
 var forageable_in_area = null
+# so that walking cannot override player action
+# e.g. chopping -> cannot move
+var is_busy: bool = false
 
 @export var inventory: Inventory
+@export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 
 func _physics_process(delta: float) -> void:
 	move()
 	
 func move():
-	direction = Input.get_vector("walk_left","walk_right", "walk_up", "walk_down")
-	velocity = direction * speed
+	player_direction = Input.get_vector("walk_left","walk_right", "walk_up", "walk_down")
+	velocity = player_direction * speed
 	move_and_slide()
 
-#func _ready():
-	#$pickable_area.area_entered.connect(_on_area_entered)
-	#$pickable_area.area_exited.connect(_on_area_exited)
 
 func _process(delta):
-	#if Input.is_action_just_pressed("interact"):
-		#if forageable_in_area != null: #and forageable_in_area.state == "mushroom"
-			#forageable_in_area.pickup()
 	if Input.is_action_just_pressed("interact"):
 		print("DEBUG: INTERACT PRESSED")
 		var interactable = get_interactable()
@@ -38,18 +37,6 @@ func get_interactable():
 			return area
 	return null
 
-# old forageable system methods
-#func _on_area_entered(area):
-	#if area.has_method("pickup"):
-		#forageable_in_area = area
-		#print("Entered pickup range")
-		#
-#func _on_area_exited(area):
-	#if area == forageable_in_area:
-		#forageable_in_area = null
-		#print("Left pickup range")
-#
-#func _on_pickable_area_entered(area):
-	#print("Collect item")
-	#if area.has_method("collect"):
-		#area.collect(inventory)
+func _input(event):
+	if event is InputEventMouseButton:
+		print("Mouse button event:", event.button_index, event.pressed)
