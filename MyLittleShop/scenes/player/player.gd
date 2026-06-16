@@ -13,13 +13,7 @@ var is_busy: bool = false
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 
 func _physics_process(delta: float) -> void:
-	move()
-	
-func move():
-	player_direction = Input.get_vector("walk_left","walk_right", "walk_up", "walk_down")
-	velocity = player_direction * speed
-	move_and_slide()
-
+	pass
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):

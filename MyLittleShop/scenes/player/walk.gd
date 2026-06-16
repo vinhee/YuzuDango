@@ -7,21 +7,33 @@ extends NodeState
 func _on_process(_delta : float) -> void:
 	pass
 
-func _on_physics_process(_delta : float) -> void:
+func _on_enter() -> void:
+	print("Walk entered, sprite: ", animated_sprite_2d)
+	animated_sprite_2d.stop()
+
+func _on_physics_process(_delta: float) -> void:
 	var direction: Vector2 = GameInputEvents.movement_input()
-	
-	if direction == Vector2.UP:
-		animated_sprite_2d.play("walk_back")
-	elif direction == Vector2.RIGHT:
-		animated_sprite_2d.play("walk_right")
-	elif direction == Vector2.DOWN:
-		animated_sprite_2d.play("walk_front")
-	elif direction == Vector2.LEFT:
-		animated_sprite_2d.play("walk_left")
+	print("Walk direction: ", direction, " sprite: ", animated_sprite_2d)
+	if direction != Vector2.ZERO:
+		if abs(direction.x) > abs(direction.y):
+		# Horizontal movement dominates
+			if direction.x > 0:
+				animated_sprite_2d.play("walk_right")
+			else:
+				animated_sprite_2d.play("walk_left")
+		else:
+		# Vertical movement dominates
+			if direction.y < 0:
+				animated_sprite_2d.play("walk_back")
+			else:
+				animated_sprite_2d.play("walk_front")
 
 	if direction != Vector2.ZERO:
-		player.player_direction = direction
-		
+		if abs(direction.x) > abs(direction.y):
+			player.player_direction = Vector2.RIGHT if direction.x > 0 else Vector2.LEFT
+		else:
+			player.player_direction = Vector2.DOWN if direction.y > 0 else Vector2.UP
+	
 	player.velocity = direction * speed
 	player.move_and_slide()
 
@@ -31,10 +43,6 @@ func _on_next_transitions() -> void:
 	else:
 		#if no mvt input, emit Idle state
 		transition.emit("Idle")
-	
-func _on_enter() -> void:
-	pass
 
 func _on_exit() -> void:
 	pass
-	#animated_sprite_2d.stop()

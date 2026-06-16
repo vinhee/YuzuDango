@@ -29,6 +29,5 @@ func _on_enter() -> void:
 		animated_sprite_2d.play("axe_front")
 
 
-
 func _on_exit() -> void:
 	animated_sprite_2d.stop()
