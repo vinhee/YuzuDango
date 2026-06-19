@@ -1,7 +1,36 @@
-[gd_scene format=3 uid="uid://cqcpjgjvopj4r"]
+[gd_scene format=3 uid="uid://ces8n45if6l4x"]
 
-[ext_resource type="Script" uid="uid://xr7raigr6t8c" path="res://scripts/forageables/mushroom.gd" id="1_tqmm2"]
 [ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="2_g0dh5"]
+
+[sub_resource type="GDScript" id="GDScript_gqesb"]
+script/source = "extends Area2D
+
+@export var player: Player
+var state = \"no mushroom\"
+var player_in_range = \"false\"
+
+func _ready():
+	#if state == \"no mushroom\":
+		#$spawn_timer.start()
+	$spawn_timer.timeout.connect(_on_spawn_timer_timeout)
+
+func pickup():
+	#if state != \"mushroom\":
+		#return
+		
+	print(\"Mushroom picked up!\")
+	
+	state = \"no mushroom\"
+	$AnimatedSprite2D.play(\"no mushroom\")
+	#set_deferred(\"monitoring\", false)
+	
+	$spawn_timer.start()
+	
+func _on_spawn_timer_timeout():
+	state = \"mushroom\"
+	$AnimatedSprite2D.play(\"mushroom\")
+	#set_deferred(\"monitoring\", true)
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tmht"]
 atlas = ExtResource("2_g0dh5")
@@ -34,7 +63,7 @@ animations = [{
 radius = 5.0990195
 
 [node name="Mushroom" type="Area2D" unique_id=1499288061]
-script = ExtResource("1_tqmm2")
+script = SubResource("GDScript_gqesb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1674579008]
 sprite_frames = SubResource("SpriteFrames_8ncvb")

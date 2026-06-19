@@ -7,9 +7,10 @@
 [ext_resource type="Script" uid="uid://dciff3fc3a72g" path="res://scripts/stateMachine/node_state_machine.gd" id="4_dp8ca"]
 [ext_resource type="Script" uid="uid://b8l2i2ldn1chf" path="res://scenes/player/idle.gd" id="5_0lw5n"]
 [ext_resource type="Script" uid="uid://cocod64tlia8x" path="res://scenes/player/walk.gd" id="5_dp8ca"]
-[ext_resource type="Script" uid="uid://behig8mls51ls" path="res://scenes/player/chopping.gd" id="8_h17s1"]
-[ext_resource type="Script" uid="uid://81br2uh86hq3" path="res://scenes/player/tilling.gd" id="9_je7p5"]
-[ext_resource type="Script" uid="uid://bb7r75j2j1r3r" path="res://scenes/player/watering.gd" id="10_fm80t"]
+[ext_resource type="Script" uid="uid://ce2jpdwmsh1li" path="res://scenes/player/chopping.gd" id="8_5gtgg"]
+[ext_resource type="PackedScene" uid="uid://bjc28p2vlr0hj" path="res://scenes/components/hit_area.tscn" id="9_h17s1"]
+[ext_resource type="Script" uid="uid://bwievev86x8id" path="res://scenes/player/tilling.gd" id="9_je7p5"]
+[ext_resource type="Script" uid="uid://bxefht14y6khu" path="res://scenes/player/watering.gd" id="10_fm80t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_my7n2"]
 atlas = ExtResource("2_lrhn5")
@@ -198,7 +199,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"axe_back",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -220,7 +221,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"axe_left",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -231,7 +232,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"axe_right",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -242,7 +243,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dig_back",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -253,7 +254,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dig_front",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -264,7 +265,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dig_left",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -275,7 +276,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dig_right",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -386,7 +387,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"water_back",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -397,7 +398,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"water_front",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -419,7 +420,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"water_right",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agfs1"]
@@ -427,6 +428,9 @@ radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dp8ca"]
 radius = 21.023796
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_je7p5"]
+radius = 5.0
 
 [node name="player" type="CharacterBody2D" unique_id=343638103]
 collision_layer = 2
@@ -437,7 +441,7 @@ current_tool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189949753]
 sprite_frames = SubResource("SpriteFrames_dp8ca")
-animation = &"water_right"
+animation = &"walk_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439124738]
@@ -462,28 +466,38 @@ script = ExtResource("5_dp8ca")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Chopping" type="Node" parent="StateMachine" unique_id=797483579 node_paths=PackedStringArray("player", "animated_sprite_2d")]
-script = ExtResource("8_h17s1")
+[node name="Chopping" type="Node" parent="StateMachine" unique_id=145178459 node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_area_collision_shape")]
+script = ExtResource("8_5gtgg")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+hit_area_collision_shape = NodePath("../../HitArea/HitCollisionShape2D")
 
-[node name="Tilling" type="Node" parent="StateMachine" unique_id=1641199595 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Tilling" type="Node" parent="StateMachine" unique_id=1856525789 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("9_je7p5")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Watering" type="Node" parent="StateMachine" unique_id=668879350 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Watering" type="Node" parent="StateMachine" unique_id=625677312 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("10_fm80t")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=772126863]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2119425004]
 shape = SubResource("CircleShape2D_dp8ca")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1185323]
+
+[node name="HitArea" parent="." unique_id=310366131 instance=ExtResource("9_h17s1")]
+current_tool = 1
+
+[node name="HitCollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=190553190]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_je7p5")
+disabled = true
+debug_color = Color(0.977511, 0.15155172, 0, 0.41960785)
 
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_pickable_area_entered"]

@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 
 
 func transition_to(node_state_name : String) -> void:
+	#print("Transition requested to: ", node_state_name, " current: ", current_node_state_name)
 	if node_state_name == current_node_state.name.to_lower():
 		return
 	

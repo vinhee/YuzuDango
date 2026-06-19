@@ -8,12 +8,12 @@ func _on_process(_delta : float) -> void:
 	pass
 
 func _on_enter() -> void:
-	print("Walk entered, sprite: ", animated_sprite_2d)
+	#print("Walk entered, sprite: ", animated_sprite_2d)
 	animated_sprite_2d.stop()
 
 func _on_physics_process(_delta: float) -> void:
 	var direction: Vector2 = GameInputEvents.movement_input()
-	print("Walk direction: ", direction, " sprite: ", animated_sprite_2d)
+	#print("Walk direction: ", direction, " sprite: ", animated_sprite_2d)
 	if direction != Vector2.ZERO:
 		if abs(direction.x) > abs(direction.y):
 		# Horizontal movement dominates

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bjc28p2vlr0hj"]
+
+[ext_resource type="Script" uid="uid://mlq5cgm5kvui" path="res://scenes/components/hit_area.gd" id="1_cbsvb"]
+
+[node name="HitArea" type="Area2D" unique_id=310366131]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_cbsvb")

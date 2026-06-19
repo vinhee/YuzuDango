@@ -20,8 +20,7 @@ func _on_enter() -> void:
 		animated_sprite_2d.play("idle_front")
 
 func _on_next_transitions() -> void:
-	#check for mvt input
-	print("Idle transitions check, movement: ", GameInputEvents.is_movement_input())
+	#print("Idle transitions check, movement: ", GameInputEvents.is_movement_input())
 	if GameInputEvents.is_movement_input():
 		#emit walk state
 		transition.emit("Walk")
