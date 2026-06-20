@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://baxym5xjutaih" path="res://scenes/inventory/slot_gui.gd" id="1_inl3j"]
 [ext_resource type="Texture2D" uid="uid://dx7as8xqmcbfd" path="res://assests/Inventory/InventorySlot.png" id="1_uwo2y"]
-[ext_resource type="FontFile" uid="uid://bky6ik2decnnj" path="res://assests/font/NoraFields-G30XG.ttf" id="3_78og1"]
+[ext_resource type="FontFile" uid="uid://bky6ik2decnnj" path="res://assests/font/NoraFields-G30XG.ttf" id="3_uf858"]
 
-[node name="Panel" type="Panel" unique_id=853047185]
+[node name="Panel" type="Panel" unique_id=113469166]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(24, 24)
 offset_right = 24.0
@@ -23,19 +23,21 @@ layout_mode = 0
 offset_right = 24.0
 offset_bottom = 24.0
 
-[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1094975690]
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1925385488]
 layout_mode = 2
 
-[node name="item" type="Sprite2D" parent="CenterContainer/Panel" unique_id=51967515]
+[node name="item" type="Sprite2D" parent="CenterContainer/Panel" unique_id=787273728]
 
-[node name="Label" type="Label" parent="CenterContainer/Panel/item" unique_id=1251381862]
-offset_left = -3.0
-offset_top = -1.0
-offset_right = 10.0
-offset_bottom = 15.0
-theme_override_colors/font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
-theme_override_fonts/font = ExtResource("3_78og1")
-theme_override_font_sizes/font_size = 12
+[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=947534115]
+custom_minimum_size = Vector2(11, 14)
+layout_mode = 0
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 9.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.08627451, 0.6)
+theme_override_fonts/font = ExtResource("3_uf858")
+theme_override_font_sizes/font_size = 14
 text = "99"
 horizontal_alignment = 2

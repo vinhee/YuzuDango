@@ -2,13 +2,14 @@ extends Panel
 
 @onready var backgroundSprite: Sprite2D = $background
 @onready var itemSprite: Sprite2D = $CenterContainer/Panel/item
-@onready var amtLabel: Label = $CenterContainer/Panel/item/Label
+@onready var amtLabel: Label = $CenterContainer/Panel/Label
 
 func update(slot: InventorySlot):
-	if !slot.item:
+	if !slot.amount:
 		backgroundSprite.frame = 0
 		itemSprite.visible = false
 		amtLabel.visible = false
+	
 	else:
 		backgroundSprite.frame = 1
 		itemSprite.visible = true
