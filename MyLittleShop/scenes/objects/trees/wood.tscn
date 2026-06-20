@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dnnnkwb3wg04k"]
+
+[ext_resource type="Texture2D" uid="uid://b2ta44h2eernx" path="res://assests/Objects/Basic Grass Biom things 1.png" id="1_wypbv"]
+[ext_resource type="PackedScene" uid="uid://be71m75of5dsn" path="res://scenes/interactables/forageables/collectable.tscn" id="2_yurcs"]
+[ext_resource type="Script" uid="uid://p0ep6kepgnwx" path="res://assests/Inventory/inventoryItems.gd" id="3_djsa2"]
+[ext_resource type="Texture2D" uid="uid://v8u2ywjheerq" path="res://assests/CollectableItems/wood.png" id="4_l7er5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yurcs"]
+atlas = ExtResource("1_wypbv")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="Resource" id="Resource_jkmdq"]
+script = ExtResource("3_djsa2")
+name = "Wood"
+texture = ExtResource("4_l7er5")
+metadata/_custom_type_script = "uid://p0ep6kepgnwx"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yurcs"]
+radius = 8.0
+
+[node name="Wood" type="Sprite2D" unique_id=2083591207]
+position = Vector2(8, 8)
+texture = SubResource("AtlasTexture_yurcs")
+
+[node name="Collectable" parent="." unique_id=983578827 instance=ExtResource("2_yurcs")]
+itemRes = SubResource("Resource_jkmdq")
+collectable_name = "wood"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collectable" unique_id=1365246046]
+shape = SubResource("CircleShape2D_yurcs")
+debug_color = Color(0.7753463, 0.40458372, 0.47578913, 0.41960785)

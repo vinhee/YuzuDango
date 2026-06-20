@@ -3,6 +3,8 @@ extends Sprite2D
 @onready var damageable_area: DamageableArea = $DamageableArea
 @onready var damage_component: DamageComponent = $DamageComponent
 
+var wood_scene = preload("res://scenes/objects/trees/wood.tscn")
+
 func _ready() -> void:
 	# hurt signal (in damageable area component) connect with on hurt func below
 	damageable_area.hurt.connect(on_hurt)
@@ -15,6 +17,11 @@ func on_hurt(hit_damage: int) -> void:
 	damage_component.apply_damage(hit_damage)
 
 func on_max_damage_reached() -> void:
+	call_deferred("add_wood_scene")
 	print("max dmg rched")
-	# remove the scene aka "tree dies"
 	queue_free()
+
+func add_wood_scene() -> void:
+	var wood_instance = wood_scene.instantiate() as Node2D
+	wood_instance.global_position = global_position
+	get_parent().add_child(wood_instance)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq7el8ageyxwg"
-path="res://.godot/imported/hazelnut.png-2f0ddf2e253de50fc16b9dfc7d07bb8f.ctex"
+uid="uid://v8u2ywjheerq"
+path="res://.godot/imported/wood.png-d098e5523b2aa3537e901ee9c8f25715.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/Crops/hazelnut.png"
-dest_files=["res://.godot/imported/hazelnut.png-2f0ddf2e253de50fc16b9dfc7d07bb8f.ctex"]
+source_file="res://assests/CollectableItems/wood.png"
+dest_files=["res://.godot/imported/wood.png-d098e5523b2aa3537e901ee9c8f25715.ctex"]
 
 [params]
 

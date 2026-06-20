@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ybh4rn5lfe12" path="res://scenes/interactables/forageables/forageable.tscn" id="1_scqb5"]
 [ext_resource type="Resource" uid="uid://dp7phjaa1t6dc" path="res://assests/Inventory/InventoryItems/hazelnut.tres" id="2_lqdc6"]
-[ext_resource type="Texture2D" uid="uid://dq7el8ageyxwg" path="res://assests/Crops/hazelnut.png" id="2_pbgmh"]
+[ext_resource type="Texture2D" uid="uid://dq7el8ageyxwg" path="res://assests/CollectableItems/hazelnut.png" id="2_pbgmh"]
 
 [node name="Forageable" unique_id=1981697517 instance=ExtResource("1_scqb5")]
 item = ExtResource("2_lqdc6")

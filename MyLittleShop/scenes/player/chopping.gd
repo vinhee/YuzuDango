@@ -3,7 +3,6 @@ extends NodeState
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var hit_area_collision_shape: CollisionShape2D
-
 #func _ready() -> void:
 	#print("ready called")
 	#hit_area_collision_shape.disabled = true
