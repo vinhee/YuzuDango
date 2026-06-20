@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://xtknan81pxbn"]
+
+[ext_resource type="Texture2D" uid="uid://b2ta44h2eernx" path="res://assests/Objects/Basic Grass Biom things 1.png" id="1_aw33s"]
+[ext_resource type="Script" uid="uid://vrmef1okkw22" path="res://scenes/objects/rocks/rock.gd" id="2_f5itc"]
+[ext_resource type="PackedScene" uid="uid://433s57loc42p" path="res://scenes/components/damageable_area.tscn" id="2_msy0l"]
+[ext_resource type="PackedScene" uid="uid://wyvfiaw80n6h" path="res://scenes/components/damage_component.tscn" id="4_bntui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5itc"]
+atlas = ExtResource("1_aw33s")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bntui"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8i8v8"]
+radius = 7.0
+
+[node name="Rock" type="Sprite2D" unique_id=1211342568]
+position = Vector2(0, -5)
+texture = SubResource("AtlasTexture_f5itc")
+script = ExtResource("2_f5itc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=555408928]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=998618553]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_bntui")
+
+[node name="DamageableArea" parent="." unique_id=894294119 instance=ExtResource("2_msy0l")]
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea" unique_id=1959461480]
+shape = SubResource("CircleShape2D_8i8v8")
+debug_color = Color(0.9946707, 0, 0.22574452, 0.41960785)
+
+[node name="DamageComponent" parent="." unique_id=376652223 instance=ExtResource("4_bntui")]
+max_damage = 5
