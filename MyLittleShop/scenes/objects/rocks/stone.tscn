@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dd74be4731wr1"]
+
+[ext_resource type="Texture2D" uid="uid://dekblafjru44j" path="res://assests/Objects/Basic_Grass_Biom_things.png" id="1_oca81"]
+[ext_resource type="PackedScene" uid="uid://be71m75of5dsn" path="res://scenes/interactables/forageables/collectable.tscn" id="2_k7uky"]
+[ext_resource type="Script" uid="uid://p0ep6kepgnwx" path="res://assests/Inventory/inventoryItems.gd" id="3_dgxlj"]
+[ext_resource type="Texture2D" uid="uid://dret2s1d1vwgs" path="res://assests/CollectableItems/stone.png" id="4_fip5g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgxlj"]
+atlas = ExtResource("1_oca81")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="Resource" id="Resource_ruqxu"]
+script = ExtResource("3_dgxlj")
+name = "Stone"
+texture = ExtResource("4_fip5g")
+metadata/_custom_type_script = "uid://p0ep6kepgnwx"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oca81"]
+radius = 8.0
+
+[node name="Stone" type="Sprite2D" unique_id=1655993808]
+texture = SubResource("AtlasTexture_dgxlj")
+
+[node name="Collectable" parent="." unique_id=983578827 instance=ExtResource("2_k7uky")]
+itemRes = SubResource("Resource_ruqxu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collectable" unique_id=22633895]
+shape = SubResource("CircleShape2D_oca81")
+debug_color = Color(0.797216, 0.34989554, 0.6211409, 0.41960785)
