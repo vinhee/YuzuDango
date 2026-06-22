@@ -9,8 +9,17 @@ var forageable_in_area = null
 # e.g. chopping -> cannot move
 var is_busy: bool = false
 
+@onready var hit_area: HitArea = $HitArea
 @export var inventory: Inventory
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
+
+func _ready() -> void:
+	ToolManager.tool_selected.connect(on_tool_selected)
+
+func on_tool_selected(tool: DataTypes.Tools) -> void:
+	current_tool = tool
+	hit_area.current_tool = tool
+	print("Tool: ", tool)
 
 func _physics_process(delta: float) -> void:
 	pass

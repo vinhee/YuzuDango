@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://cocod64tlia8x" path="res://scenes/player/walk.gd" id="5_dp8ca"]
 [ext_resource type="Script" uid="uid://ce2jpdwmsh1li" path="res://scenes/player/chopping.gd" id="8_5gtgg"]
 [ext_resource type="PackedScene" uid="uid://bjc28p2vlr0hj" path="res://scenes/components/hit_area.tscn" id="9_h17s1"]
-[ext_resource type="Script" path="res://scenes/player/tilling.gd" id="9_je7p5"]
-[ext_resource type="Script" path="res://scenes/player/watering.gd" id="10_fm80t"]
+[ext_resource type="Script" uid="uid://bwievev86x8id" path="res://scenes/player/tilling.gd" id="9_je7p5"]
+[ext_resource type="Script" uid="uid://bxefht14y6khu" path="res://scenes/player/watering.gd" id="10_fm80t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_my7n2"]
 atlas = ExtResource("2_lrhn5")
@@ -437,7 +437,6 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_75vfm")
 inventory = ExtResource("2_0owmy")
-current_tool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189949753]
 sprite_frames = SubResource("SpriteFrames_dp8ca")
@@ -492,7 +491,6 @@ shape = SubResource("CircleShape2D_dp8ca")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1185323]
 
 [node name="HitArea" parent="." unique_id=310366131 instance=ExtResource("9_h17s1")]
-current_tool = 1
 
 [node name="HitCollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=190553190]
 position = Vector2(0, 11)
