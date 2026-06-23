@@ -16,3 +16,13 @@ enum Tools {
 	PlantStrawberry,
 	PlantWatermelon
 }
+
+enum GrowthStates {
+	SeedPack,
+	Sprout,
+	Seedling,
+	Vegetating,
+	Mature,
+	Harvestable,
+	Product
+}

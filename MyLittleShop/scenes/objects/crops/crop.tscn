@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dwrsorm4mqoef"]
+
+[ext_resource type="PackedScene" uid="uid://433s57loc42p" path="res://scenes/components/damageable_area.tscn" id="1_8vxos"]
+[ext_resource type="Script" uid="uid://c4egw15gdhyyg" path="res://scenes/objects/crops/crop.gd" id="1_62b5o"]
+[ext_resource type="PackedScene" uid="uid://q2rsi40n6a45" path="res://scenes/objects/crops/particles/watering_particles.tscn" id="1_pg0tg"]
+[ext_resource type="PackedScene" uid="uid://cwdsf0ctt35" path="res://scenes/objects/crops/particles/flowering_particles.tscn" id="2_2vaou"]
+[ext_resource type="PackedScene" uid="uid://0yp4t703pfq3" path="res://scenes/objects/crops/growth_cycle_component.tscn" id="5_vys0v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg0tg"]
+
+[node name="Crop" type="Node2D" unique_id=615719872]
+script = ExtResource("1_62b5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=615139431]
+
+[node name="WateringParticles" parent="." unique_id=1199243487 instance=ExtResource("1_pg0tg")]
+
+[node name="FloweringParticles" parent="." unique_id=568947646 instance=ExtResource("2_2vaou")]
+
+[node name="DamageableArea" parent="." unique_id=894294119 instance=ExtResource("1_8vxos")]
+tool = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea" unique_id=2121409385]
+shape = SubResource("RectangleShape2D_pg0tg")
+debug_color = Color(0.83419025, 0.47507983, 0.41761473, 0.41960785)
+
+[node name="GrowthCycleComponent" parent="." unique_id=1784845757 instance=ExtResource("5_vys0v")]
