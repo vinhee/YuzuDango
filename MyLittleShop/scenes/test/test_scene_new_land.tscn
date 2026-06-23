@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://c85p3kmeexfk"]
 
 [ext_resource type="Texture2D" uid="uid://di2633jqpn6pp" path="res://assests/Tilesets/land.png" id="1_h8po5"]
+[ext_resource type="PackedScene" uid="uid://hjb3ec7ff3r0" path="res://scenes/player/player.tscn" id="2_na261"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8po5"]
 texture = ExtResource("1_h8po5")
@@ -65,3 +66,6 @@ tile_set = SubResource("TileSet_na261")
 [node name="Tree" type="TileMapLayer" parent="." unique_id=709489958]
 tile_map_data = PackedByteArray("AAABAAoAAAAAAAMAAAACABQAAAAAAAMAAAAIABAAAAAAAAMAAAANABIAAAAAAAMAAAAPAAAAAAABAAMAAAAYAAMAAAAAAAMAAAAdAAIAAAAAAAMAAAAdABMAAAAAAAMAAAAeAAcAAAAAAAMAAAAjABYAAAAAAAMAAAAlAAwAAAAAAAMAAAAnABQAAAAAAAMAAAADABQAAAABAAMAAAAGAAgAAAACAAMAAAAQAAAAAAACAAMAAAAQAAIAAAACAAMAAAASAAAAAAABAAMAAAATAAMAAAACAAMAAAAVABEAAAABAAMAAAAXABIAAAACAAMAAAAaAA0AAAABAAMAAAAdABQAAAABAAMAAAAeAAwAAAACAAMAAAA=")
 tile_set = SubResource("TileSet_q2sve")
+
+[node name="player" parent="." unique_id=343638103 instance=ExtResource("2_na261")]
+position = Vector2(319, 180)

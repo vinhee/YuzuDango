@@ -1,32 +1,10 @@
 [gd_scene format=3 uid="uid://dak5eyk210c8y"]
 
 [ext_resource type="FontFile" uid="uid://bky6ik2decnnj" path="res://assests/font/NoraFields-G30XG.ttf" id="1_2yhwj"]
-
-[sub_resource type="GDScript" id="GDScript_2yhwj"]
-script/source = "extends Panel
-
-class_name itemStack
-
-@onready var itemSprite: Sprite2D = $item
-@onready var amtLabel: Label = $item/Label
-
-var inventorySlot: InventorySlot
-
-func update():
-	if !inventorySlot || !inventorySlot.item: return
-	
-	itemSprite.visible = true
-	itemSprite.texture = inventorySlot.item.texture
-	
-	if inventorySlot.amount > 1:
-		amtLabel.visible = true
-		amtLabel.text = str(inventorySlot.amount)
-	else:
-		amtLabel.visible = false
-"
+[ext_resource type="Script" uid="uid://dgyqanm8xb0hi" path="res://scenes/inventory/itemStack.gd" id="1_yigmi"]
 
 [node name="Panel" type="Panel" unique_id=1861405117]
-script = SubResource("GDScript_2yhwj")
+script = ExtResource("1_yigmi")
 
 [node name="item" type="Sprite2D" parent="." unique_id=969773633]
 
@@ -35,8 +13,10 @@ offset_left = -3.0
 offset_top = -1.0
 offset_right = 10.0
 offset_bottom = 15.0
-theme_override_colors/font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("1_2yhwj")
 theme_override_font_sizes/font_size = 12
 text = "99"

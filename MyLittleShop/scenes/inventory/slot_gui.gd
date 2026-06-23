@@ -5,14 +5,17 @@ extends Panel
 @onready var amtLabel: Label = $CenterContainer/Panel/Label
 
 func update(slot: InventorySlot):
-	if !slot.amount:
+	if !slot || !slot.item || slot.amount <= 0:
 		backgroundSprite.frame = 0
 		itemSprite.visible = false
 		amtLabel.visible = false
+		return
+	backgroundSprite.frame = 1
+	itemSprite.visible = true
+	itemSprite.texture = slot.item.texture
 	
-	else:
-		backgroundSprite.frame = 1
-		itemSprite.visible = true
-		itemSprite.texture = slot.item.texture
+	if slot.amount > 1:
 		amtLabel.visible = true
 		amtLabel.text = str(slot.amount)
+	else:
+		amtLabel.visible = false

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dog4dptgxyvcx" path="res://scenes/interactables/forageables/hazelnut.tscn" id="3_5re8k"]
 [ext_resource type="PackedScene" uid="uid://bu3d2oaq6b5er" path="res://scenes/interactables/forageables/mushroom.tscn" id="4_vxrfl"]
 [ext_resource type="Script" uid="uid://cms7dakrhg6a6" path="res://scenes/test/canvas_layer.gd" id="5_uohlo"]
+[ext_resource type="PackedScene" uid="uid://bv0pt200oylaj" path="res://scenes/inventory/hotbar.tscn" id="6_5re8k"]
 [ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory/inventory_gui.tscn" id="6_bdrym"]
 [ext_resource type="Script" uid="uid://tt2puoch3rxx" path="res://scripts/SpawnPoints.gd" id="6_k1jqw"]
 [ext_resource type="PackedScene" uid="uid://den01qa0l6idn" path="res://scenes/interactables/door.tscn" id="7_k1jqw"]
@@ -57,6 +58,19 @@ offset_right = 64.0
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Hotbar" parent="CanvasLayer" unique_id=763296917 instance=ExtResource("6_5re8k")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -47.0
+offset_right = 68.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="SpawnPoints" type="Node" parent="." unique_id=58835657]
 
