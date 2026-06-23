@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneManager="*uid://bg7hjuns1a434"
 ToolManager="*uid://554ot21tvnb4"
+DayAndNightCycleManager="*uid://dayblvd8xddmk"
 
 [display]
 

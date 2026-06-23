@@ -1,12 +1,51 @@
 [gd_scene format=3 uid="uid://b8a5kdc4w4n13"]
 
-[sub_resource type="Theme" id="Theme_8pm35"]
+[ext_resource type="Theme" uid="uid://dkg7erymidql3" path="res://scenes/ui/game_ui_theme.tres" id="1_fnqby"]
+[ext_resource type="Script" uid="uid://bk06kol10h73p" path="res://scenes/ui/day_and_night_panel.gd" id="2_25t5k"]
 
 [node name="DayAndNightPanel" type="Control" unique_id=653497235]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_8pm35")
+anchors_preset = 0
+theme = ExtResource("1_fnqby")
+script = ExtResource("2_25t5k")
+
+[node name="DayPanel" type="PanelContainer" parent="." unique_id=830754963]
+layout_mode = 0
+offset_left = -80.0
+offset_bottom = 27.0
+theme_type_variation = &"DayAndNightCounterPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="DayPanel" unique_id=1481305245]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="DayLabel" type="Label" parent="DayPanel/MarginContainer" unique_id=1530172552]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"DayAndNightLabel"
+text = "DAY 0"
+horizontal_alignment = 1
+
+[node name="TimePanel" type="PanelContainer" parent="." unique_id=142847039]
+layout_mode = 0
+offset_left = -80.0
+offset_top = 29.0
+offset_bottom = 56.0
+theme_type_variation = &"DayAndNightCounterPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="TimePanel" unique_id=1621175183]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="TimeLabel" type="Label" parent="TimePanel/MarginContainer" unique_id=1721566830]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"DayAndNightLabel"
+text = "00:00"
+horizontal_alignment = 1
