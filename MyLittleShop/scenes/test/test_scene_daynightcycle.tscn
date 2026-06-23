@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cms7dakrhg6a6" path="res://scenes/test/canvas_layer.gd" id="6_s8q4x"]
 [ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory/inventory_gui.tscn" id="7_inv77"]
 [ext_resource type="PackedScene" uid="uid://gqmbof7uq5kp" path="res://scenes/ui/game_screen.tscn" id="8_df3d7"]
+[ext_resource type="PackedScene" uid="uid://c8unfgvunrnh6" path="res://scenes/components/day_night_cycle_component.tscn" id="9_clm12"]
 
 [sub_resource type="GDScript" id="GDScript_8n3o6"]
 script/source = "extends Node2D
@@ -159,6 +160,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameScreen" parent="." unique_id=781089797 instance=ExtResource("8_df3d7")]
+
+[node name="DayNightCycleComponent" parent="." unique_id=395284059 instance=ExtResource("9_clm12")]
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]
