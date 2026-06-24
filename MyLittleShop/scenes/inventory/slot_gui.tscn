@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://baxym5xjutaih" path="res://scenes/inventory/slot_gui.gd" id="1_inl3j"]
 [ext_resource type="Texture2D" uid="uid://dx7as8xqmcbfd" path="res://assests/Inventory/InventorySlot.png" id="1_uwo2y"]
-[ext_resource type="FontFile" uid="uid://bky6ik2decnnj" path="res://assests/font/NoraFields-G30XG.ttf" id="3_uf858"]
+[ext_resource type="FontFile" uid="uid://bb8qrkk0rvfsp" path="res://assests/font/GamjaFlower-Regular.ttf" id="3_uf858"]
 
 [node name="Panel" type="Panel" unique_id=113469166]
 self_modulate = Color(1, 1, 1, 0)
@@ -36,7 +36,8 @@ offset_top = -3.0
 offset_right = 9.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0.08627451, 0.6)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_uf858")
 theme_override_font_sizes/font_size = 14
 text = "99"

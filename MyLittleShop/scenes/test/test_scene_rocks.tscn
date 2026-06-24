@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://hjb3ec7ff3r0" path="res://scenes/player/player.tscn" id="3_8wdim"]
 [ext_resource type="PackedScene" uid="uid://dog4dptgxyvcx" path="res://scenes/interactables/forageables/hazelnut.tscn" id="4_2abgw"]
 [ext_resource type="PackedScene" uid="uid://bu3d2oaq6b5er" path="res://scenes/interactables/forageables/mushroom.tscn" id="5_ytfjn"]
+[ext_resource type="PackedScene" uid="uid://bv0pt200oylaj" path="res://scenes/inventory/hotbar.tscn" id="6_37x1a"]
 [ext_resource type="Script" uid="uid://cms7dakrhg6a6" path="res://scenes/test/canvas_layer.gd" id="6_urr4d"]
 [ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory/inventory_gui.tscn" id="7_73pkl"]
 
@@ -81,6 +82,19 @@ offset_right = 64.0
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Hotbar" parent="CanvasLayer" unique_id=763296917 instance=ExtResource("6_37x1a")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -55.0
+offset_right = 65.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]

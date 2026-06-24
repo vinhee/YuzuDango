@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dak5eyk210c8y"]
 
-[ext_resource type="FontFile" uid="uid://bky6ik2decnnj" path="res://assests/font/NoraFields-G30XG.ttf" id="1_2yhwj"]
 [ext_resource type="Script" uid="uid://dgyqanm8xb0hi" path="res://scenes/inventory/itemStack.gd" id="1_yigmi"]
+[ext_resource type="FontFile" uid="uid://bb8qrkk0rvfsp" path="res://assests/font/GamjaFlower-Regular.ttf" id="2_yigmi"]
 
 [node name="Panel" type="Panel" unique_id=1861405117]
 script = ExtResource("1_yigmi")
@@ -17,7 +17,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("1_2yhwj")
+theme_override_fonts/font = ExtResource("2_yigmi")
 theme_override_font_sizes/font_size = 12
 text = "99"
 horizontal_alignment = 2
