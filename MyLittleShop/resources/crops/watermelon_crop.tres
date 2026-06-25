@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://bi01qxg70uf6k"]
+
+[ext_resource type="Resource" uid="uid://bo2lai56ekcbq" path="res://resources/items/products/watermelon_prod.tres" id="1_nhfhv"]
+[ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="2_cmboj"]
+[ext_resource type="Resource" uid="uid://bltnpfnrajlx6" path="res://resources/items/seedpacks/watermelon_seed.tres" id="3_cmboj"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="4_82ekf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
+atlas = ExtResource("4_82ekf")
+region = Rect2(64, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smfyv"]
+atlas = ExtResource("4_82ekf")
+region = Rect2(48, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjyx8"]
+atlas = ExtResource("4_82ekf")
+region = Rect2(16, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un8qh"]
+atlas = ExtResource("4_82ekf")
+region = Rect2(0, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt4o1"]
+atlas = ExtResource("4_82ekf")
+region = Rect2(32, 176, 16, 16)
+
+[resource]
+script = ExtResource("2_cmboj")
+crop_name = "WatermelonCrop"
+days_to_harvest = 9
+sprite_sprout = SubResource("AtlasTexture_un8qh")
+sprite_seedling = SubResource("AtlasTexture_gjyx8")
+sprite_vegetating = SubResource("AtlasTexture_nt4o1")
+sprite_mature = SubResource("AtlasTexture_smfyv")
+sprite_harvestable = SubResource("AtlasTexture_s53bh")
+seed_pack_item = ExtResource("3_cmboj")
+harvest_product_item = ExtResource("1_nhfhv")
+regrow_days = 4
+metadata/_custom_type_script = "uid://cm2ixh0te2m2t"
