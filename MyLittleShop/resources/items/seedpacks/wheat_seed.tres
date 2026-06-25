@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cipp8y2g6l1ms"]
+
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_olvst"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="1_v7x03"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyt8c"]
+atlas = ExtResource("1_v7x03")
+region = Rect2(96, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_olvst")
+item_id = "1"
+item_name = "WheatSeed"
+icon = SubResource("AtlasTexture_uyt8c")
+item_type = 0
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

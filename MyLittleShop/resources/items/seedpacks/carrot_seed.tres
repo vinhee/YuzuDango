@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dfsofoy4heaiv"]
+
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="1_wme34"]
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="2_8oyaj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyt8c"]
+atlas = ExtResource("1_wme34")
+region = Rect2(96, 64, 16, 16)
+
+[resource]
+script = ExtResource("2_8oyaj")
+item_id = "4"
+item_name = "CarrotSeed"
+icon = SubResource("AtlasTexture_uyt8c")
+item_type = 0
+metadata/_custom_type_script = "uid://1av5x5in6v2c"
