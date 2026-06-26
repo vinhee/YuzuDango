@@ -1,48 +1,9 @@
-#extends NodeState
-#
-#@export var player: Player
-#@export var animated_sprite_2d: AnimatedSprite2D
-#
-#var has_hit := false
-#var last_anim := ""
-#
-#func _on_process(_delta : float) -> void:
-	#pass
-#
-#func _on_enter() -> void:
-	#player.is_busy = true
-	#
-	#match player.player_direction:
-		#Vector2.UP:
-			#_play("dig_back")
-		#Vector2.DOWN:
-			#_play("dig_front")
-		#Vector2.LEFT:
-			#_play("dig_left")
-		#Vector2.RIGHT:
-			#_play("dig_right")
-#
-#
-#func _on_physics_process(_delta: float) -> void:
-	#pass  # no movement allowed
-#
-#func _on_next_transitions() -> void:
-	#if !animated_sprite_2d.is_playing():
-		#transition.emit("Idle")
-#
-#func _on_exit() -> void:
-	#player.is_busy = false
-#
-#func _play(anim: String) -> void:
-	#if last_anim == anim:
-		#return
-	#last_anim = anim
-	#animated_sprite_2d.play(anim)
-
 extends NodeState
 
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
+
+var has_tilled: bool = false
 
 func _on_process(_delta : float) -> void:
 	pass
@@ -52,13 +13,15 @@ func _on_physics_process(_delta : float) -> void:
 	pass
 
 
-func _on_next_transitions() -> void:
-	if !animated_sprite_2d.is_playing():
-		transition.emit("Idle")
+#func _on_next_transitions() -> void:
+	#if !animated_sprite_2d.is_playing():
+		#transition.emit("Idle")
 
 
 func _on_enter() -> void:
 	#print("Stored direction: ", player.player_direction)
+	
+	has_tilled = false
 	
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("dig_back")
@@ -73,6 +36,23 @@ func _on_enter() -> void:
 	else:
 		animated_sprite_2d.play("dig_front")
 
+
+#func _on_exit() -> void:
+	#animated_sprite_2d.stop()
+
+func _on_next_transitions() -> void:
+	if !animated_sprite_2d.is_playing():
+		if not has_tilled:
+			has_tilled = true
+			_do_till()
+		transition.emit("Idle")
+
+func _do_till() -> void:
+	var target_cell = _get_target_cell()
+	FarmManager.till(target_cell)
+
+func _get_target_cell() -> Vector2i:
+	return player.get_facing_cell()
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()

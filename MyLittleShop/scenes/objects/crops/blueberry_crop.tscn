@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bm3266swtatki"]
+
+[ext_resource type="PackedScene" uid="uid://dwrsorm4mqoef" path="res://scenes/objects/crops/crop.tscn" id="1_a8fsm"]
+[ext_resource type="Resource" uid="uid://dmawmbtg6kpg0" path="res://resources/crops/blueberry_crop.tres" id="2_v0je0"]
+
+[node name="BlueberryCrop" unique_id=615719872 instance=ExtResource("1_a8fsm")]
+crop_data = ExtResource("2_v0je0")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b7b56tjxpk17w"]
+
+[ext_resource type="PackedScene" uid="uid://dwrsorm4mqoef" path="res://scenes/objects/crops/crop.tscn" id="1_7m4yr"]
+[ext_resource type="Resource" uid="uid://xjur3ka4gy8d" path="res://resources/crops/rice_crop.tres" id="2_x0n8a"]
+
+[node name="RiceCrop" unique_id=615719872 instance=ExtResource("1_7m4yr")]
+crop_data = ExtResource("2_x0n8a")
