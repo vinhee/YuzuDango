@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://dmawmbtg6kpg0"]
+
+[ext_resource type="Resource" uid="uid://srdlwcsgb7xp" path="res://resources/items/products/blueberry_prod.tres" id="1_jg37u"]
+[ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="2_luqbb"]
+[ext_resource type="Resource" uid="uid://ccprbwio8jegb" path="res://resources/items/seedpacks/blueberry_seed.tres" id="3_luqbb"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="4_j7anr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
+atlas = ExtResource("4_j7anr")
+region = Rect2(64, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smfyv"]
+atlas = ExtResource("4_j7anr")
+region = Rect2(48, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjyx8"]
+atlas = ExtResource("4_j7anr")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un8qh"]
+atlas = ExtResource("4_j7anr")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt4o1"]
+atlas = ExtResource("4_j7anr")
+region = Rect2(32, 144, 16, 16)
+
+[resource]
+script = ExtResource("2_luqbb")
+crop_name = "BlueberryCrop"
+days_to_harvest = 10
+sprite_sprout = SubResource("AtlasTexture_un8qh")
+sprite_seedling = SubResource("AtlasTexture_gjyx8")
+sprite_vegetating = SubResource("AtlasTexture_nt4o1")
+sprite_mature = SubResource("AtlasTexture_smfyv")
+sprite_harvestable = SubResource("AtlasTexture_s53bh")
+seed_pack_item = ExtResource("3_luqbb")
+harvest_product_item = ExtResource("1_jg37u")
+regrows_after_harvest = true
+metadata/_custom_type_script = "uid://cm2ixh0te2m2t"

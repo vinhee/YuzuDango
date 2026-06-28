@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://dlgxd86jmvihk"]
+
+[ext_resource type="Resource" uid="uid://b3x83qm1t3oya" path="res://resources/items/products/potato_prod.tres" id="1_n0l8c"]
+[ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="2_qjbm5"]
+[ext_resource type="Resource" uid="uid://7qohbj8in4wp" path="res://resources/items/seedpacks/potato_seed.tres" id="3_qjbm5"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="4_3x6vk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
+atlas = ExtResource("4_3x6vk")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smfyv"]
+atlas = ExtResource("4_3x6vk")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjyx8"]
+atlas = ExtResource("4_3x6vk")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un8qh"]
+atlas = ExtResource("4_3x6vk")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt4o1"]
+atlas = ExtResource("4_3x6vk")
+region = Rect2(32, 48, 16, 16)
+
+[resource]
+script = ExtResource("2_qjbm5")
+crop_name = "PotatoCrop"
+days_to_harvest = 4
+sprite_sprout = SubResource("AtlasTexture_un8qh")
+sprite_seedling = SubResource("AtlasTexture_gjyx8")
+sprite_vegetating = SubResource("AtlasTexture_nt4o1")
+sprite_mature = SubResource("AtlasTexture_smfyv")
+sprite_harvestable = SubResource("AtlasTexture_s53bh")
+seed_pack_item = ExtResource("3_qjbm5")
+harvest_product_item = ExtResource("1_n0l8c")
+metadata/_custom_type_script = "uid://cm2ixh0te2m2t"

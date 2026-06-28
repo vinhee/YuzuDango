@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dgigwqmnglvdp"]
+
+[ext_resource type="Script" uid="uid://cn87v0tthvm0q" path="res://scenes/objects/crops/farm_tile.gd" id="1_asgsl"]
+[ext_resource type="Texture2D" uid="uid://05eedeka3bxi" path="res://assests/Tilesets/Tilled_Dirt_Wide_v2.png" id="2_f3q8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3q8m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afsmu"]
+atlas = ExtResource("2_f3q8m")
+region = Rect2(48, 48, 16, 16)
+
+[node name="FarmTile" type="Area2D" unique_id=2047013207]
+script = ExtResource("1_asgsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=823383701]
+shape = SubResource("RectangleShape2D_f3q8m")
+
+[node name="TilledSprite" type="Sprite2D" parent="." unique_id=1853818825]
+visible = false
+texture = SubResource("AtlasTexture_afsmu")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1493065290]

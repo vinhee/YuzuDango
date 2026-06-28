@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="MyLittleShopCopy"
-run/main_scene="uid://crfx2iy6wss2p"
+config/name="MyLittleShop"
+run/main_scene="uid://csl3a2ks3k71u"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SceneManager="*uid://bg7hjuns1a434"
 ToolManager="*uid://554ot21tvnb4"
 DayAndNightCycleManager="*uid://dayblvd8xddmk"
+FarmManager="*uid://doia3j2rifh3k"
 
 [display]
 

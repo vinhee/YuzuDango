@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c5pp4tp3llmic"]
+
+[ext_resource type="PackedScene" uid="uid://dwrsorm4mqoef" path="res://scenes/objects/crops/crop.tscn" id="1_2vccg"]
+[ext_resource type="Resource" uid="uid://b4fpaqps54ed5" path="res://resources/crops/strawberry_crop.tres" id="2_qikx0"]
+
+[node name="StrawberryCrop" unique_id=615719872 instance=ExtResource("1_2vccg")]
+crop_data = ExtResource("2_qikx0")

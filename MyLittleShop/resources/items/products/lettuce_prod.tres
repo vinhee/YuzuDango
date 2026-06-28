@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bu1gyqe5jqof4"]
+
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="1_kociq"]
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="2_cbcvx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xctgs"]
+atlas = ExtResource("1_kociq")
+region = Rect2(80, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_cbcvx")
+item_id = "11"
+item_name = "LettuceProduct"
+icon = SubResource("AtlasTexture_xctgs")
+item_type = 1
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://cd73phuvpvdop"]
+
+[ext_resource type="Resource" uid="uid://chtxwi2e5onm4" path="res://resources/items/products/corn_prod.tres" id="1_ros1i"]
+[ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="2_8k6kj"]
+[ext_resource type="Resource" uid="uid://1f72jswqkpuj" path="res://resources/items/seedpacks/corn_seed.tres" id="3_8k6kj"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="4_6xcc8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
+atlas = ExtResource("4_6xcc8")
+region = Rect2(64, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smfyv"]
+atlas = ExtResource("4_6xcc8")
+region = Rect2(48, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjyx8"]
+atlas = ExtResource("4_6xcc8")
+region = Rect2(16, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un8qh"]
+atlas = ExtResource("4_6xcc8")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt4o1"]
+atlas = ExtResource("4_6xcc8")
+region = Rect2(32, 80, 16, 16)
+
+[resource]
+script = ExtResource("2_8k6kj")
+crop_name = "CornCrop"
+days_to_harvest = 6
+sprite_sprout = SubResource("AtlasTexture_un8qh")
+sprite_seedling = SubResource("AtlasTexture_gjyx8")
+sprite_vegetating = SubResource("AtlasTexture_nt4o1")
+sprite_mature = SubResource("AtlasTexture_smfyv")
+sprite_harvestable = SubResource("AtlasTexture_s53bh")
+seed_pack_item = ExtResource("3_8k6kj")
+harvest_product_item = ExtResource("1_ros1i")
+regrows_after_harvest = true
+metadata/_custom_type_script = "uid://cm2ixh0te2m2t"

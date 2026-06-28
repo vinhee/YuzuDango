@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://b3akc3gpldvst"]
+
+[ext_resource type="Resource" uid="uid://bu1gyqe5jqof4" path="res://resources/items/products/lettuce_prod.tres" id="1_k6tdj"]
+[ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="2_r8p7o"]
+[ext_resource type="Resource" uid="uid://dsx3pc16r1ca" path="res://resources/items/seedpacks/lettuce_seed.tres" id="3_r8p7o"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="4_nhe3j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
+atlas = ExtResource("4_nhe3j")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smfyv"]
+atlas = ExtResource("4_nhe3j")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjyx8"]
+atlas = ExtResource("4_nhe3j")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un8qh"]
+atlas = ExtResource("4_nhe3j")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt4o1"]
+atlas = ExtResource("4_nhe3j")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_r8p7o")
+crop_name = "LettuceCrop"
+days_to_harvest = 6
+sprite_sprout = SubResource("AtlasTexture_un8qh")
+sprite_seedling = SubResource("AtlasTexture_gjyx8")
+sprite_vegetating = SubResource("AtlasTexture_nt4o1")
+sprite_mature = SubResource("AtlasTexture_smfyv")
+sprite_harvestable = SubResource("AtlasTexture_s53bh")
+seed_pack_item = ExtResource("3_r8p7o")
+harvest_product_item = ExtResource("1_k6tdj")
+metadata/_custom_type_script = "uid://cm2ixh0te2m2t"

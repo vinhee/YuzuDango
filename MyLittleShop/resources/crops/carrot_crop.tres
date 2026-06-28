@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://0d7s4bv2jqbc"]
+
+[ext_resource type="Resource" uid="uid://drvt6c0015738" path="res://resources/items/products/carrot_prod.tres" id="1_2qjbb"]
+[ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="2_8nrlx"]
+[ext_resource type="Resource" uid="uid://dfsofoy4heaiv" path="res://resources/items/seedpacks/carrot_seed.tres" id="3_8nrlx"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="4_ka2q2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
+atlas = ExtResource("4_ka2q2")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smfyv"]
+atlas = ExtResource("4_ka2q2")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjyx8"]
+atlas = ExtResource("4_ka2q2")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un8qh"]
+atlas = ExtResource("4_ka2q2")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt4o1"]
+atlas = ExtResource("4_ka2q2")
+region = Rect2(32, 64, 16, 16)
+
+[resource]
+script = ExtResource("2_8nrlx")
+crop_name = "CarrotCrop"
+sprite_sprout = SubResource("AtlasTexture_un8qh")
+sprite_seedling = SubResource("AtlasTexture_gjyx8")
+sprite_vegetating = SubResource("AtlasTexture_nt4o1")
+sprite_mature = SubResource("AtlasTexture_smfyv")
+sprite_harvestable = SubResource("AtlasTexture_s53bh")
+seed_pack_item = ExtResource("3_8nrlx")
+harvest_product_item = ExtResource("1_2qjbb")
+metadata/_custom_type_script = "uid://cm2ixh0te2m2t"
