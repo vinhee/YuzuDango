@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MyLittleShop"
-run/main_scene="uid://csl3a2ks3k71u"
+run/main_scene="uid://crfx2iy6wss2p"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
