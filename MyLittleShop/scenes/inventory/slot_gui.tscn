@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://uhmcjpcc8p4"]
 
 [ext_resource type="Script" uid="uid://baxym5xjutaih" path="res://scenes/inventory/slot_gui.gd" id="1_inl3j"]
-[ext_resource type="Texture2D" uid="uid://dx7as8xqmcbfd" path="res://assests/Inventory/InventorySlot.png" id="1_uwo2y"]
+[ext_resource type="Texture2D" uid="uid://k0beeg8pb5xl" path="res://assests/Inventory/InventorySlot.png" id="1_uwo2y"]
 [ext_resource type="FontFile" uid="uid://bb8qrkk0rvfsp" path="res://assests/font/GamjaFlower-Regular.ttf" id="3_uf858"]
 
 [node name="Panel" type="Panel" unique_id=113469166]
@@ -15,7 +15,7 @@ script = ExtResource("1_inl3j")
 position = Vector2(12, 12)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_uwo2y")
-vframes = 2
+vframes = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=117961338]
 custom_minimum_size = Vector2(24, 24)

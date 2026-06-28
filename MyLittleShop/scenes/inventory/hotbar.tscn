@@ -22,3 +22,12 @@ layout_mode = 2
 
 [node name="Hotbar_slot5" parent="." unique_id=432446019 instance=ExtResource("1_rekbt")]
 layout_mode = 2
+
+[node name="Hotbar_slot6" parent="." unique_id=1331427549 instance=ExtResource("1_rekbt")]
+layout_mode = 2
+
+[node name="Hotbar_slot7" parent="." unique_id=1492154360 instance=ExtResource("1_rekbt")]
+layout_mode = 2
+
+[node name="Hotbar_slot8" parent="." unique_id=411939913 instance=ExtResource("1_rekbt")]
+layout_mode = 2

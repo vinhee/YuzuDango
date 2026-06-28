@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory/inventory_gui.tscn" id="6_bdrym"]
 [ext_resource type="Script" uid="uid://tt2puoch3rxx" path="res://scripts/SpawnPoints.gd" id="6_k1jqw"]
 [ext_resource type="PackedScene" uid="uid://den01qa0l6idn" path="res://scenes/interactables/door.tscn" id="7_k1jqw"]
+[ext_resource type="PackedScene" uid="uid://hjb3ec7ff3r0" path="res://scenes/player/player.tscn" id="9_vxrfl"]
 
 [node name="MainMap" type="Node2D" unique_id=1367645800]
 
@@ -88,6 +89,11 @@ spawn_id = "SpawnOutside"
 position = Vector2(454, 205)
 target_scene = "res://scenes/houses/IntHouse.tscn"
 target_spawn_id = "SpawnInside"
+
+[node name="Player" type="Node2D" parent="." unique_id=498899072]
+
+[node name="player" parent="Player" unique_id=343638103 instance=ExtResource("9_vxrfl")]
+position = Vector2(264, 191)
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]
