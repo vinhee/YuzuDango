@@ -13,9 +13,9 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	var old_index = active_slot_index
 
-	if event.is_action_pressed("scroll_up") or event.is_action_pressed("hotbar_prev"):
+	if event.is_action_pressed("scroll_up"): #or event.is_action_pressed("hotbar_prev"):
 		active_slot_index = posmod(active_slot_index - 1, slots.size())
-	elif event.is_action_pressed("scroll_down") or event.is_action_pressed("hotbar_next"):
+	elif event.is_action_pressed("scroll_down"): #or event.is_action_pressed("hotbar_next"):
 		active_slot_index = posmod(active_slot_index + 1, slots.size())
 
 	for i in range(slots.size()):

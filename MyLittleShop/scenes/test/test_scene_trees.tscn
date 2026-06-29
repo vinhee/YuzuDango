@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cms7dakrhg6a6" path="res://scenes/test/canvas_layer.gd" id="6_dqkyw"]
 [ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory/inventory_gui.tscn" id="7_frcy5"]
 [ext_resource type="PackedScene" uid="uid://bv0pt200oylaj" path="res://scenes/inventory/hotbar.tscn" id="8_0o37t"]
+[ext_resource type="PackedScene" uid="uid://hhkmtklulokw" path="res://scenes/ui/tools_panel.tscn" id="9_woeu3"]
 
 [sub_resource type="GDScript" id="GDScript_8n3o6"]
 script/source = "extends Node2D
@@ -54,6 +55,7 @@ tile_set = ExtResource("2_0o37t")
 
 [node name="Player" parent="." unique_id=343638103 instance=ExtResource("3_woeu3")]
 position = Vector2(320, 184)
+current_tool = 1
 
 [node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1824442041]
 
@@ -95,6 +97,14 @@ offset_right = 68.0
 offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="ToolsPanel" parent="." unique_id=788158690 instance=ExtResource("9_woeu3")]
+offset_left = 226.0
+offset_top = 15.0
+offset_right = 424.0
+offset_bottom = 63.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]
