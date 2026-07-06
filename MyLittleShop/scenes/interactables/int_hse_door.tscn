@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0u16m7r4l1xm"]
 
-[ext_resource type="Texture2D" uid="uid://w8oeqvj0h8o5" path="res://assests/Tilesets/Wooden House.png" id="1_c54a3"]
+[ext_resource type="Texture2D" uid="uid://w8oeqvj0h8o5" path="res://assets/Tilesets/Wooden House.png" id="1_c54a3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tic0u"]
 atlas = ExtResource("1_c54a3")

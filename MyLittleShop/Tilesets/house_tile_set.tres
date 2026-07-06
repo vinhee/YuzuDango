@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://cf8w0ymdwr6dj"]
 
-[ext_resource type="Texture2D" uid="uid://do2ytcp836wgc" path="res://assests/Tilesets/Wooden_House_Walls_Tilset.png" id="1_0e3uf"]
-[ext_resource type="Texture2D" uid="uid://bqa48khlxlay3" path="res://assests/Objects/Basic Furniture.png" id="2_juxxr"]
+[ext_resource type="Texture2D" uid="uid://do2ytcp836wgc" path="res://assets/Tilesets/Wooden_House_Walls_Tilset.png" id="1_0e3uf"]
+[ext_resource type="Texture2D" uid="uid://bqa48khlxlay3" path="res://assets/Objects/Basic Furniture.png" id="2_juxxr"]
 [ext_resource type="PackedScene" uid="uid://0u16m7r4l1xm" path="res://scenes/interactables/int_hse_door.tscn" id="3_s4u7f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juxxr"]

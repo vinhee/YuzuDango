@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://chtxwi2e5onm4" path="res://resources/items/products/corn_prod.tres" id="1_ros1i"]
 [ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="2_8k6kj"]
 [ext_resource type="Resource" uid="uid://1f72jswqkpuj" path="res://resources/items/seedpacks/corn_seed.tres" id="3_8k6kj"]
-[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="4_6xcc8"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="4_6xcc8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
 atlas = ExtResource("4_6xcc8")

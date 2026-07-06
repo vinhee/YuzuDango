@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://hjb3ec7ff3r0"]
 
 [ext_resource type="Script" uid="uid://dbxth7552x458" path="res://scenes/player/player.gd" id="1_75vfm"]
-[ext_resource type="Texture2D" uid="uid://b67is5rswp66b" path="res://assests/Characters/Basic Charakter Spritesheet.png" id="1_agfs1"]
+[ext_resource type="Texture2D" uid="uid://b67is5rswp66b" path="res://assets/Characters/Basic Charakter Spritesheet.png" id="1_agfs1"]
 [ext_resource type="Resource" uid="uid://buudd87g587sk" path="res://scenes/player/playerInventory.tres" id="2_0owmy"]
-[ext_resource type="Texture2D" uid="uid://bf321axh3p4ak" path="res://assests/Characters/Basic Charakter Actions.png" id="2_lrhn5"]
+[ext_resource type="Texture2D" uid="uid://bf321axh3p4ak" path="res://assets/Characters/Basic Charakter Actions.png" id="2_lrhn5"]
 [ext_resource type="Script" uid="uid://dciff3fc3a72g" path="res://scripts/stateMachine/node_state_machine.gd" id="4_dp8ca"]
 [ext_resource type="Script" uid="uid://b8l2i2ldn1chf" path="res://scenes/player/idle.gd" id="5_0lw5n"]
 [ext_resource type="Script" uid="uid://cocod64tlia8x" path="res://scenes/player/walk.gd" id="5_dp8ca"]

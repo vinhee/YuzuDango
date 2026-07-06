@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://crfx2iy6wss2p"]
 
 [ext_resource type="Script" uid="uid://dasvp5mg81ohc" path="res://main_menu.gd" id="1_8jkg5"]
-[ext_resource type="Texture2D" uid="uid://bydna4x6aj6j4" path="res://assests/MainMenu/main_menu.png" id="2_7st3g"]
-[ext_resource type="Texture2D" uid="uid://b8hn1hwxd42ga" path="res://assests/MainMenu/start_active.png" id="2_biq0h"]
-[ext_resource type="Texture2D" uid="uid://coix7lyycoln8" path="res://assests/MainMenu/start_inactive.png" id="3_7st3g"]
-[ext_resource type="Texture2D" uid="uid://b8cm5n7rnf2g" path="res://assests/MainMenu/load_active.png" id="4_11v51"]
-[ext_resource type="Texture2D" uid="uid://dkvtdyhlcfw7k" path="res://assests/MainMenu/load_inactive.png" id="5_kskfm"]
-[ext_resource type="Texture2D" uid="uid://b3gptbwu05kx2" path="res://assests/MainMenu/quit_active.png" id="6_88ij5"]
-[ext_resource type="Texture2D" uid="uid://hts4c7tse7bv" path="res://assests/MainMenu/quit_inactive.png" id="7_mb30r"]
-[ext_resource type="Texture2D" uid="uid://ciaik654ks0s1" path="res://assests/MainMenu/title.png" id="8_3kulw"]
+[ext_resource type="Texture2D" uid="uid://bydna4x6aj6j4" path="res://assets/MainMenu/main_menu.png" id="2_7st3g"]
+[ext_resource type="Texture2D" uid="uid://b8hn1hwxd42ga" path="res://assets/MainMenu/start_active.png" id="2_biq0h"]
+[ext_resource type="Texture2D" uid="uid://coix7lyycoln8" path="res://assets/MainMenu/start_inactive.png" id="3_7st3g"]
+[ext_resource type="Texture2D" uid="uid://b8cm5n7rnf2g" path="res://assets/MainMenu/load_active.png" id="4_11v51"]
+[ext_resource type="Texture2D" uid="uid://dkvtdyhlcfw7k" path="res://assets/MainMenu/load_inactive.png" id="5_kskfm"]
+[ext_resource type="Texture2D" uid="uid://b3gptbwu05kx2" path="res://assets/MainMenu/quit_active.png" id="6_88ij5"]
+[ext_resource type="Texture2D" uid="uid://hts4c7tse7bv" path="res://assets/MainMenu/quit_inactive.png" id="7_mb30r"]
+[ext_resource type="Texture2D" uid="uid://ciaik654ks0s1" path="res://assets/MainMenu/title.png" id="8_3kulw"]
 
 [node name="MainMenu" type="Node2D" unique_id=521385618]
 script = ExtResource("1_8jkg5")

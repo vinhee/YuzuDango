@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dak5eyk210c8y"]
 
 [ext_resource type="Script" uid="uid://dgyqanm8xb0hi" path="res://scenes/inventory/itemStack.gd" id="1_yigmi"]
-[ext_resource type="FontFile" uid="uid://bb8qrkk0rvfsp" path="res://assests/font/GamjaFlower-Regular.ttf" id="2_yigmi"]
+[ext_resource type="FontFile" uid="uid://bb8qrkk0rvfsp" path="res://assets/font/GamjaFlower-Regular.ttf" id="2_yigmi"]
 
 [node name="Panel" type="Panel" unique_id=1861405117]
 script = ExtResource("1_yigmi")

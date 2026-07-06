@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgigwqmnglvdp"]
 
 [ext_resource type="Script" uid="uid://cn87v0tthvm0q" path="res://scenes/objects/crops/farm_tile.gd" id="1_asgsl"]
-[ext_resource type="Texture2D" uid="uid://05eedeka3bxi" path="res://assests/Tilesets/Tilled_Dirt_Wide_v2.png" id="2_f3q8m"]
+[ext_resource type="Texture2D" uid="uid://05eedeka3bxi" path="res://assets/Tilesets/Tilled_Dirt_Wide_v2.png" id="2_f3q8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3q8m"]
 

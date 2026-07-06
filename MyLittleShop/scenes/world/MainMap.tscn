@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dqhhjuseaogr5"]
 
+[ext_resource type="Script" uid="uid://dvc4jllmr67b" path="res://scenes/world/main_map.gd" id="1_uohlo"]
 [ext_resource type="TileSet" uid="uid://dnyqm2i3ystxa" path="res://Tilesets/game_tile_sets.tres" id="2_k1jqw"]
 [ext_resource type="PackedScene" uid="uid://dog4dptgxyvcx" path="res://scenes/interactables/forageables/hazelnut.tscn" id="3_5re8k"]
 [ext_resource type="PackedScene" uid="uid://bu3d2oaq6b5er" path="res://scenes/interactables/forageables/mushroom.tscn" id="4_vxrfl"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://gqmbof7uq5kp" path="res://scenes/ui/game_screen.tscn" id="9_vxrfl"]
 
 [node name="MainMap" type="Node2D" unique_id=1367645800]
+script = ExtResource("1_uohlo")
 
 [node name="GameTileMap" type="Node2D" parent="." unique_id=88439356]
 

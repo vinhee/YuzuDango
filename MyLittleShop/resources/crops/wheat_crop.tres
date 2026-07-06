@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://cts1oi3e15ema" path="res://resources/items/products/wheat_prod.tres" id="1_7ltpk"]
 [ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="1_e5gf5"]
-[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="2_sumu4"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="2_sumu4"]
 [ext_resource type="Resource" uid="uid://cipp8y2g6l1ms" path="res://resources/items/seedpacks/wheat_seed.tres" id="3_6ndyi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]

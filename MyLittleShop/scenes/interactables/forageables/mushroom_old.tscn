@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ces8n45if6l4x"]
 
-[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="2_g0dh5"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="2_g0dh5"]
 
 [sub_resource type="GDScript" id="GDScript_gqesb"]
 script/source = "extends Area2D

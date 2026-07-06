@@ -1,83 +1,100 @@
-# manages the farm
 extends Node
 
-enum TileState { UNTILLED, TILLED, PLANTED }
+@export var ground_layer: TileMapLayer
+@export var wetness_overlay_layer: TileMapLayer
 
-var tile_states: Dictionary = {}   # tileState
-var tile_crops: Dictionary = {}    # crop node
-var tile_nodes: Dictionary = {}    # FarmTile node
+enum GroundState { GRASS, TILLED_DRY, TILLED_WET }
 
-const CROP_SCENES: Dictionary = {
-	"corn_seed": preload("res://scenes/objects/crops/corn_crop.tscn"),
-	"wheat_seed": preload("res://scenes/objects/crops/wheat_crop.tscn"),
-	"blueberry_seed": preload("res://scenes/objects/crops/blueberry_crop.tscn"),
-	"strawberry_seed": preload("res://scenes/objects/crops/strawberry_crop.tscn"),
-	"watermelon_seed": preload("res://scenes/objects/crops/watermelon_crop.tscn"),
-	"rice_seed": preload("res://scenes/objects/crops/rice_crop.tscn"),
-	"carrot_seed": preload("res://scenes/objects/crops/carrot_crop.tscn"),
-	"lettuce_seed": preload("res://scenes/objects/crops/lettuce_crop.tscn"),
-	"potato_seed": preload("res://scenes/objects/crops/potato_crop.tscn"),
-}
+const TERRAIN_SET_ID := 0     
+const GRASS_TERRAIN_ID := 0   
+const TILLED_TERRAIN_ID := 1 
 
-@onready var crop_container: Node2D = $CropContainer 
+const WETNESS_SOURCE_ID := 3       
+const WET_OVERLAY_COORD := Vector2i(1, 15)
 
-signal item_harvested(item: ItemData)
+var ground_states: Dictionary = {}    
+var crops: Dictionary = {}            
 
-signal tile_state_changed(cell: Vector2i, state: TileState)
+const CROP_SCENE := preload("res://scenes/objects/crops/crop.tscn")
 
-func register_tile(cell: Vector2i, tile: FarmTile) -> void:
-	tile_nodes[cell] = tile
-
-func till(cell: Vector2i) -> void:
-	if get_state(cell) != TileState.UNTILLED:
-		return
-	tile_states[cell] = TileState.TILLED
+func _ready() -> void:
+	DayAndNightCycleManager.time_tick_day.connect(_on_new_day)
 	
-	if tile_nodes.has(cell):
-		tile_nodes[cell].show_tilled()
+# ---------- TOOL ACTIONS ----------
 
-func plant(cell: Vector2i, seed_item: ItemData) -> bool:
-	if get_state(cell) != TileState.TILLED:
+func till(cell: Vector2i) -> bool:
+	if crops.has(cell):
 		return false
-	var scene = CROP_SCENES.get(seed_item.item_id, null)
-	if not scene:
+	var state = ground_states.get(cell, GroundState.GRASS)
+	if state != GroundState.GRASS:
 		return false
-	
-	var crop = scene.instantiate()
-	crop_container.add_child(crop)
-	crop.global_position = cell_to_world(cell)
-	crop.plant(DayAndNightCycleManager.current_day)
-	
-	tile_states[cell] = TileState.PLANTED
-	tile_crops[cell] = crop
-	crop.growth_cycle.crop_harvestable.connect(func(): _on_crop_harvestable(cell))
+
+	print("Calling terrain connect with set=", TERRAIN_SET_ID, " terrain=", TILLED_TERRAIN_ID)
+	ground_layer.set_cells_terrain_connect([cell], TERRAIN_SET_ID, TILLED_TERRAIN_ID)
+
+	var check = ground_layer.get_cell_tile_data(cell)
+	if check:
+		print("Immediately after connect call, terrain is: ", check.terrain)
+	else:
+		print("Immediately after connect call, NO tile data at all")
+
+	ground_states[cell] = GroundState.TILLED_DRY
 	return true
 
-func water(cell: Vector2i) -> void:
-	if get_state(cell) != TileState.PLANTED:
-		return
-	tile_crops[cell].water()
+func water(cell: Vector2i) -> bool:
+	var state = ground_states.get(cell, GroundState.GRASS)
+	if state == GroundState.GRASS:
+		return false # no effect on grass
 
-func harvest(cell: Vector2i) -> void:
-	if get_state(cell) != TileState.PLANTED:
-		return
-	var crop = tile_crops[cell]
-	var product = crop.try_harvest()
-	if not product:
-		return
-	item_harvested.emit(product)
-	if not is_instance_valid(crop):   # crop removed itself (non-regrow)
-		tile_crops.erase(cell)
-		tile_states[cell] = TileState.TILLED
+	wetness_overlay_layer.set_cell(cell, WETNESS_SOURCE_ID, WET_OVERLAY_COORD)
+	ground_states[cell] = GroundState.TILLED_WET
 
-func get_state(cell: Vector2i) -> TileState:
-	return tile_states.get(cell, TileState.UNTILLED)
+	if crops.has(cell):
+		crops[cell].water()
+	return true
 
-func world_to_cell(world_pos: Vector2) -> Vector2i:
-	return Vector2i(world_pos / 16.0)  # replace 16 with your tile size
+func plant(cell: Vector2i, seed_item: ItemData) -> bool:
+	var state = ground_states.get(cell, GroundState.GRASS)
+	if state == GroundState.GRASS:
+		return false
+	if crops.has(cell):
+		return false
 
-func cell_to_world(cell: Vector2i) -> Vector2:
-	return Vector2(cell) * 16.0 # not sure if its 8x8 or 16x16
+	var crop_data: CropData = CropDatabase.get_crop_for_seed(seed_item)
+	if crop_data == null:
+		push_warning("No CropData found for seed item: %s" % seed_item.item_id)
+		return false
 
-func _on_crop_harvestable(cell: Vector2i) -> void:
-	pass 
+	var crop: Crop = CROP_SCENE.instantiate()
+	crop.data = crop_data
+	crop.cell = cell
+	crop.position = ground_layer.map_to_local(cell)
+	ground_layer.add_child(crop)
+	crops[cell] = crop
+	return true
+
+func harvest(cell: Vector2i) -> ItemData:
+	if not crops.has(cell):
+		return null
+	var crop: Crop = crops[cell]
+	if not crop.is_harvestable():
+		return null
+
+	var product: ItemData = crop.data.harvest_product_item
+	if crop.data.regrows_after_harvest:
+		crop.reset_after_harvest()
+	else:
+		crop.queue_free()
+		crops.erase(cell)
+	return product
+
+# ---------- DAY CYCLE ----------
+
+func _on_new_day(_day: int) -> void:
+	for cell in ground_states.keys():
+		if ground_states[cell] == GroundState.TILLED_WET:
+			wetness_overlay_layer.erase_cell(cell)
+			ground_states[cell] = GroundState.TILLED_DRY
+
+	for cell in crops.keys():
+		crops[cell].advance_day()

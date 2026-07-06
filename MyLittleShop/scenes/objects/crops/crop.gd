@@ -45,13 +45,13 @@
 class_name Crop
 extends Node2D
 
-@export var crop_data: CropData   # ← set this in each inherited scene's inspector
+@export var crop_data: CropData
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var growth_cycle: GrowthCycleComponent = $GrowthCycleComponent
 @onready var watering_particles: GPUParticles2D = $WateringParticles
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
-@onready var damageable_area: Area2D = $DamageableArea   # your reusable component
+@onready var damageable_area: Area2D = $DamageableArea 
 
 func _ready() -> void:
 	# Pass crop data down to the component

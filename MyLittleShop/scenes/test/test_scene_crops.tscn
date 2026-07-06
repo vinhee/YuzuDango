@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dmpe1mseyws4p"]
 
-[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="1_5ko52"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="1_5ko52"]
 [ext_resource type="TileSet" uid="uid://dnyqm2i3ystxa" path="res://Tilesets/game_tile_sets.tres" id="2_av17k"]
 [ext_resource type="PackedScene" uid="uid://hjb3ec7ff3r0" path="res://scenes/player/player.tscn" id="3_n2ev8"]
 [ext_resource type="PackedScene" uid="uid://dog4dptgxyvcx" path="res://scenes/interactables/forageables/hazelnut.tscn" id="4_dcj5d"]

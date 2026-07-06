@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xtknan81pxbn"]
 
-[ext_resource type="Texture2D" uid="uid://b2ta44h2eernx" path="res://assests/Objects/Basic Grass Biom things 1.png" id="1_aw33s"]
+[ext_resource type="Texture2D" uid="uid://b2ta44h2eernx" path="res://assets/Objects/Basic Grass Biom things 1.png" id="1_aw33s"]
 [ext_resource type="Script" uid="uid://vrmef1okkw22" path="res://scenes/objects/rocks/rock.gd" id="2_f5itc"]
 [ext_resource type="PackedScene" uid="uid://433s57loc42p" path="res://scenes/components/damageable_area.tscn" id="2_msy0l"]
 [ext_resource type="PackedScene" uid="uid://wyvfiaw80n6h" path="res://scenes/components/damage_component.tscn" id="4_bntui"]

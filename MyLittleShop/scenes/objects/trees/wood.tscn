@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dnnnkwb3wg04k"]
 
-[ext_resource type="Texture2D" uid="uid://b2ta44h2eernx" path="res://assests/Objects/Basic Grass Biom things 1.png" id="1_wypbv"]
+[ext_resource type="Texture2D" uid="uid://b2ta44h2eernx" path="res://assets/Objects/Basic Grass Biom things 1.png" id="1_wypbv"]
 [ext_resource type="PackedScene" uid="uid://be71m75of5dsn" path="res://scenes/interactables/forageables/collectable.tscn" id="2_yurcs"]
-[ext_resource type="Script" uid="uid://p0ep6kepgnwx" path="res://assests/Inventory/inventoryItems.gd" id="3_djsa2"]
-[ext_resource type="Texture2D" uid="uid://v8u2ywjheerq" path="res://assests/CollectableItems/wood.png" id="4_l7er5"]
+[ext_resource type="Script" uid="uid://p0ep6kepgnwx" path="res://assets/Inventory/inventoryItems.gd" id="3_djsa2"]
+[ext_resource type="Texture2D" uid="uid://v8u2ywjheerq" path="res://assets/CollectableItems/wood.png" id="4_l7er5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yurcs"]
 atlas = ExtResource("1_wypbv")

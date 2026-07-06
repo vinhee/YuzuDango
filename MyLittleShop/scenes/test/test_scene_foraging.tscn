@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dydo20fa036lw"]
 
 [ext_resource type="TileSet" uid="uid://dnyqm2i3ystxa" path="res://Tilesets/game_tile_sets.tres" id="1_q64gb"]
-[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assests/Crops/Crops.png" id="1_x0o2t"]
+[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="1_x0o2t"]
 [ext_resource type="PackedScene" uid="uid://hjb3ec7ff3r0" path="res://scenes/player/player.tscn" id="2_dlvpu"]
 [ext_resource type="Script" uid="uid://cms7dakrhg6a6" path="res://scenes/test/canvas_layer.gd" id="4_8n3o6"]
 [ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory/inventory_gui.tscn" id="4_dlvpu"]
