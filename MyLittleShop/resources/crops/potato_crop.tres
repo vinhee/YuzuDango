@@ -28,6 +28,7 @@ region = Rect2(32, 48, 16, 16)
 [resource]
 script = ExtResource("2_qjbm5")
 crop_name = "PotatoCrop"
+plant_tool = 7
 days_to_harvest = 4
 sprite_sprout = SubResource("AtlasTexture_un8qh")
 sprite_seedling = SubResource("AtlasTexture_gjyx8")

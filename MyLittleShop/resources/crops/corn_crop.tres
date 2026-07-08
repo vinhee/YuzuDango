@@ -28,6 +28,7 @@ region = Rect2(32, 80, 16, 16)
 [resource]
 script = ExtResource("2_8k6kj")
 crop_name = "CornCrop"
+plant_tool = 9
 days_to_harvest = 6
 sprite_sprout = SubResource("AtlasTexture_un8qh")
 sprite_seedling = SubResource("AtlasTexture_gjyx8")

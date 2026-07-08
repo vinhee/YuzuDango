@@ -1,5 +1,4 @@
 extends NodeState
-
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 
@@ -28,21 +27,17 @@ func _on_next_transitions() -> void:
 	if player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.use_tool():
 		transition.emit("Watering")
 
-	# no tool equipped so check if player is holding seed to plant
 	#if player.current_tool == DataTypes.Tools.None && GameInputEvents.use_tool():
-		#_try_plant()
+		#var held_item = player.inventory.get_held_item()
+		#if held_item != null and held_item.item_type == ItemData.ItemType.SEED:
+			#transition.emit("Planting")
+	
+	# TEMPORARY: no real "holding a seed" check yet, just plant sberry for testing
+	if _is_planting_tool(player.current_tool) && GameInputEvents.use_tool():
+		transition.emit("Planting")
 
-#func _try_plant() -> void:
-	#var held_item = player.inventory.get_held_item()
-	#if held_item == null:
-		#return
-	#if held_item.item_type != ItemData.ItemType.SEED:
-		#return
-	#
-	#var target_cell = player.get_facing_cell()
-	#var success = FarmManager.plant(target_cell, held_item)
-	#if success:
-		#player.inventory.remove_one(held_item)
+func _is_planting_tool(tool: DataTypes.Tools) -> bool:
+	return CropDatabase.crop_by_tool.has(tool)
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()

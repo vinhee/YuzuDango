@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://q2rsi40n6a45" path="res://scenes/objects/crops/particles/watering_particles.tscn" id="1_pg0tg"]
 [ext_resource type="PackedScene" uid="uid://cwdsf0ctt35" path="res://scenes/objects/crops/particles/flowering_particles.tscn" id="2_2vaou"]
 [ext_resource type="PackedScene" uid="uid://0yp4t703pfq3" path="res://scenes/objects/crops/growth_cycle_component.tscn" id="5_vys0v"]
+[ext_resource type="Script" uid="uid://bt2qs2nvr0gr1" path="res://scenes/objects/crops/crop_interactable.gd" id="6_vys0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg0tg"]
 
@@ -25,3 +26,8 @@ shape = SubResource("RectangleShape2D_pg0tg")
 debug_color = Color(0.83419025, 0.47507983, 0.41761473, 0.41960785)
 
 [node name="GrowthCycleComponent" parent="." unique_id=1784845757 instance=ExtResource("5_vys0v")]
+
+[node name="InteractableArea" type="Area2D" parent="." unique_id=1870106712]
+script = ExtResource("6_vys0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1506368797]

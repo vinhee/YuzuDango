@@ -28,6 +28,7 @@ region = Rect2(32, 160, 16, 16)
 [resource]
 script = ExtResource("2_flawu")
 crop_name = "StrawberryCrop"
+plant_tool = 12
 sprite_sprout = SubResource("AtlasTexture_un8qh")
 sprite_seedling = SubResource("AtlasTexture_gjyx8")
 sprite_vegetating = SubResource("AtlasTexture_nt4o1")

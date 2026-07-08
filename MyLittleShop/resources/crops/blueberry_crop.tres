@@ -28,6 +28,7 @@ region = Rect2(32, 144, 16, 16)
 [resource]
 script = ExtResource("2_luqbb")
 crop_name = "BlueberryCrop"
+plant_tool = 11
 days_to_harvest = 10
 sprite_sprout = SubResource("AtlasTexture_un8qh")
 sprite_seedling = SubResource("AtlasTexture_gjyx8")

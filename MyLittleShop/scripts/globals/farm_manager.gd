@@ -5,21 +5,23 @@ extends Node
 
 enum GroundState { GRASS, TILLED_DRY, TILLED_WET }
 
-const TERRAIN_SET_ID := 0     
-const GRASS_TERRAIN_ID := 0   
-const TILLED_TERRAIN_ID := 1 
+# Terrain system
+const TERRAIN_SET_ID := 0
+const GRASS_TERRAIN_ID := 0
+const TILLED_TERRAIN_ID := 1
 
-const WETNESS_SOURCE_ID := 3       
-const WET_OVERLAY_COORD := Vector2i(1, 15)
+# Wetness overlay tile
+const WETNESS_SOURCE_ID := 3
+const WET_OVERLAY_COORD := Vector2i(1, 15) #atlas coord of wet tile sprite
 
 var ground_states: Dictionary = {}    
-var crops: Dictionary = {}            
+var crops: Dictionary = {}          
 
 const CROP_SCENE := preload("res://scenes/objects/crops/crop.tscn")
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(_on_new_day)
-	
+
 # ---------- TOOL ACTIONS ----------
 
 func till(cell: Vector2i) -> bool:
@@ -29,22 +31,14 @@ func till(cell: Vector2i) -> bool:
 	if state != GroundState.GRASS:
 		return false
 
-	print("Calling terrain connect with set=", TERRAIN_SET_ID, " terrain=", TILLED_TERRAIN_ID)
 	ground_layer.set_cells_terrain_connect([cell], TERRAIN_SET_ID, TILLED_TERRAIN_ID)
-
-	var check = ground_layer.get_cell_tile_data(cell)
-	if check:
-		print("Immediately after connect call, terrain is: ", check.terrain)
-	else:
-		print("Immediately after connect call, NO tile data at all")
-
 	ground_states[cell] = GroundState.TILLED_DRY
 	return true
 
 func water(cell: Vector2i) -> bool:
 	var state = ground_states.get(cell, GroundState.GRASS)
 	if state == GroundState.GRASS:
-		return false # no effect on grass
+		return false
 
 	wetness_overlay_layer.set_cell(cell, WETNESS_SOURCE_ID, WET_OVERLAY_COORD)
 	ground_states[cell] = GroundState.TILLED_WET
@@ -53,6 +47,21 @@ func water(cell: Vector2i) -> bool:
 		crops[cell].water()
 	return true
 
+func plant_with_crop_data(cell: Vector2i, crop_data: CropData) -> bool:
+	var state = ground_states.get(cell, GroundState.GRASS)
+	if state == GroundState.GRASS:
+		return false
+	if crops.has(cell):
+		return false
+
+	var crop: Crop = CROP_SCENE.instantiate()
+	crop.data = crop_data
+	crop.cell = cell
+	crop.position = ground_layer.map_to_local(cell)
+	ground_layer.add_child(crop)
+	crops[cell] = crop
+	return true
+	
 func plant(cell: Vector2i, seed_item: ItemData) -> bool:
 	var state = ground_states.get(cell, GroundState.GRASS)
 	if state == GroundState.GRASS:

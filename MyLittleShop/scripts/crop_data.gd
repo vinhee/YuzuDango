@@ -3,6 +3,7 @@ class_name CropData
 extends Resource
 
 @export var crop_name: String = "Unknown Crop"
+@export var plant_tool: DataTypes.Tools = DataTypes.Tools.None
 @export var days_to_harvest: int = 7
 
 # Sprites for each growth stage

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dmpe1mseyws4p"]
 
-[ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="1_5ko52"]
+[ext_resource type="Resource" uid="uid://bltnpfnrajlx6" path="res://resources/items/seedpacks/watermelon_seed.tres" id="1_av17k"]
 [ext_resource type="TileSet" uid="uid://dnyqm2i3ystxa" path="res://Tilesets/game_tile_sets.tres" id="2_av17k"]
 [ext_resource type="PackedScene" uid="uid://hjb3ec7ff3r0" path="res://scenes/player/player.tscn" id="3_n2ev8"]
 [ext_resource type="PackedScene" uid="uid://dog4dptgxyvcx" path="res://scenes/interactables/forageables/hazelnut.tscn" id="4_dcj5d"]
@@ -14,118 +14,24 @@
 [sub_resource type="GDScript" id="GDScript_8n3o6"]
 script/source = "extends Node2D
 
-@export var mushroom_scene: PackedScene
-
-#func _ready():
-	#print(\"mushroom_scene = \", mushroom_scene)
-	#spawn_mushroom()
-	#
-#func spawn_mushroom():
-	#var mushroom = mushroom_scene.instantiate()
-	#mushroom.position = Vector2(300, 200)
-	#$Forageables.add_child(mushroom)
-	#mushroom.state = \"mushroom\"
-	#print(\"Spawned mushroom\")
-
-
-@onready var crop_container: Node2D = $CropContainer
-@onready var farm_tiles_container: Node2D = $FarmTilesContainer
+@export var player: Player
+@export var test_seed_item: ItemData
 
 func _ready() -> void:
-	FarmManager.crop_container = crop_container
-	
-	# Register every pre-placed FarmTile with FarmManager
-	for tile in farm_tiles_container.get_children():
-		if tile is FarmTile:
-			var cell = FarmManager.world_to_cell(tile.global_position)
-			FarmManager.register_tile(cell, tile)
+	FarmManager.ground_layer = $GameTileMap/Ground
+	FarmManager.wetness_overlay_layer = $GameTileMap/WetnessOverlay
 
 func _on_inventory_gui_closed() -> void:
 	get_tree().paused = false
-
 
 func _on_inventory_gui_opened() -> void:
 	get_tree().paused = true
 "
 
-[sub_resource type="GDScript" id="GDScript_gqesb"]
-script/source = "extends Area2D
-
-@export var player: Player
-var state = \"no mushroom\"
-var player_in_range = \"false\"
-
-func _ready():
-	#if state == \"no mushroom\":
-		#$spawn_timer.start()
-	$spawn_timer.timeout.connect(_on_spawn_timer_timeout)
-
-func pickup():
-	#if state != \"mushroom\":
-		#return
-		
-	print(\"Mushroom picked up!\")
-	
-	state = \"no mushroom\"
-	$AnimatedSprite2D.play(\"no mushroom\")
-	#set_deferred(\"monitoring\", false)
-	
-	$spawn_timer.start()
-	
-func _on_spawn_timer_timeout():
-	state = \"mushroom\"
-	$AnimatedSprite2D.play(\"mushroom\")
-	#set_deferred(\"monitoring\", true)
-"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3tmht"]
-atlas = ExtResource("1_5ko52")
-region = Rect2(0, 240, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uyfo6"]
-atlas = ExtResource("1_5ko52")
-region = Rect2(0, 256, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ncvb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3tmht")
-}],
-"loop": true,
-"name": &"mushroom",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uyfo6")
-}],
-"loop": true,
-"name": &"no mushroom",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_s2rck"]
-radius = 5.0990195
-
-[sub_resource type="PackedScene" id="PackedScene_vn5id"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Mushroom", "Area2D", "script", "AnimatedSprite2D", "AnimatedSprite2D", "sprite_frames", "animation", "spawn_timer", "Timer", "wait_time", "CollisionShape2D", "CollisionShape2D", "shape"),
-"node_count": 4,
-"node_ids": PackedInt32Array(1499288061, 1674579008, 1305792128, 351289552),
-"node_paths": [NodePath("."), NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 2, 5, 1, 6, 2, 0, 1073741825, 0, 8, 7, -1, 1, 9, 3, 0, 1073741826, 0, 11, 10, -1, 1, 12, 4, 0),
-"variants": [SubResource("GDScript_gqesb"), SubResource("SpriteFrames_8ncvb"), &"mushroom", 5.0, SubResource("CircleShape2D_s2rck")],
-"version": 3
-}
-
-[node name="TestSceneCrops" type="Node2D" unique_id=1367645800]
+[node name="TestSceneCrops" type="Node2D" unique_id=1367645800 node_paths=PackedStringArray("player")]
 script = SubResource("GDScript_8n3o6")
-mushroom_scene = SubResource("PackedScene_vn5id")
+player = NodePath("player")
+test_seed_item = ExtResource("1_av17k")
 
 [node name="GameTileMap" type="Node2D" parent="." unique_id=88439356]
 
@@ -167,8 +73,6 @@ grow_vertical = 2
 
 [node name="DayNightCycleComponent" parent="." unique_id=395284059 instance=ExtResource("9_0gc43")]
 visible = false
-
-[node name="CropContainer" type="Node2D" parent="." unique_id=1409608007]
 
 [node name="FarmTilesContainer" type="Node2D" parent="." unique_id=1689913507]
 

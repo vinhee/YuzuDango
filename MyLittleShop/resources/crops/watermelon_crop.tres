@@ -28,6 +28,7 @@ region = Rect2(32, 176, 16, 16)
 [resource]
 script = ExtResource("2_cmboj")
 crop_name = "WatermelonCrop"
+plant_tool = 13
 days_to_harvest = 9
 sprite_sprout = SubResource("AtlasTexture_un8qh")
 sprite_seedling = SubResource("AtlasTexture_gjyx8")

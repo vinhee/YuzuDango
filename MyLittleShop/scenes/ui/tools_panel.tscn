@@ -25,7 +25,7 @@ region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_62b2c"]
 atlas = ExtResource("3_0jxvs")
-region = Rect2(96, 16, 16, 16)
+region = Rect2(96, 160, 16, 16)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a7ivs"]
 load_path = "res://.godot/imported/Crops.png-21bbff7669fa6e78e76087e05d82e252.ctex"
@@ -79,7 +79,7 @@ theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_bdu3n")
 icon_alignment = 1
 
-[node name="SeedWheat" type="Button" parent="MarginContainer/HBoxContainer" unique_id=161685190]
+[node name="SeedStrawberry" type="Button" parent="MarginContainer/HBoxContainer" unique_id=161685190]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
@@ -103,6 +103,6 @@ icon_alignment = 1
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTill" to="." method="_on_tool_till_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedWheat" to="." method="_on_seed_wheat_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedStrawberry" to="." method="_on_seed_wheat_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SeedPotato" to="." method="_on_seed_potato_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SeedBlueberry" to="." method="_on_seed_blueberry_pressed"]

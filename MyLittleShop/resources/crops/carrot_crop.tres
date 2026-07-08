@@ -28,6 +28,7 @@ region = Rect2(32, 64, 16, 16)
 [resource]
 script = ExtResource("2_8nrlx")
 crop_name = "CarrotCrop"
+plant_tool = 8
 sprite_sprout = SubResource("AtlasTexture_un8qh")
 sprite_seedling = SubResource("AtlasTexture_gjyx8")
 sprite_vegetating = SubResource("AtlasTexture_nt4o1")
