@@ -13,11 +13,18 @@ func _on_physics_process(_delta: float) -> void:
 func _on_enter() -> void:
 	has_planted = false
 	match player.player_direction:
-		Vector2.UP: animated_sprite_2d.play("plant_back")
-		Vector2.DOWN: animated_sprite_2d.play("plant_front")
-		Vector2.LEFT: animated_sprite_2d.play("plant_left")
-		Vector2.RIGHT: animated_sprite_2d.play("plant_right")
-		_: animated_sprite_2d.play("plant_front")
+		# note: for now all directions just play the plant anim (front facing)
+		# in the future when hv time to design more animations can add
+		Vector2.UP: animated_sprite_2d.play("plant")
+		Vector2.DOWN: animated_sprite_2d.play("plant")
+		Vector2.LEFT: animated_sprite_2d.play("plant")
+		Vector2.RIGHT: animated_sprite_2d.play("plant")
+		_: animated_sprite_2d.play("plant")
+		#Vector2.UP: animated_sprite_2d.play("plant_back")
+		#Vector2.DOWN: animated_sprite_2d.play("plant_front")
+		#Vector2.LEFT: animated_sprite_2d.play("plant_left")
+		#Vector2.RIGHT: animated_sprite_2d.play("plant_right")
+		#_: animated_sprite_2d.play("plant_front")
 
 func _on_next_transitions() -> void:
 	if !animated_sprite_2d.is_playing():

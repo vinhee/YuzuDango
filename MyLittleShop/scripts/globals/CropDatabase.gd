@@ -5,6 +5,7 @@ var crop_by_tool: Dictionary = {}   # NEW: DataTypes.Tools -> CropData
 
 func _ready() -> void:
 	_load_all_crop_data("res://resources/crops/")
+	print("crop_by_tool loaded: ", crop_by_tool)
 
 func _load_all_crop_data(path: String) -> void:
 	var dir = DirAccess.open(path)
