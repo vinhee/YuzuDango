@@ -20,6 +20,11 @@ const CROP_SCENE := preload("res://scenes/objects/crops/crop.tscn")
 #func _ready() -> void:
 	#DayAndNightCycleManager.time_tick_day.connect(_on_new_day)
 
+func _ready() -> void:
+	print("FarmManager _ready called, self=", self)
+	DayAndNightCycleManager.time_tick_day.connect(_on_new_day)
+	print("FarmManager connected to time_tick_day")
+
 # ---------- TOOL ACTIONS ----------
 func till(cell: Vector2i) -> bool:
 	if crops.has(cell):
@@ -103,8 +108,9 @@ func harvest(cell: Vector2i) -> ItemData:
 
 # ---------- DAY CYCLE ----------
 func _on_new_day(_day: int) -> void:
+	print("FarmManager _on_new_day fired")
 	for cell in ground_states.keys():
 		if ground_states[cell] == GroundState.TILLED_WET:
 			wetness_overlay_layer.erase_cell(cell)
 			ground_states[cell] = GroundState.TILLED_DRY
-	# time tick day handled by growth cycle component
+			# time tick day handled by growth cycle component

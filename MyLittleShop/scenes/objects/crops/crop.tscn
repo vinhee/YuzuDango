@@ -17,6 +17,7 @@ script = ExtResource("1_62b5o")
 [node name="WateringParticles" parent="." unique_id=1199243487 instance=ExtResource("1_pg0tg")]
 
 [node name="FloweringParticles" parent="." unique_id=568947646 instance=ExtResource("2_2vaou")]
+emitting = false
 
 [node name="DamageableArea" parent="." unique_id=894294119 instance=ExtResource("1_8vxos")]
 tool = 4

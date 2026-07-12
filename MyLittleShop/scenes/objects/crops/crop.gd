@@ -22,6 +22,11 @@ func _ready() -> void:
 	# now changed to farm manager handling it
 	# in the future need to remove damageable area node from crop scene
 	#damageable_area.watered.connect(_on_watered)
+	
+	# alrd set flowering particles emitting to false on the node itself
+	# this is a backup to make sure its false
+	# only when harvestable the code changes it to true
+	flowering_particles.emitting = false
 	_update_sprite(DataTypes.GrowthStates.Sprout)
 
 func plant(current_day: int) -> void:

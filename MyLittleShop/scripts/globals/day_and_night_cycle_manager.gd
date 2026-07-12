@@ -5,7 +5,7 @@ const MINUTES_PER_HOUR: int = 60
 const GAME_MINUTE_DURATION: float = TAU / MINUTES_PER_DAY
 
 # change speed to test day night cycle + growing crops
-var game_speed: float = 100.0
+var game_speed: float = 200.0
 
 var init_day: int = 1
 var init_hour: int = 12

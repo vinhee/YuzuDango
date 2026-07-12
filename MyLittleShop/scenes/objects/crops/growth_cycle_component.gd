@@ -19,6 +19,7 @@ func plant(current_day: int) -> void:
 	growth_stage_changed.emit(current_state)
 
 func _on_new_day(day: int) -> void:
+	print("GrowthCycle _on_new_day fired: day=", day, " is_watered=", is_watered, " plant_day=", plant_day)
 	if plant_day == -1:
 		return
 	if not is_watered:
