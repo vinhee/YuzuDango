@@ -20,14 +20,12 @@ func _on_tool_watering_can_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
 
 func _on_seed_strawberry_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.PlantStrawberry)
-
+	ToolManager.select_seed(strawberry_seed_data)
 func _on_seed_potato_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.PlantPotato)
-
+	ToolManager.select_seed(potato_seed_data)
 func _on_seed_blueberry_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.PlantBlueberry)
-	
+	ToolManager.select_seed(blueberry_seed_data)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT:

@@ -34,17 +34,14 @@ func _on_next_transitions() -> void:
 		transition.emit("Idle")
 
 func _do_plant() -> void:
-	var crop_data = CropDatabase.get_crop_for_tool(player.current_tool)
-	# vin help do inventory method to get seed item that player is holding
-	# replace test_seed_item with player.inventory.get_held_item()
-	if test_seed_item == null:
+	var seed_item: ItemData = ToolManager.selected_seed
+	if seed_item == null:
 		return
 	var target_cell = player.get_facing_cell()
-	var success = FarmManager.plant(target_cell, test_seed_item)
+	var success = FarmManager.plant(target_cell, seed_item)
 	if success:
-		print("Planted (stub, no inventory consumption yet)")
-		# vin help with inventory remove item method
-		# smt like player.inventory.remove_one(test_seed_item)
+		print("Planted: ", seed_item.item_id)
+		# vin help do: player.inventory.remove_one(seed_item)
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()

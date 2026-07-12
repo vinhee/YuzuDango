@@ -340,7 +340,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ugbui")
 }],
-"loop": true,
+"loop": false,
 "name": &"plant",
 "speed": 2.0
 }, {

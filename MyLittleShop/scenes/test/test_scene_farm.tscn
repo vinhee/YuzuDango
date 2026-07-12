@@ -15,7 +15,8 @@ extends Node2D
 func _ready() -> void:
 	FarmManager.ground_layer = $GameTileMap/Ground
 	FarmManager.wetness_overlay_layer = $GameTileMap/WetnessOverlay
-
+	FarmManager.crop_layer = $GameTileMap/Crop
+	
 	print(\"Runtime tile_set resource path: \", FarmManager.ground_layer.tile_set.resource_path)
 
 	var ts = FarmManager.ground_layer.tile_set
@@ -69,6 +70,8 @@ tile_set = ExtResource("2_gfdun")
 
 [node name="WetnessOverlay" type="TileMapLayer" parent="GameTileMap" unique_id=2086389900]
 tile_set = ExtResource("2_gfdun")
+
+[node name="Crop" type="TileMapLayer" parent="GameTileMap" unique_id=1600901788]
 
 [node name="Player" parent="." unique_id=343638103 instance=ExtResource("3_88fn1")]
 position = Vector2(320, 184)

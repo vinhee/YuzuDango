@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://b47a5il3pqh8f" path="res://scenes/ui/tools_panel.gd" id="2_0jxvs"]
 [ext_resource type="Texture2D" uid="uid://bb7f17kc24cco" path="res://assets/Objects/Basic tools and meterials.png" id="2_a7ivs"]
 [ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="3_0jxvs"]
+[ext_resource type="Resource" uid="uid://cofx35ewoagun" path="res://resources/items/seedpacks/strawberry_seed.tres" id="3_3neg6"]
+[ext_resource type="Resource" uid="uid://7qohbj8in4wp" path="res://resources/items/seedpacks/potato_seed.tres" id="4_ur6ba"]
+[ext_resource type="Resource" uid="uid://ccprbwio8jegb" path="res://resources/items/seedpacks/blueberry_seed.tres" id="5_bdu3n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbtgy"]
 atlas = ExtResource("2_a7ivs")
@@ -47,6 +50,9 @@ offset_bottom = 40.0
 theme = ExtResource("1_2yiqu")
 theme_type_variation = &"DarkWoodPanel"
 script = ExtResource("2_0jxvs")
+strawberry_seed_data = ExtResource("3_3neg6")
+potato_seed_data = ExtResource("4_ur6ba")
+blueberry_seed_data = ExtResource("5_bdu3n")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=285956748]
 layout_mode = 2
@@ -103,6 +109,6 @@ icon_alignment = 1
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTill" to="." method="_on_tool_till_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedStrawberry" to="." method="_on_seed_wheat_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedStrawberry" to="." method="_on_seed_strawberry_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SeedPotato" to="." method="_on_seed_potato_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SeedBlueberry" to="." method="_on_seed_blueberry_pressed"]

@@ -47,7 +47,3 @@ func get_interactable():
 		if area is Interactable:
 			return area
 	return null
-
-func _input(event):
-	if event is InputEventMouseButton:
-		print("Mouse button event:", event.button_index, event.pressed)
