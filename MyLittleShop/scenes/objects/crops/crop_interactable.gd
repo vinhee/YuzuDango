@@ -3,13 +3,17 @@ extends Interactable
 var crop: Crop
 
 func interact(player: Player) -> void:
-	try_harvest(player)
+	if crop:
+		crop.interact(player)
 
-func try_harvest(player: Player) -> void:
-	if crop == null:
-		return
-	if not crop.is_harvestable():
-		return
+# func interact(player: Player) -> void:
+	# try_harvest(player)
+
+# func try_harvest(player: Player) -> void:
+	# if crop == null:
+		# return
+	# if not crop.is_harvestable():
+		# return
 	#var product: InventoryItem = crop.try_harvest()
 	#if product == null:
 		#return

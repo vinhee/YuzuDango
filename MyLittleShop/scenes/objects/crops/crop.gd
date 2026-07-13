@@ -60,3 +60,20 @@ func _update_sprite(state: DataTypes.GrowthStates) -> void:
 		DataTypes.GrowthStates.Vegetating:   sprite.texture = crop_data.sprite_vegetating
 		DataTypes.GrowthStates.Mature:       sprite.texture = crop_data.sprite_mature
 		DataTypes.GrowthStates.Harvestable:  sprite.texture = crop_data.sprite_harvestable
+
+func interact(player: Player) -> void:
+	if not is_harvestable():
+		print("Crop isn't ready yet!")
+		return
+	var harvested_product = try_harvest() 
+	
+	if harvested_product and crop_data.harvest_item and player.inventory:
+		player.inventory.insert(crop_data.harvest_item)
+		print("Harvested and added to inventory: ", crop_data.harvest_item.name)
+
+		if FarmManager.crops.has(cell):
+			FarmManager.crops.erase(cell)
+			
+		queue_free()
+	else:
+		print("WARNING: Missing crop_data.harvest_item or Player Inventory!")

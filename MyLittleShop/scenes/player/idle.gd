@@ -27,6 +27,8 @@ func _on_next_transitions() -> void:
 	if player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.use_tool():
 		transition.emit("Watering")
 
+	if player.current_tool == DataTypes.Tools.None && GameInputEvents.use_tool():
+		transition.emit("Harvesting")
 	#if player.current_tool == DataTypes.Tools.None && GameInputEvents.use_tool():
 		#var held_item = player.inventory.get_held_item()
 		#if held_item != null and held_item.item_type == ItemData.ItemType.SEED:

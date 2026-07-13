@@ -9,6 +9,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg0tg"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vys0v"]
+
 [node name="Crop" type="Node2D" unique_id=615719872]
 script = ExtResource("1_62b5o")
 
@@ -29,6 +31,9 @@ debug_color = Color(0.83419025, 0.47507983, 0.41761473, 0.41960785)
 [node name="GrowthCycleComponent" parent="." unique_id=1784845757 instance=ExtResource("5_vys0v")]
 
 [node name="InteractableArea" type="Area2D" parent="." unique_id=1870106712]
+collision_layer = 4
 script = ExtResource("6_vys0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1506368797]
+shape = SubResource("CircleShape2D_vys0v")
+debug_color = Color(0.37487644, 0.4767915, 1, 0.41960785)

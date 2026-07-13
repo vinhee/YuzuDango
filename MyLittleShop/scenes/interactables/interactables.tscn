@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bwdlrhleykssg"]
+
+[sub_resource type="GDScript" id="GDScript_kij2m"]
+script/source = "extends Area2D
+
+
+signal interacted(player: Player)
+
+func interact(player: Player) -> void:
+	interacted.emit(player)"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kij2m"]
+size = Vector2(8, 8)
+
+[node name="Interactables" type="Area2D" unique_id=742816335]
+script = SubResource("GDScript_kij2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218173392]
+shape = SubResource("RectangleShape2D_kij2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1125513099]

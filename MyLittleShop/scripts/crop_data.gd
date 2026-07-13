@@ -21,3 +21,6 @@ extends Resource
 @export var needs_water_every_day: bool = true
 @export var regrows_after_harvest: bool = false     # e.g. tomatoes, blueberries
 @export var regrow_days: int = 3                    # days to regrow if above is true
+
+# Harvested crops into inventory
+@export var harvest_item: InventoryItem
