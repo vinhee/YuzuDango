@@ -7,7 +7,8 @@ script/source = "extends Area2D
 signal interacted(player: Player)
 
 func interact(player: Player) -> void:
-	interacted.emit(player)"
+	interacted.emit(player)
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kij2m"]
 size = Vector2(8, 8)
