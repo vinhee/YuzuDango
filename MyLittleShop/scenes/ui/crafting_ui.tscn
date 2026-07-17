@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dw7ndy6fsxghb"]
+
+[ext_resource type="Script" uid="uid://lp2l12u0y7s2" path="res://scripts/crafting/crafting_ui.gd" id="1_efemu"]
+
+[node name="CraftingUi" type="Control" unique_id=1464643722]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_efemu")
+
+[node name="Panel" type="Panel" parent="." unique_id=1430178548]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RecipeList" type="ItemList" parent="Panel" unique_id=947965901]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="IngredientList" type="VBoxContainer" parent="Panel" unique_id=1900588849]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuantitySpinBox" type="SpinBox" parent="Panel" unique_id=1475914436]
+layout_mode = 0
+offset_right = 86.5
+offset_bottom = 31.0
+
+[node name="CraftButton" type="Button" parent="Panel" unique_id=1943963389]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=2105247018]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

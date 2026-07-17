@@ -22,6 +22,7 @@ ToolManager="*uid://554ot21tvnb4"
 DayAndNightCycleManager="*uid://dayblvd8xddmk"
 FarmManager="*uid://doia3j2rifh3k"
 CropDatabase="*uid://bjrp87mnxhtaf"
+CraftingUI="*uid://dw7ndy6fsxghb"
 
 [display]
 
