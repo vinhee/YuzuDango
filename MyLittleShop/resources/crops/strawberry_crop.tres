@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://b4fpaqps54ed5"]
 
-[ext_resource type="Resource" uid="uid://bpfij77hf1c8p" path="res://assets/Inventory/InventoryItems/strawberry.tres" id="1_flawu"]
 [ext_resource type="Resource" uid="uid://db5k8tmo41b74" path="res://resources/items/products/strawberry_prod.tres" id="1_yiixw"]
 [ext_resource type="Script" uid="uid://cm2ixh0te2m2t" path="res://scripts/crop_data.gd" id="2_flawu"]
 [ext_resource type="Resource" uid="uid://cofx35ewoagun" path="res://resources/items/seedpacks/strawberry_seed.tres" id="3_flawu"]
 [ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="4_cykgj"]
+
+[sub_resource type="Resource" id="Resource_yiixw"]
+metadata/__load_path__ = "res://assets/Inventory/InventoryItems/strawberry.tres"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
 atlas = ExtResource("4_cykgj")
@@ -39,5 +41,5 @@ seed_pack_item = ExtResource("3_flawu")
 harvest_product_item = ExtResource("1_yiixw")
 regrows_after_harvest = true
 regrow_days = 4
-harvest_item = ExtResource("1_flawu")
+harvest_item = SubResource("Resource_yiixw")
 metadata/_custom_type_script = "uid://cm2ixh0te2m2t"

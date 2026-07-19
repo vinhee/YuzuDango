@@ -16,6 +16,9 @@ const TILE_SIZE: int = 16
 
 func _ready() -> void:
 	ToolManager.tool_selected.connect(on_tool_selected)
+	
+	print("Player Interaction Area Mask: ", $InteractionArea.collision_mask)
+	print("Player Interaction Area Monitoring: ", $InteractionArea.monitoring)
 
 func on_tool_selected(tool: DataTypes.Tools) -> void:
 	current_tool = tool
@@ -43,7 +46,9 @@ func _process(delta):
 			print("DEBUG: no interactable in range")
 
 func get_interactable():
-	for area in $InteractionArea.get_overlapping_areas():
-		if area is Interactable:
+	var areas = $InteractionArea.get_overlapping_areas()
+	print("DEBUG: Overlapping areas found = ", areas.size())
+	for area in areas:
+		if area.has_method("interact"):
 			return area
 	return null

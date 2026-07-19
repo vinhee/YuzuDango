@@ -2,7 +2,7 @@ extends Interactable
 class_name Forageable
 
 # @export var item_id: String = "mushroom"
-@export var item: InventoryItem
+@export var item: ItemData
 @export var amount: int = 1
 @export var respawn_time: float = 10.0
 
@@ -14,8 +14,12 @@ var available := true
 
 func _ready():
 	timer.timeout.connect(_on_respawn)
+	
+	print("Mushroom Collision Layer: ", collision_layer)
+	print("Mushroom Monitorable: ", monitorable)
 
 func interact(player: Player):
+	super(player)
 	try_pickup(player)
 
 func try_pickup(player: Player):

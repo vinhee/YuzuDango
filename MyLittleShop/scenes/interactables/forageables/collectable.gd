@@ -1,7 +1,7 @@
 class_name collectableComp
 extends Area2D
 
-@export var itemRes: InventoryItem
+@export var itemRes: ItemData
 @export var collectable_name: String
 @export var amount: int = 1
 
@@ -25,7 +25,7 @@ func try_pickup(player: Player):
 
 func pickup(player: Player):
 	available = false
-	print("Picked up ", amount, " ", itemRes.name if itemRes else "unknown item")
+	print("Picked up ", amount, " ", itemRes.item_name if itemRes else "unknown item")
 
 	for i in range(amount):
 		player.inventory.insert(itemRes)

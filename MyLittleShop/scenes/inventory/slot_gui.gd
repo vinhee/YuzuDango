@@ -12,7 +12,7 @@ func update(slot: InventorySlot):
 		return
 	backgroundSprite.frame = 1
 	itemSprite.visible = true
-	itemSprite.texture = slot.item.texture
+	itemSprite.texture = slot.item.icon
 	
 	if slot.amount > 1:
 		amtLabel.visible = true

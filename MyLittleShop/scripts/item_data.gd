@@ -1,7 +1,7 @@
 class_name ItemData
 extends Resource
 
-enum ItemType { SEED, CROP, TOOL, MISC, FOOD }
+enum ItemType { SEED, CROP, TOOL, MISC, FOOD, FORAGEABLE }
 
 @export var item_id: String = ""          
 @export var item_name: String = ""        

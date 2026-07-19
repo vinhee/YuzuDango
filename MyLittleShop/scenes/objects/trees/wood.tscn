@@ -2,18 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://b2ta44h2eernx" path="res://assets/Objects/Basic Grass Biom things 1.png" id="1_wypbv"]
 [ext_resource type="PackedScene" uid="uid://be71m75of5dsn" path="res://scenes/interactables/forageables/collectable.tscn" id="2_yurcs"]
-[ext_resource type="Script" uid="uid://p0ep6kepgnwx" path="res://assets/Inventory/inventoryItems.gd" id="3_djsa2"]
-[ext_resource type="Texture2D" uid="uid://v8u2ywjheerq" path="res://assets/CollectableItems/wood.png" id="4_l7er5"]
+[ext_resource type="Texture2D" uid="uid://v8u2ywjheerq" path="res://assets/CollectableItems/wood.png" id="3_djsa2"]
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="3_rxm62"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yurcs"]
 atlas = ExtResource("1_wypbv")
 region = Rect2(80, 32, 16, 16)
 
-[sub_resource type="Resource" id="Resource_jkmdq"]
-script = ExtResource("3_djsa2")
-name = "Wood"
-texture = ExtResource("4_l7er5")
-metadata/_custom_type_script = "uid://p0ep6kepgnwx"
+[sub_resource type="Resource" id="Resource_djsa2"]
+script = ExtResource("3_rxm62")
+item_id = "19"
+item_name = "Wood"
+icon = ExtResource("3_djsa2")
+metadata/_custom_type_script = "uid://1av5x5in6v2c"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yurcs"]
 radius = 8.0
@@ -23,7 +24,7 @@ position = Vector2(8, 8)
 texture = SubResource("AtlasTexture_yurcs")
 
 [node name="Collectable" parent="." unique_id=983578827 instance=ExtResource("2_yurcs")]
-itemRes = SubResource("Resource_jkmdq")
+itemRes = SubResource("Resource_djsa2")
 collectable_name = "wood"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collectable" unique_id=1365246046]

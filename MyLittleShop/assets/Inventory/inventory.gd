@@ -5,7 +5,7 @@ class_name Inventory
 signal updated
 @export var slots: Array[InventorySlot]
 
-func insert(item: InventoryItem):
+func insert(item: ItemData):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
 	if !itemSlots.is_empty():
 		itemSlots[0].amount += 1

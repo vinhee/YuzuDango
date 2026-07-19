@@ -23,4 +23,4 @@ extends Resource
 @export var regrow_days: int = 3                    # days to regrow if above is true
 
 # Harvested crops into inventory
-@export var harvest_item: InventoryItem
+@export var harvest_item: ItemData

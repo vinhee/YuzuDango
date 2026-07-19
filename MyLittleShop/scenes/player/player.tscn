@@ -446,7 +446,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agfs1"]
-radius = 8.0
+radius = 11.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dp8ca"]
 radius = 21.023796
@@ -459,6 +459,7 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_75vfm")
 inventory = ExtResource("2_0owmy")
+current_tool = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189949753]
 sprite_frames = SubResource("SpriteFrames_dp8ca")
@@ -468,7 +469,7 @@ frame_progress = 0.06142516
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439124738]
 shape = SubResource("CircleShape2D_agfs1")
-debug_color = Color(0, 0.5959784, 0.7244664, 0.41960785)
+debug_color = Color(0.7480716, 0.4618913, 1.92523e-07, 0.41960785)
 
 [node name="Animation" type="Node" parent="." unique_id=1812418443]
 
@@ -516,6 +517,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2119425004]
 shape = SubResource("CircleShape2D_dp8ca")
+debug_color = Color(0.84501654, 0.1577771, 0.83665174, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1185323]
 

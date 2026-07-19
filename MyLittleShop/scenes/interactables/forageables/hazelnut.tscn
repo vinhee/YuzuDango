@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://dog4dptgxyvcx"]
 
 [ext_resource type="PackedScene" uid="uid://ybh4rn5lfe12" path="res://scenes/interactables/forageables/forageable.tscn" id="1_scqb5"]
-[ext_resource type="Resource" uid="uid://dp7phjaa1t6dc" path="res://assets/Inventory/InventoryItems/hazelnut.tres" id="2_lqdc6"]
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="2_lqdc6"]
 [ext_resource type="Texture2D" uid="uid://dq7el8ageyxwg" path="res://assets/CollectableItems/hazelnut.png" id="2_pbgmh"]
 
+[sub_resource type="Resource" id="Resource_qbbt0"]
+script = ExtResource("2_lqdc6")
+item_id = "17"
+item_name = "hazelnut"
+icon = ExtResource("2_pbgmh")
+item_type = 4
+metadata/_custom_type_script = "uid://1av5x5in6v2c"
+
 [node name="Forageable" unique_id=1981697517 instance=ExtResource("1_scqb5")]
-item = ExtResource("2_lqdc6")
+item = SubResource("Resource_qbbt0")
 
 [node name="Sprite2D" parent="." index="0" unique_id=537154582]
 texture = ExtResource("2_pbgmh")
