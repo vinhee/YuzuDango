@@ -65,15 +65,18 @@ func interact(player: Player) -> void:
 	if not is_harvestable():
 		print("Crop isn't ready yet!")
 		return
-	var harvested_product = try_harvest() 
+		
+	var harvested_product = growth_cycle.harvest()
+	print("Debug: ", harvested_product)
 	
-	if harvested_product and crop_data.harvest_item and player.inventory:
-		player.inventory.insert(crop_data.harvest_item)
-		print("Harvested and added to inventory: ", crop_data.harvest_item.name)
-
-		if FarmManager.crops.has(cell):
-			FarmManager.crops.erase(cell)
-			
-		queue_free()
+	if harvested_product and player.inventory:
+		player.inventory.insert(harvested_product)
+		
+		if not crop_data.regrows_after_harvest:
+			if FarmManager.crops.has(cell):
+				FarmManager.crops.erase(cell)
+			queue_free()
+		else:
+			print("Regrow Crop")
 	else:
 		print("WARNING: Missing crop_data.harvest_item or Player Inventory!")

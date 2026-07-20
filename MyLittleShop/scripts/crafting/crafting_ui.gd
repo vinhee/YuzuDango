@@ -20,7 +20,7 @@ func open(recipes_to_show: Array[Recipe], player_inventory: Inventory) -> void:
 	selected_recipe = null
 	visible = true
 	get_tree().paused = true
-	_populate_recipe_list()
+	#_populate_recipe_list()
 
 func _on_craft_button_pressed() -> void:
 	pass # Replace with function body.

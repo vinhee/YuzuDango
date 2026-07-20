@@ -5,9 +5,6 @@
 [ext_resource type="Resource" uid="uid://cofx35ewoagun" path="res://resources/items/seedpacks/strawberry_seed.tres" id="3_flawu"]
 [ext_resource type="Texture2D" uid="uid://xxpqf8qcljlu" path="res://assets/Crops/Crops.png" id="4_cykgj"]
 
-[sub_resource type="Resource" id="Resource_yiixw"]
-metadata/__load_path__ = "res://assets/Inventory/InventoryItems/strawberry.tres"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_s53bh"]
 atlas = ExtResource("4_cykgj")
 region = Rect2(64, 160, 16, 16)
@@ -41,5 +38,4 @@ seed_pack_item = ExtResource("3_flawu")
 harvest_product_item = ExtResource("1_yiixw")
 regrows_after_harvest = true
 regrow_days = 4
-harvest_item = SubResource("Resource_yiixw")
 metadata/_custom_type_script = "uid://cm2ixh0te2m2t"

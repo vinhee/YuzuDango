@@ -5,9 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://hjb3ec7ff3r0" path="res://scenes/player/player.tscn" id="2_dlvpu"]
 [ext_resource type="Script" uid="uid://cms7dakrhg6a6" path="res://scenes/test/canvas_layer.gd" id="4_8n3o6"]
 [ext_resource type="PackedScene" uid="uid://dbxs2pdloqh5w" path="res://scenes/inventory/inventory_gui.tscn" id="4_dlvpu"]
-[ext_resource type="PackedScene" uid="uid://ybh4rn5lfe12" path="res://scenes/interactables/forageables/forageable.tscn" id="4_gqesb"]
-[ext_resource type="Texture2D" uid="uid://dq7el8ageyxwg" path="res://assets/CollectableItems/hazelnut.png" id="5_vn5id"]
-[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="6_cq3nq"]
+[ext_resource type="PackedScene" uid="uid://dog4dptgxyvcx" path="res://scenes/interactables/forageables/hazelnut.tscn" id="5_gqesb"]
 [ext_resource type="PackedScene" uid="uid://bu3d2oaq6b5er" path="res://scenes/interactables/forageables/mushroom.tscn" id="7_cq3nq"]
 [ext_resource type="PackedScene" uid="uid://bv0pt200oylaj" path="res://scenes/inventory/hotbar.tscn" id="8_gqesb"]
 
@@ -111,14 +109,6 @@ _bundled = {
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_ldi0o"]
-script = ExtResource("6_cq3nq")
-item_id = "17"
-item_name = "hazelnut"
-icon = ExtResource("5_vn5id")
-item_type = 4
-metadata/_custom_type_script = "uid://1av5x5in6v2c"
-
 [node name="TestSceneForaging" type="Node2D" unique_id=1367645800]
 script = SubResource("GDScript_8n3o6")
 mushroom_scene = SubResource("PackedScene_vn5id")
@@ -141,12 +131,11 @@ current_tool = 0
 
 [node name="Forageables" type="Node" parent="." unique_id=1989389595]
 
-[node name="hazelnut" parent="Forageables" unique_id=1981697517 instance=ExtResource("4_gqesb")]
-position = Vector2(216, 180)
-item = SubResource("Resource_ldi0o")
-
 [node name="mushroom" parent="Forageables" unique_id=1990291134 instance=ExtResource("7_cq3nq")]
 position = Vector2(248, 236)
+
+[node name="Forageable" parent="Forageables" unique_id=1981697517 instance=ExtResource("5_gqesb")]
+position = Vector2(242, 171)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=235907968]
 process_mode = 3
