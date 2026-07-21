@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bvowqek2bn05b" path="res://scenes/objects/workstations/workstation.gd" id="1_c20vi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_je6y3"]
-size = Vector2(48, 30)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_c20vi"]
 radius = 30.265491
 
@@ -12,11 +9,10 @@ radius = 30.265491
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1463361106]
 
-[node name="CollisionArea" type="Area2D" parent="." unique_id=149701287]
+[node name="CollisionArea" type="StaticBody2D" parent="." unique_id=301306725]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=846988575]
-shape = SubResource("RectangleShape2D_je6y3")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1054026040]
 collision_layer = 4
@@ -24,4 +20,5 @@ collision_mask = 2
 script = ExtResource("1_c20vi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=331801148]
+position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_c20vi")

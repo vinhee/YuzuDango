@@ -9,13 +9,22 @@
 atlas = ExtResource("2_0ebbw")
 region = Rect2(32, 0, 48, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm4yh"]
+size = Vector2(38, 22)
+
 [node name="Stove" unique_id=1442804441 instance=ExtResource("1_tri0x")]
-station_name = "Stove"
-available_recipes = Array[ExtResource("2_gm4yh")]([ExtResource("3_pnl6h")])
 
 [node name="Sprite2D" parent="." index="0" unique_id=1463361106]
 texture = SubResource("AtlasTexture_1bgns")
 
-[node name="CollisionShape2D" parent="InteractionArea" parent_id_path=PackedInt32Array(1054026040) index="0" unique_id=331801148]
+[node name="CollisionShape2D" parent="CollisionArea" parent_id_path=PackedInt32Array(301306725) index="0" unique_id=846988575]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gm4yh")
+
+[node name="InteractionArea" parent="." index="2" unique_id=1054026040]
+station_name = "Stove"
+available_recipes = Array[ExtResource("2_gm4yh")]([ExtResource("3_pnl6h")])
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0" unique_id=331801148]
 position = Vector2(0, 11)
 debug_color = Color(0.829266, 0.32460195, 0.5830637, 0.41960785)

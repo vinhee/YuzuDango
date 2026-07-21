@@ -33,16 +33,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
+theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
-
-[node name="TitleLabel" type="Label" parent="Panel/MarginContainer" unique_id=2121554896]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 24
-horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=530757997]
 layout_mode = 2
@@ -68,6 +61,20 @@ text = "Craft"
 layout_mode = 2
 text = "Close"
 
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=2121554896]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_right = 0.5
+offset_bottom = 34.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
 [node name="DimBackround" type="ColorRect" parent="." unique_id=341090594]
 visible = false
 layout_mode = 1
@@ -78,6 +85,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[connection signal="item_selected" from="Panel/MarginContainer/HBoxContainer/RecipeList" to="." method="_on_recipe_list_item_selected"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/CraftButton" to="." method="_on_craft_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

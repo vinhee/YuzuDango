@@ -5,14 +5,20 @@
 extends CanvasLayer
 
 @onready var control: Control = $CraftingUi
-@onready var title_label: Label = $CraftingUi/Panel/MarginContainer/TitleLabel
+@onready var title_label: Label = $CraftingUi/Panel/TitleLabel
 @onready var recipe_list: ItemList = $CraftingUi/Panel/MarginContainer/HBoxContainer/RecipeList
 @onready var ingredient_list: VBoxContainer = $CraftingUi/Panel/MarginContainer/HBoxContainer/VBoxContainer/IngredientList
 @onready var quantity_spinbox: SpinBox = $CraftingUi/Panel/MarginContainer/HBoxContainer/VBoxContainer/QuantitySpinBox
 @onready var craft_button: Button = $CraftingUi/Panel/MarginContainer/HBoxContainer/VBoxContainer/CraftButton
+@onready var close_button: Button = $CraftingUi/Panel/MarginContainer/HBoxContainer/VBoxContainer/CloseButton
 var recipes: Array[Recipe] = []
 var inventory: Inventory
 var selected_recipe: Recipe
+
+func _ready() -> void:
+	recipe_list.item_selected.connect(_on_recipe_list_item_selected)
+	craft_button.pressed.connect(_on_craft_button_pressed)
+	close_button.pressed.connect(_on_close_button_pressed)
 
 func open(recipes_to_show: Array[Recipe], player_inventory: Inventory, station_name: String = "") -> void:
 	recipes = recipes_to_show
@@ -43,7 +49,9 @@ func _max_craftable(recipe: Recipe) -> int:
 	return max(max_amount, 0)
 
 func _on_recipe_list_item_selected(index: int) -> void:
+	print("Recipe selected, index: ", index)
 	selected_recipe = recipes[index]
+	print("Selected recipe: ", selected_recipe.recipe_name)
 	_update_ingredient_display()
 
 func _update_ingredient_display() -> void:

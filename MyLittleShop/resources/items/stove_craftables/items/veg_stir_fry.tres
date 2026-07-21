@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b37l7xpseu5or" path="res://assets/Workstations/Food stations-export.png" id="1_jh7ux"]
 [ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_rf1ww"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qp4bk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh7ux"]
 atlas = ExtResource("1_jh7ux")
 region = Rect2(96, 32, 32, 32)
 
@@ -11,6 +11,6 @@ region = Rect2(96, 32, 32, 32)
 script = ExtResource("1_rf1ww")
 item_id = "veg_stir_fry"
 item_name = "VegetableStirFry"
-icon = SubResource("AtlasTexture_qp4bk")
+icon = SubResource("AtlasTexture_jh7ux")
 item_type = 4
 metadata/_custom_type_script = "uid://1av5x5in6v2c"
