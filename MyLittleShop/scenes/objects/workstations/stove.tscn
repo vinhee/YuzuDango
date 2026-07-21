@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bkoro03fqnj2w"]
+
+[ext_resource type="PackedScene" uid="uid://ccfkdkytapehr" path="res://scenes/objects/workstations/workstation.tscn" id="1_tri0x"]
+[ext_resource type="Texture2D" uid="uid://b37l7xpseu5or" path="res://assets/Workstations/Food stations-export.png" id="2_0ebbw"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_gm4yh"]
+[ext_resource type="Resource" uid="uid://c6b7atbr8loh5" path="res://resources/items/stove_craftables/recipes/veg_stir_fry_recipe.tres" id="3_pnl6h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bgns"]
+atlas = ExtResource("2_0ebbw")
+region = Rect2(32, 0, 48, 32)
+
+[node name="Stove" unique_id=1442804441 instance=ExtResource("1_tri0x")]
+station_name = "Stove"
+available_recipes = Array[ExtResource("2_gm4yh")]([ExtResource("3_pnl6h")])
+
+[node name="Sprite2D" parent="." index="0" unique_id=1463361106]
+texture = SubResource("AtlasTexture_1bgns")
+
+[node name="CollisionShape2D" parent="InteractionArea" parent_id_path=PackedInt32Array(1054026040) index="0" unique_id=331801148]
+position = Vector2(0, 11)
+debug_color = Color(0.829266, 0.32460195, 0.5830637, 0.41960785)
