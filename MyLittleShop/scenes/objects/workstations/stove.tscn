@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b37l7xpseu5or" path="res://assets/Workstations/Food stations-export.png" id="2_0ebbw"]
 [ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_gm4yh"]
 [ext_resource type="Resource" uid="uid://c6b7atbr8loh5" path="res://resources/items/stove_craftables/recipes/veg_stir_fry_recipe.tres" id="3_pnl6h"]
+[ext_resource type="Resource" uid="uid://bf3s1g772faaj" path="res://resources/items/stove_craftables/recipes/porridge.tres" id="5_xosm0"]
+[ext_resource type="Resource" uid="uid://y4k7p88qgrc7" path="res://resources/items/stove_craftables/recipes/veg_broth.tres" id="6_1fc2v"]
+[ext_resource type="Resource" uid="uid://dxne2kxwolbvn" path="res://resources/items/stove_craftables/recipes/grilled_corn_recipe.tres" id="7_arewt"]
+[ext_resource type="Resource" uid="uid://vbsw1muqmgc5" path="res://resources/items/stove_craftables/recipes/rice_recipe.tres" id="8_72p6a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bgns"]
 atlas = ExtResource("2_0ebbw")
@@ -23,7 +27,7 @@ shape = SubResource("RectangleShape2D_gm4yh")
 
 [node name="InteractionArea" parent="." index="2" unique_id=1054026040]
 station_name = "Stove"
-available_recipes = Array[ExtResource("2_gm4yh")]([ExtResource("3_pnl6h")])
+available_recipes = Array[ExtResource("2_gm4yh")]([ExtResource("3_pnl6h"), ExtResource("5_xosm0"), ExtResource("6_1fc2v"), ExtResource("7_arewt"), ExtResource("8_72p6a")])
 
 [node name="CollisionShape2D" parent="InteractionArea" index="0" unique_id=331801148]
 position = Vector2(0, 11)

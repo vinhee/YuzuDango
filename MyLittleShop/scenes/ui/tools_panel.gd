@@ -5,10 +5,20 @@ extends PanelContainer
 @onready var seed_strawberry: Button = $MarginContainer/HBoxContainer/SeedStrawberry
 @onready var seed_potato: Button = $MarginContainer/HBoxContainer/SeedPotato
 @onready var seed_blueberry: Button = $MarginContainer/HBoxContainer/SeedBlueberry
+@onready var seed_rice: Button = $MarginContainer/HBoxContainer/SeedRice
+@onready var seed_lettuce: Button = $MarginContainer/HBoxContainer/SeedLettuce
+@onready var seed_carrot: Button = $MarginContainer/HBoxContainer/SeedCarrot
+@onready var seed_wheat: Button = $MarginContainer/HBoxContainer/SeedWheat
+@onready var seed_corn: Button = $MarginContainer/HBoxContainer/SeedCorn
 
 @export var strawberry_seed_data: ItemData
 @export var potato_seed_data: ItemData
 @export var blueberry_seed_data: ItemData
+@export var rice_seed_data: ItemData
+@export var lettuce_seed_data: ItemData
+@export var carrot_seed_data: ItemData
+@export var wheat_seed_data: ItemData
+@export var corn_seed_data: ItemData
 
 func _on_tool_axe_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.AxeWood)
@@ -25,6 +35,16 @@ func _on_seed_potato_pressed() -> void:
 	ToolManager.select_seed(potato_seed_data)
 func _on_seed_blueberry_pressed() -> void:
 	ToolManager.select_seed(blueberry_seed_data)
+func _on_seed_rice_pressed() -> void:
+	ToolManager.select_seed(rice_seed_data)
+func _on_seed_lettuce_pressed() -> void:
+	ToolManager.select_seed(lettuce_seed_data)
+func _on_seed_carrot_pressed() -> void:
+	ToolManager.select_seed(carrot_seed_data)
+func _on_seed_wheat_pressed() -> void:
+	ToolManager.select_seed(wheat_seed_data)
+func _on_seed_corn_pressed() -> void:
+	ToolManager.select_seed(corn_seed_data)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -37,3 +57,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			seed_strawberry.release_focus()
 			seed_potato.release_focus()
 			seed_blueberry.release_focus()
+			seed_rice.release_focus()
+			seed_lettuce.release_focus()
+			seed_carrot.release_focus()
+			seed_wheat.release_focus()
+			seed_corn.release_focus()

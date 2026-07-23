@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cojaf3a4upaog"]
+
+[ext_resource type="PackedScene" uid="uid://ccfkdkytapehr" path="res://scenes/objects/workstations/workstation.tscn" id="1_55omj"]
+[ext_resource type="Texture2D" uid="uid://b37l7xpseu5or" path="res://assets/Workstations/Food stations-export.png" id="2_inh1a"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="3_ovpan"]
+[ext_resource type="Resource" uid="uid://b1qctlw0vxsrk" path="res://resources/items/oven_craftables/recipes/bread_recipe.tres" id="4_jwojv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojr4o"]
+atlas = ExtResource("2_inh1a")
+region = Rect2(0, 64, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovpan"]
+size = Vector2(26, 25)
+
+[node name="Oven" unique_id=1442804441 instance=ExtResource("1_55omj")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1463361106]
+texture = SubResource("AtlasTexture_ojr4o")
+
+[node name="CollisionShape2D" parent="CollisionArea" parent_id_path=PackedInt32Array(301306725) index="0" unique_id=846988575]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_ovpan")
+debug_color = Color(0.8757016, 0.29071712, 0.48225945, 0.41960785)
+
+[node name="InteractionArea" parent="." index="2" unique_id=1054026040]
+station_name = "Oven"
+available_recipes = Array[ExtResource("3_ovpan")]([ExtResource("4_jwojv")])
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0" unique_id=331801148]
+position = Vector2(0, 16)

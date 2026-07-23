@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://y4k7p88qgrc7"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_rhw3j"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_bv236"]
+[ext_resource type="Resource" uid="uid://drvt6c0015738" path="res://resources/items/products/carrot_prod.tres" id="2_lfeep"]
+[ext_resource type="Resource" uid="uid://b3x83qm1t3oya" path="res://resources/items/products/potato_prod.tres" id="3_jwuho"]
+[ext_resource type="Resource" uid="uid://dy1uynaxx62ch" path="res://resources/items/stove_craftables/items/veg_broth.tres" id="4_wd601"]
+
+[sub_resource type="Resource" id="Resource_dtqml"]
+script = ExtResource("1_rhw3j")
+item = ExtResource("2_lfeep")
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[sub_resource type="Resource" id="Resource_pletm"]
+script = ExtResource("1_rhw3j")
+item = ExtResource("3_jwuho")
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("2_bv236")
+recipe_name = "VegetableBroth"
+output_item = ExtResource("4_wd601")
+ingredients = Array[ExtResource("1_rhw3j")]([SubResource("Resource_dtqml"), SubResource("Resource_pletm")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"

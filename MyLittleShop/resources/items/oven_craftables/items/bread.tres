@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ckshvgimwa54x"]
+
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_m3rly"]
+[ext_resource type="Texture2D" uid="uid://b37l7xpseu5or" path="res://assets/Workstations/Food stations-export.png" id="1_ops7o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5y3p"]
+atlas = ExtResource("1_ops7o")
+region = Rect2(48, 80, 32, 32)
+
+[resource]
+script = ExtResource("1_m3rly")
+item_id = "bread"
+item_name = "Bread"
+icon = SubResource("AtlasTexture_v5y3p")
+item_type = 4
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

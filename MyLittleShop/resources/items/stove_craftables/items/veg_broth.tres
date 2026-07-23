@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dy1uynaxx62ch"]
+
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_2gtvs"]
+[ext_resource type="Texture2D" uid="uid://b37l7xpseu5or" path="res://assets/Workstations/Food stations-export.png" id="1_mlm4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48410"]
+atlas = ExtResource("1_mlm4n")
+region = Rect2(160, 32, 32, 32)
+
+[resource]
+script = ExtResource("1_2gtvs")
+item_id = "vegetable_broth"
+item_name = "VegetableBroth"
+icon = SubResource("AtlasTexture_48410")
+item_type = 4
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

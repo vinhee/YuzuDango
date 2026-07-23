@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://b1qctlw0vxsrk"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_f5ihk"]
+[ext_resource type="Resource" uid="uid://cts1oi3e15ema" path="res://resources/items/products/wheat_prod.tres" id="2_2h5o4"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_67kau"]
+[ext_resource type="Resource" uid="uid://ckshvgimwa54x" path="res://resources/items/oven_craftables/items/bread.tres" id="3_v38c3"]
+
+[sub_resource type="Resource" id="Resource_uqgf7"]
+script = ExtResource("1_f5ihk")
+item = ExtResource("2_2h5o4")
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("2_67kau")
+recipe_name = "BreadRecipe"
+output_item = ExtResource("3_v38c3")
+ingredients = Array[ExtResource("1_f5ihk")]([SubResource("Resource_uqgf7")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"

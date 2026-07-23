@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dxne2kxwolbvn"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_egdda"]
+[ext_resource type="Resource" uid="uid://chtxwi2e5onm4" path="res://resources/items/products/corn_prod.tres" id="2_djhac"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_tvmbl"]
+[ext_resource type="Resource" uid="uid://brd0itak0pra" path="res://resources/items/stove_craftables/items/grilled_corn.tres" id="3_ni06g"]
+
+[sub_resource type="Resource" id="Resource_e12rr"]
+script = ExtResource("1_egdda")
+item = ExtResource("2_djhac")
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("2_tvmbl")
+recipe_name = "GrilledCornRecipe"
+output_item = ExtResource("3_ni06g")
+ingredients = Array[ExtResource("1_egdda")]([SubResource("Resource_e12rr")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"

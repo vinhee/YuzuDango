@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c5re45mfrgsc6"]
+
+[ext_resource type="Texture2D" uid="uid://b37l7xpseu5or" path="res://assets/Workstations/Food stations-export.png" id="1_dyo01"]
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_rehfp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41v1s"]
+atlas = ExtResource("1_dyo01")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+script = ExtResource("1_rehfp")
+item_id = "porridge"
+item_name = "Porridge"
+icon = SubResource("AtlasTexture_41v1s")
+item_type = 4
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

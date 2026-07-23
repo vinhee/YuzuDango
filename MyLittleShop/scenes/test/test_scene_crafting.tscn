@@ -75,7 +75,8 @@ tile_set = ExtResource("1_fk67m")
 [node name="Crop" type="TileMapLayer" parent="GameTileMap" unique_id=1600901788]
 
 [node name="Workstations" type="TileMapLayer" parent="GameTileMap" unique_id=410057654]
-tile_map_data = PackedByteArray("AAAYAAoAAAAAAAAAAQA=")
+position = Vector2(5, -4)
+tile_map_data = PackedByteArray("AAAXAA0AAAAAAAAAAQAXAAgAAAAAAAAAAgA=")
 tile_set = ExtResource("2_nal6f")
 
 [node name="Player" parent="." unique_id=343638103 instance=ExtResource("2_vsn8v")]

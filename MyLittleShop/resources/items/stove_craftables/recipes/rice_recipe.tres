@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://vbsw1muqmgc5"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_k28jt"]
+[ext_resource type="Resource" uid="uid://dfnln1tn335yc" path="res://resources/items/products/rice_prod.tres" id="2_txaxv"]
+[ext_resource type="Resource" uid="uid://bu0ikyta2pc8i" path="res://resources/items/stove_craftables/items/rice.tres" id="3_ebu08"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="4_bqxa2"]
+
+[sub_resource type="Resource" id="Resource_0m6fr"]
+script = ExtResource("1_k28jt")
+item = ExtResource("2_txaxv")
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("4_bqxa2")
+recipe_name = "RiceRecipe"
+output_item = ExtResource("3_ebu08")
+output_quantity = 2
+ingredients = Array[ExtResource("1_k28jt")]([SubResource("Resource_0m6fr")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"

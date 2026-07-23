@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bqqem6wx8r1uy"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_r4nux"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_8n2ec"]
+[ext_resource type="Resource" uid="uid://b3x83qm1t3oya" path="res://resources/items/products/potato_prod.tres" id="2_c3iku"]
+[ext_resource type="Resource" uid="uid://dhdp43r8a2ho2" path="res://resources/items/stove_craftables/items/mushroom_stir_fry.tres" id="3_mieuc"]
+
+[sub_resource type="Resource" id="Resource_iexi4"]
+script = ExtResource("1_r4nux")
+item = ExtResource("2_c3iku")
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("2_8n2ec")
+recipe_name = "MushroomStirFryRecipe"
+output_item = ExtResource("3_mieuc")
+ingredients = Array[ExtResource("1_r4nux")]([SubResource("Resource_iexi4")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"

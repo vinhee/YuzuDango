@@ -44,6 +44,41 @@ load_path = "res://.godot/imported/Crops.png-21bbff7669fa6e78e76087e05d82e252.ct
 atlas = SubResource("CompressedTexture2D_gbtgy")
 region = Rect2(96, 144, 16, 16)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3neg6"]
+load_path = "res://.godot/imported/Crops.png-21bbff7669fa6e78e76087e05d82e252.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur6ba"]
+atlas = SubResource("CompressedTexture2D_3neg6")
+region = Rect2(96, 96, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdu3n"]
+load_path = "res://.godot/imported/Crops.png-21bbff7669fa6e78e76087e05d82e252.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icge2"]
+atlas = SubResource("CompressedTexture2D_bdu3n")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n1kta"]
+load_path = "res://.godot/imported/Crops.png-21bbff7669fa6e78e76087e05d82e252.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uel26"]
+atlas = SubResource("CompressedTexture2D_n1kta")
+region = Rect2(96, 64, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ara0f"]
+load_path = "res://.godot/imported/Crops.png-21bbff7669fa6e78e76087e05d82e252.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01f5n"]
+atlas = SubResource("CompressedTexture2D_ara0f")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_62b2c"]
+load_path = "res://.godot/imported/Crops.png-21bbff7669fa6e78e76087e05d82e252.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1kta"]
+atlas = SubResource("CompressedTexture2D_62b2c")
+region = Rect2(96, 80, 16, 16)
+
 [node name="ToolsPanel" type="PanelContainer" unique_id=788158690]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -106,9 +141,49 @@ theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_a6726")
 icon_alignment = 1
 
+[node name="SeedRice" type="Button" parent="MarginContainer/HBoxContainer" unique_id=2096044499]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_ur6ba")
+icon_alignment = 1
+
+[node name="SeedLettuce" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1683727179]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_icge2")
+icon_alignment = 1
+
+[node name="SeedCarrot" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1549228556]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_uel26")
+icon_alignment = 1
+
+[node name="SeedWheat" type="Button" parent="MarginContainer/HBoxContainer" unique_id=264624886]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_01f5n")
+icon_alignment = 1
+
+[node name="SeedCorn" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1469855690]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_n1kta")
+icon_alignment = 1
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTill" to="." method="_on_tool_till_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SeedStrawberry" to="." method="_on_seed_strawberry_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SeedPotato" to="." method="_on_seed_potato_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SeedBlueberry" to="." method="_on_seed_blueberry_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedRice" to="." method="_on_seed_blueberry_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedLettuce" to="." method="_on_seed_blueberry_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedCarrot" to="." method="_on_seed_blueberry_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedWheat" to="." method="_on_seed_blueberry_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SeedCorn" to="." method="_on_seed_blueberry_pressed"]
