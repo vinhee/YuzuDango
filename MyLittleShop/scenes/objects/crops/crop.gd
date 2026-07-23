@@ -71,7 +71,7 @@ func interact(player: Player) -> void:
 	
 	if harvested_product and crop_data.harvest_product_item and player.inventory:
 		player.inventory.insert(crop_data.harvest_product_item)
-		print("Harvested and added to inventory: ", crop_data.harvest_item.name)
+		print("Harvested and added to inventory: ", crop_data.harvest_product_item.item_name)
 
 		if FarmManager.crops.has(cell):
 			FarmManager.crops.erase(cell)

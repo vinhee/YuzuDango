@@ -16,6 +16,8 @@ var inventory: Inventory
 var selected_recipe: Recipe
 
 func _ready() -> void:
+	print("CraftingUI _ready called")
+	print("recipe_list is: ", recipe_list)
 	recipe_list.item_selected.connect(_on_recipe_list_item_selected)
 	craft_button.pressed.connect(_on_craft_button_pressed)
 	close_button.pressed.connect(_on_close_button_pressed)
@@ -26,7 +28,7 @@ func open(recipes_to_show: Array[Recipe], player_inventory: Inventory, station_n
 	selected_recipe = null
 	title_label.text = station_name
 	control.visible = true
-	get_tree().paused = true
+	#get_tree().paused = true
 	_populate_recipe_list()
 
 func _populate_recipe_list() -> void:

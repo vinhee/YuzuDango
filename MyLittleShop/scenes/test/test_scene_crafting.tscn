@@ -51,7 +51,7 @@ func _on_inventory_gui_opened() -> void:
 			#print(\"Neighbor has no tile data\")
 "
 
-[node name="TestSceneFarm2" type="Node2D" unique_id=1367645800 node_paths=PackedStringArray("player")]
+[node name="TestSceneCrafting" type="Node2D" unique_id=1367645800 node_paths=PackedStringArray("player")]
 script = SubResource("GDScript_8n3o6")
 player = NodePath("Player")
 

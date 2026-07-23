@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://lp2l12u0y7s2" path="res://scenes/ui/crafting_ui.gd" id="1_xjqke"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=62168774]
+process_mode = 3
 layer = 5
 script = ExtResource("1_xjqke")
 
