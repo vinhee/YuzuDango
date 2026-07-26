@@ -60,7 +60,7 @@ texture_normal = ExtResource("6_88ij5")
 texture_hover = ExtResource("7_mb30r")
 
 [node name="Title" type="Sprite2D" parent="ButtonManager" unique_id=947812395]
-position = Vector2(142.99998, 18.999985)
+position = Vector2(134.99997, 61.999985)
 scale = Vector2(0.5293427, 0.56200004)
 texture = ExtResource("8_3kulw")
 
