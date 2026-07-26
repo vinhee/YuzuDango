@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dwrsorm4mqoef" path="res://scenes/objects/crops/crop.tscn" id="1_2vccg"]
 [ext_resource type="Resource" uid="uid://b4fpaqps54ed5" path="res://resources/crops/strawberry_crop.tres" id="2_qikx0"]
+[ext_resource type="PackedScene" uid="uid://cg1cg5vyn01le" path="res://scenes/components/save_data_component.tscn" id="3_qikx0"]
+[ext_resource type="Resource" uid="uid://dof04742r0ycq" path="res://resources/scene_data_resource.tres" id="4_aoyqn"]
 
 [node name="StrawberryCrop" unique_id=615719872 instance=ExtResource("1_2vccg")]
 crop_data = ExtResource("2_qikx0")
+
+[node name="SaveDataComponent" parent="." index="6" unique_id=117473108 instance=ExtResource("3_qikx0")]
+save_data_resource = ExtResource("4_aoyqn")

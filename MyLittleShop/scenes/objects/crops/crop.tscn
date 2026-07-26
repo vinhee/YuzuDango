@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cwdsf0ctt35" path="res://scenes/objects/crops/particles/flowering_particles.tscn" id="2_2vaou"]
 [ext_resource type="PackedScene" uid="uid://0yp4t703pfq3" path="res://scenes/objects/crops/growth_cycle_component.tscn" id="5_vys0v"]
 [ext_resource type="Script" uid="uid://bt2qs2nvr0gr1" path="res://scenes/objects/crops/crop_interactable.gd" id="6_vys0v"]
+[ext_resource type="PackedScene" uid="uid://cg1cg5vyn01le" path="res://scenes/components/save_data_component.tscn" id="7_0p1so"]
+[ext_resource type="Resource" uid="uid://dof04742r0ycq" path="res://resources/scene_data_resource.tres" id="8_o7jkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg0tg"]
 
@@ -37,3 +39,6 @@ script = ExtResource("6_vys0v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1506368797]
 shape = SubResource("CircleShape2D_vys0v")
 debug_color = Color(0.37487644, 0.4767915, 1, 0.41960785)
+
+[node name="SaveDataComponent" parent="." unique_id=117473108 instance=ExtResource("7_0p1so")]
+save_data_resource = ExtResource("8_o7jkm")

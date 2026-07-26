@@ -80,20 +80,6 @@ func plant(cell: Vector2i, seed_item: ItemData) -> bool:
 	crop.plant(DayAndNightCycleManager.current_day)
 	return true
 
-#func harvest(cell: Vector2i) -> ItemData:
-	#if not crops.has(cell):
-		#return null
-	#var crop: Crop = crops[cell]
-	#if not crop.is_harvestable():
-		#return null
-	#var product: ItemData = crop.crop_data.harvest_product_item
-	#if crop.crop_data.regrows_after_harvest:
-		#crop.reset_after_harvest()
-	#else:
-		#crop.queue_free()
-		#crops.erase(cell)
-	#return product
-
 func harvest(cell: Vector2i) -> ItemData:
 	if not crops.has(cell):
 		return null

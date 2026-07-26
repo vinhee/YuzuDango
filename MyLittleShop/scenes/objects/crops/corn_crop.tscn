@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dwrsorm4mqoef" path="res://scenes/objects/crops/crop.tscn" id="1_82q42"]
 [ext_resource type="Resource" uid="uid://cd73phuvpvdop" path="res://resources/crops/corn_crop.tres" id="2_vpyp3"]
+[ext_resource type="PackedScene" uid="uid://cg1cg5vyn01le" path="res://scenes/components/save_data_component.tscn" id="3_5cdmj"]
+[ext_resource type="Resource" uid="uid://dof04742r0ycq" path="res://resources/scene_data_resource.tres" id="4_maxu8"]
 
 [node name="CornCrop" unique_id=615719872 instance=ExtResource("1_82q42")]
 crop_data = ExtResource("2_vpyp3")
+
+[node name="SaveDataComponent" parent="." index="6" unique_id=117473108 instance=ExtResource("3_5cdmj")]
+save_data_resource = ExtResource("4_maxu8")

@@ -34,10 +34,10 @@ anchor_left = 8.012
 anchor_top = 5.795
 anchor_right = 8.012
 anchor_bottom = 5.795
-offset_left = 54.51996
-offset_top = -173.80002
-offset_right = 217.51999
-offset_bottom = -100.80002
+offset_left = 55.51996
+offset_top = -200.80002
+offset_right = 218.51999
+offset_bottom = -127.80002
 texture_normal = ExtResource("2_biq0h")
 texture_hover = ExtResource("3_7st3g")
 
@@ -53,14 +53,14 @@ texture_hover = ExtResource("5_kskfm")
 [node name="Quit" type="TextureButton" parent="ButtonManager" unique_id=667586953]
 layout_mode = 0
 offset_left = 382.99997
-offset_top = 177.99998
+offset_top = 204.99998
 offset_right = 530.0
-offset_bottom = 261.0
+offset_bottom = 288.0
 texture_normal = ExtResource("6_88ij5")
 texture_hover = ExtResource("7_mb30r")
 
 [node name="Title" type="Sprite2D" parent="ButtonManager" unique_id=947812395]
-position = Vector2(141.24997, 68.74999)
+position = Vector2(142.99998, 18.999985)
 scale = Vector2(0.5293427, 0.56200004)
 texture = ExtResource("8_3kulw")
 

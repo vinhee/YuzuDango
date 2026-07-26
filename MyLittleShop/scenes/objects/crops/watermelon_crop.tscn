@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dwrsorm4mqoef" path="res://scenes/objects/crops/crop.tscn" id="1_66x5v"]
 [ext_resource type="Resource" uid="uid://bi01qxg70uf6k" path="res://resources/crops/watermelon_crop.tres" id="2_q1qhl"]
+[ext_resource type="PackedScene" uid="uid://cg1cg5vyn01le" path="res://scenes/components/save_data_component.tscn" id="3_yv006"]
+[ext_resource type="Resource" uid="uid://dof04742r0ycq" path="res://resources/scene_data_resource.tres" id="4_52tod"]
 
 [node name="WatermelonCrop" unique_id=615719872 instance=ExtResource("1_66x5v")]
 crop_data = ExtResource("2_q1qhl")
+
+[node name="SaveDataComponent" parent="." index="6" unique_id=117473108 instance=ExtResource("3_yv006")]
+save_data_resource = ExtResource("4_52tod")

@@ -23,6 +23,7 @@ DayAndNightCycleManager="*uid://dayblvd8xddmk"
 FarmManager="*uid://doia3j2rifh3k"
 CropDatabase="*uid://bjrp87mnxhtaf"
 CraftingUI="*uid://dw7ndy6fsxghb"
+SaveGameManager="*uid://breg6p8wf1txu"
 
 [display]
 
@@ -33,6 +34,17 @@ window/size/window_height_override=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
+
+[file_customization]
+
+folder_colors={
+"res://Tilesets/": "orange",
+"res://assets/": "green",
+"res://exports/": "teal",
+"res://resources/": "blue",
+"res://scenes/": "purple",
+"res://scripts/": "pink"
+}
 
 [input]
 
@@ -123,6 +135,11 @@ hotbar_7={
 hotbar_8={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":56,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+save_game={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":80,"location":0,"echo":false,"script":null)
 ]
 }
 

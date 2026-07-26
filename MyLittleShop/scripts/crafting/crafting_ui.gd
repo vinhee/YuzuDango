@@ -1,9 +1,8 @@
+extends Control
 # attached to craftingui scene
 # visible = false at the start
 # process mode = always bc we pause the game when crafting
 # when time is paused must still be able to press stuff
-
-extends Control
 
 @onready var recipe_list: ItemList = $Panel/RecipeList
 @onready var ingredient_list: VBoxContainer = $Panel/IngredientList
