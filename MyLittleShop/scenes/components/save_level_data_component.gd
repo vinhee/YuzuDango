@@ -30,7 +30,9 @@ func save_game() -> void:
 	
 	save_node_data()
 	
-	var result: int = ResourceSaver.save(game_data_resource, save_game_datapath + level_scene_name)
+	var full_file_path = save_game_datapath.path_join(same_level_file_name)
+	
+	var result: int = ResourceSaver.save(game_data_resource, full_file_path)
 	print("Save Result: ", result)
 	
 func load_game() -> void:
