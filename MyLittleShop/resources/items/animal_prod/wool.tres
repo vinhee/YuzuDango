@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://tgy37q3wlcwq"]
+
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_2kli5"]
+[ext_resource type="Texture2D" uid="uid://di1jkhontqxa8" path="res://assets/Workstations/loom.png" id="1_4w6rg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fasus"]
+atlas = ExtResource("1_4w6rg")
+region = Rect2(0, 32, 32, 32)
+
+[resource]
+script = ExtResource("1_2kli5")
+item_id = "wool"
+item_name = "Wool"
+icon = SubResource("AtlasTexture_fasus")
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

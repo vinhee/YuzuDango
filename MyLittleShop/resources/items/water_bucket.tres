@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ce7tp2ihct74k"]
+
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_b8j0h"]
+[ext_resource type="Texture2D" uid="uid://r7u7reulbvus" path="res://assets/Workstations/Food stations.png" id="1_macay"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7tj1"]
+atlas = ExtResource("1_macay")
+region = Rect2(80, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_b8j0h")
+item_id = "waterbucket"
+item_name = "Water"
+icon = SubResource("AtlasTexture_k7tj1")
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

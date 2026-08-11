@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bpucorvluudja"]
+
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_bjrk1"]
+[ext_resource type="Texture2D" uid="uid://di1jkhontqxa8" path="res://assets/Workstations/loom.png" id="1_opdlh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwi8r"]
+atlas = ExtResource("1_opdlh")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+script = ExtResource("1_bjrk1")
+item_id = "cotton"
+item_name = "Cotton"
+icon = SubResource("AtlasTexture_uwi8r")
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

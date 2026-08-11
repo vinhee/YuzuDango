@@ -18,6 +18,8 @@ func _ready() -> void:
 	FarmManager.wetness_overlay_layer = $GameTileMap/WetnessOverlay
 	FarmManager.crop_layer = $GameTileMap/Crop
 	
+	_give_test_ingre()
+	
 	print(\"Runtime tile_set resource path: \", FarmManager.ground_layer.tile_set.resource_path)
 
 	var ts = FarmManager.ground_layer.tile_set
@@ -26,6 +28,26 @@ func _ready() -> void:
 		print(\"Terrain Set \", set_idx, \":\")
 		for terrain_idx in ts.get_terrains_count(set_idx):
 			print(\"  Terrain \", terrain_idx, \" = \", ts.get_terrain_name(set_idx, terrain_idx))
+
+func _give_test_ingre() -> void:
+	var potato_data: ItemData = load(\"res://resources/items/products/potato_prod.tres\")
+	var carrot_data: ItemData = load(\"res://resources/items/products/carrot_prod.tres\")
+	var rice_data: ItemData = load(\"res://resources/items/products/rice_prod.tres\")
+	var wheat_data: ItemData = load(\"res://resources/items/products/wheat_prod.tres\")
+	var sberry_data: ItemData = load(\"res://resources/items/products/strawberry_prod.tres\")
+	
+	var wool_data: ItemData = load(\"res://resources/items/animal_prod/wool.tres\")
+	var cotton_data: ItemData = load(\"res://resources/items/cotton.tres\")
+	var water_data: ItemData = load(\"res://resources/items/water_bucket.tres\")
+	
+	player.inventory.insert(potato_data)
+	player.inventory.insert(carrot_data)
+	player.inventory.insert(rice_data)
+	player.inventory.insert(wheat_data)
+	player.inventory.insert(sberry_data)
+	player.inventory.insert(wool_data)
+	player.inventory.insert(cotton_data)
+	player.inventory.insert(water_data)
 
 func _on_inventory_gui_closed() -> void:
 	get_tree().paused = false
