@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://xbpep4kdnpfp"]
+
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_6rp2e"]
+[ext_resource type="Texture2D" uid="uid://di1jkhontqxa8" path="res://assets/Workstations/loom.png" id="1_o2jae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldjm2"]
+atlas = ExtResource("1_o2jae")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_6rp2e")
+item_id = "hoodie"
+item_name = "Hoodie"
+icon = SubResource("AtlasTexture_ldjm2")
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

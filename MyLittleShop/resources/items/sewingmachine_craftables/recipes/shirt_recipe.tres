@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://d08lioselwkva"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_2p74q"]
+[ext_resource type="Resource" uid="uid://bpucorvluudja" path="res://resources/items/cotton.tres" id="2_47es3"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_k8va3"]
+[ext_resource type="Resource" uid="uid://dgmsjq7cvxjlv" path="res://resources/items/sewingmachine_craftables/items/shirt.tres" id="3_no0lf"]
+
+[sub_resource type="Resource" id="Resource_au2rg"]
+script = ExtResource("1_2p74q")
+item = ExtResource("2_47es3")
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("2_k8va3")
+recipe_name = "ShirtRecipe"
+output_item = ExtResource("3_no0lf")
+ingredients = Array[ExtResource("1_2p74q")]([SubResource("Resource_au2rg")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"

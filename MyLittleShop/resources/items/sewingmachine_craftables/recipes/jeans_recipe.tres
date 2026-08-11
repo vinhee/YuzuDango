@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://isb2onxnw831"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_fp04p"]
+[ext_resource type="Resource" uid="uid://bpucorvluudja" path="res://resources/items/cotton.tres" id="2_5gthr"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_x3ft7"]
+[ext_resource type="Resource" uid="uid://ctwssey0fl78h" path="res://resources/items/sewingmachine_craftables/items/jeans.tres" id="3_6266m"]
+
+[sub_resource type="Resource" id="Resource_yv6ho"]
+script = ExtResource("1_fp04p")
+item = ExtResource("2_5gthr")
+quantity = 2
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("2_x3ft7")
+recipe_name = "JeansRecipe"
+output_item = ExtResource("3_6266m")
+ingredients = Array[ExtResource("1_fp04p")]([SubResource("Resource_yv6ho")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"

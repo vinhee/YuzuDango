@@ -2,10 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://bkoro03fqnj2w" path="res://scenes/objects/workstations/stove.tscn" id="1_whlca"]
 [ext_resource type="PackedScene" uid="uid://cojaf3a4upaog" path="res://scenes/objects/workstations/oven.tscn" id="2_ytvn0"]
+[ext_resource type="PackedScene" uid="uid://b53wt58ocdwpe" path="res://scenes/objects/workstations/loom.tscn" id="3_5xepw"]
+[ext_resource type="PackedScene" uid="uid://c0h56mf7d6fm4" path="res://scenes/objects/workstations/sewing_machine.tscn" id="4_ogbid"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yvgo6"]
 scenes/1/scene = ExtResource("1_whlca")
 scenes/2/scene = ExtResource("2_ytvn0")
+scenes/3/scene = ExtResource("3_5xepw")
+scenes/4/scene = ExtResource("4_ogbid")
 
 [resource]
 sources/0 = SubResource("TileSetScenesCollectionSource_yvgo6")

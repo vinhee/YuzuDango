@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bsbewve5odpbj"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_i8nnw"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_e4dc5"]
+[ext_resource type="Resource" uid="uid://tgy37q3wlcwq" path="res://resources/items/animal_prod/wool.tres" id="2_h5312"]
+[ext_resource type="Resource" uid="uid://xbpep4kdnpfp" path="res://resources/items/loom_craftables/items/hoodie.tres" id="3_gxi1y"]
+
+[sub_resource type="Resource" id="Resource_qhstl"]
+script = ExtResource("1_i8nnw")
+item = ExtResource("2_h5312")
+quantity = 2
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("2_e4dc5")
+recipe_name = "HoodieRecipe"
+output_item = ExtResource("3_gxi1y")
+ingredients = Array[ExtResource("1_i8nnw")]([SubResource("Resource_qhstl")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b53wt58ocdwpe"]
+
+[ext_resource type="PackedScene" uid="uid://ccfkdkytapehr" path="res://scenes/objects/workstations/workstation.tscn" id="1_i1u2b"]
+[ext_resource type="Texture2D" uid="uid://di1jkhontqxa8" path="res://assets/Workstations/loom.png" id="2_bj32a"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="3_yqsdp"]
+[ext_resource type="Resource" uid="uid://o46iqc1p43h5" path="res://resources/items/loom_craftables/recipes/sweater_recipe.tres" id="4_dseau"]
+[ext_resource type="Resource" uid="uid://bsbewve5odpbj" path="res://resources/items/loom_craftables/recipes/hoodie_recipe.tres" id="5_udhrr"]
+[ext_resource type="Resource" uid="uid://deowjqjo0y8u0" path="res://resources/items/loom_craftables/recipes/socks_recipe.tres" id="6_8vy7k"]
+[ext_resource type="Resource" uid="uid://bgyb6qvn7vip3" path="res://resources/items/loom_craftables/recipes/pillow_recipe.tres" id="7_purk0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyu06"]
+atlas = ExtResource("2_bj32a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3lho6"]
+radius = 17.029387
+
+[node name="Loom" unique_id=1442804441 instance=ExtResource("1_i1u2b")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1463361106]
+texture = SubResource("AtlasTexture_jyu06")
+
+[node name="CollisionShape2D" parent="CollisionArea" parent_id_path=PackedInt32Array(301306725) index="0" unique_id=846988575]
+shape = SubResource("CircleShape2D_3lho6")
+debug_color = Color(0.9011602, 0.1925256, 0.61085576, 0.41960785)
+
+[node name="InteractionArea" parent="." index="2" unique_id=1054026040]
+available_recipes = Array[ExtResource("3_yqsdp")]([ExtResource("4_dseau"), ExtResource("5_udhrr"), ExtResource("6_8vy7k"), ExtResource("7_purk0")])

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ctwssey0fl78h"]
+
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="1_lrh7n"]
+[ext_resource type="Texture2D" uid="uid://blu71yg2oi4o1" path="res://assets/Workstations/sewing_machine.png" id="1_v4ok7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nodsb"]
+atlas = ExtResource("1_v4ok7")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_lrh7n")
+item_id = "jeans"
+item_name = "Jeans"
+icon = SubResource("AtlasTexture_nodsb")
+metadata/_custom_type_script = "uid://1av5x5in6v2c"

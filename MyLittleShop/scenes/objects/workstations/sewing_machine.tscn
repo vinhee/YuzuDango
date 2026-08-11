@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c0h56mf7d6fm4"]
+
+[ext_resource type="PackedScene" uid="uid://ccfkdkytapehr" path="res://scenes/objects/workstations/workstation.tscn" id="1_2f84n"]
+[ext_resource type="Texture2D" uid="uid://blu71yg2oi4o1" path="res://assets/Workstations/sewing_machine.png" id="2_uhy4g"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="3_m7pst"]
+[ext_resource type="Resource" uid="uid://d08lioselwkva" path="res://resources/items/sewingmachine_craftables/recipes/shirt_recipe.tres" id="4_aiepm"]
+[ext_resource type="Resource" uid="uid://db721lk6qy0ig" path="res://resources/items/sewingmachine_craftables/recipes/dress_recipe.tres" id="5_finv4"]
+[ext_resource type="Resource" uid="uid://isb2onxnw831" path="res://resources/items/sewingmachine_craftables/recipes/jeans_recipe.tres" id="6_5lytn"]
+[ext_resource type="Resource" uid="uid://fdko6i0ystsd" path="res://resources/items/sewingmachine_craftables/recipes/skirt_recipe.tres" id="7_ev6a2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p67dw"]
+atlas = ExtResource("2_uhy4g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2akwn"]
+radius = 14.0
+
+[node name="SewingMachine" unique_id=1442804441 instance=ExtResource("1_2f84n")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1463361106]
+texture = SubResource("AtlasTexture_p67dw")
+
+[node name="CollisionShape2D" parent="CollisionArea" parent_id_path=PackedInt32Array(301306725) index="0" unique_id=846988575]
+shape = SubResource("CircleShape2D_2akwn")
+debug_color = Color(0.89501286, 0.23462436, 0.55229676, 0.41960785)
+
+[node name="InteractionArea" parent="." index="2" unique_id=1054026040]
+available_recipes = Array[ExtResource("3_m7pst")]([ExtResource("4_aiepm"), ExtResource("5_finv4"), ExtResource("6_5lytn"), ExtResource("7_ev6a2")])

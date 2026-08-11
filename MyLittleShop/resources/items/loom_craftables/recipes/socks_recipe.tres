@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://deowjqjo0y8u0"]
+
+[ext_resource type="Script" uid="uid://dudanphsj1vwr" path="res://scripts/crafting/ingredient_requirement.gd" id="1_lld2o"]
+[ext_resource type="Resource" uid="uid://tgy37q3wlcwq" path="res://resources/items/animal_prod/wool.tres" id="2_u3rcj"]
+[ext_resource type="Script" uid="uid://c5sb2a1o2ek6f" path="res://scripts/crafting/recipe.gd" id="2_wi532"]
+[ext_resource type="Resource" uid="uid://d1jm7ij30hmae" path="res://resources/items/loom_craftables/items/socks.tres" id="3_qsb7y"]
+
+[sub_resource type="Resource" id="Resource_07b4l"]
+script = ExtResource("1_lld2o")
+item = ExtResource("2_u3rcj")
+metadata/_custom_type_script = "uid://dudanphsj1vwr"
+
+[resource]
+script = ExtResource("2_wi532")
+recipe_name = "SocksRecipe"
+output_item = ExtResource("3_qsb7y")
+ingredients = Array[ExtResource("1_lld2o")]([SubResource("Resource_07b4l")])
+metadata/_custom_type_script = "uid://c5sb2a1o2ek6f"
