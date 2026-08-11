@@ -31,11 +31,18 @@ func open(recipes_to_show: Array[Recipe], player_inventory: Inventory, station_n
 	#get_tree().paused = true
 	_populate_recipe_list()
 
+#func _populate_recipe_list() -> void:
+	#recipe_list.clear()
+	#for recipe in recipes:
+		#var idx = recipe_list.add_item(recipe.recipe_name, recipe.output_item.icon)
+		#recipe_list.set_item_disabled(idx, not _can_craft(recipe, 1))
+
 func _populate_recipe_list() -> void:
 	recipe_list.clear()
 	for recipe in recipes:
 		var idx = recipe_list.add_item(recipe.recipe_name, recipe.output_item.icon)
-		recipe_list.set_item_disabled(idx, not _can_craft(recipe, 1))
+		if not _can_craft(recipe, 1):
+			recipe_list.set_item_custom_fg_color(idx, Color.GRAY)
 
 func _can_craft(recipe: Recipe, amount: int) -> bool:
 	for req in recipe.ingredients:
