@@ -11,6 +11,5 @@ func add(value: int) -> void:
 func spend(value: int) -> bool:
 	if amount >= value:
 		amount -= value
-		money_changed.emit(amount)
 		return true
 	return false

@@ -459,7 +459,6 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_75vfm")
 inventory = ExtResource("2_0owmy")
-current_tool = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189949753]
 sprite_frames = SubResource("SpriteFrames_dp8ca")

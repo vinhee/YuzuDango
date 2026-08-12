@@ -41,3 +41,10 @@ func remove_item(item: ItemData, amount: int) -> bool:
 func add_item(item: ItemData, amount: int) -> void:
 	for i in amount:
 		insert(item)
+
+func get_all_items() -> Array:
+	var valid_items = []
+	for slot in slots:
+		if slot != null and slot.item != null and slot.amount > 0:
+			valid_items.append(slot)
+	return valid_items

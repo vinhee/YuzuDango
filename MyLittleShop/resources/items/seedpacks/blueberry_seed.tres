@@ -13,4 +13,5 @@ item_id = "7"
 item_name = "BlueberrySeed"
 icon = SubResource("AtlasTexture_uyt8c")
 item_type = 0
+sell_price = 5
 metadata/_custom_type_script = "uid://1av5x5in6v2c"

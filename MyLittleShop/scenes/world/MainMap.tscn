@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://tt2puoch3rxx" path="res://scripts/SpawnPoints.gd" id="6_k1jqw"]
 [ext_resource type="PackedScene" uid="uid://den01qa0l6idn" path="res://scenes/interactables/door.tscn" id="7_k1jqw"]
 [ext_resource type="PackedScene" uid="uid://gqmbof7uq5kp" path="res://scenes/ui/game_screen.tscn" id="9_vxrfl"]
+[ext_resource type="PackedScene" uid="uid://drihgplouotmm" path="res://scenes/shop/shop.tscn" id="12_yi0ss"]
 
 [node name="MainMap" type="Node2D" unique_id=1367645800]
 script = ExtResource("1_uohlo")
@@ -116,6 +117,9 @@ target_scene = "res://scenes/houses/IntHouse.tscn"
 target_spawn_id = "SpawnInside"
 
 [node name="GameScreen" parent="." unique_id=781089797 instance=ExtResource("9_vxrfl")]
+
+[node name="Shop" parent="." unique_id=1734947255 instance=ExtResource("12_yi0ss")]
+position = Vector2(305, 220)
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://jge5wbp4inyo"]
+
+[ext_resource type="Script" uid="uid://b87qkluj01v8g" path="res://scenes/shop/shop_ui.gd" id="1_380ce"]
+[ext_resource type="PackedScene" path="res://scenes/shop/shop_ui_panel.tscn" id="2_gk7bq"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1783684554]
+process_mode = 3
+layer = 5
+script = ExtResource("1_380ce")
+
+[node name="ShopUi" parent="." unique_id=1226098306 instance=ExtResource("2_gk7bq")]

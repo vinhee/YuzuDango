@@ -24,6 +24,7 @@ FarmManager="*uid://doia3j2rifh3k"
 CropDatabase="*uid://bjrp87mnxhtaf"
 CraftingUI="*uid://dw7ndy6fsxghb"
 SaveGameManager="*uid://breg6p8wf1txu"
+ShopUI="*uid://jge5wbp4inyo"
 
 [display]
 

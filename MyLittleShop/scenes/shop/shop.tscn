@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://drihgplouotmm"]
+
+[ext_resource type="Script" uid="uid://day4oev012m5y" path="res://scenes/shop/shop_interact.gd" id="1_100s2"]
+[ext_resource type="Texture2D" uid="uid://v6ee1fq4t8u1" path="res://assets/Objects/selling_board.png" id="1_xcdpw"]
+[ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="2_ge4d2"]
+[ext_resource type="Resource" uid="uid://ccprbwio8jegb" path="res://resources/items/seedpacks/blueberry_seed.tres" id="3_xcdpw"]
+[ext_resource type="Resource" uid="uid://dfsofoy4heaiv" path="res://resources/items/seedpacks/carrot_seed.tres" id="4_tp26b"]
+[ext_resource type="Resource" uid="uid://1f72jswqkpuj" path="res://resources/items/seedpacks/corn_seed.tres" id="5_vk20h"]
+[ext_resource type="Resource" uid="uid://srdlwcsgb7xp" path="res://resources/items/products/blueberry_prod.tres" id="6_8qn5i"]
+[ext_resource type="Resource" uid="uid://drvt6c0015738" path="res://resources/items/products/carrot_prod.tres" id="7_dww4p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xcdpw"]
+radius = 12.0415945
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shop"]
+radius = 25.019993
+
+[node name="Shop" type="Node2D" unique_id=1734947255]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1711019785]
+position = Vector2(-1, -1)
+scale = Vector2(0.26953122, 0.23263893)
+texture = ExtResource("1_xcdpw")
+
+[node name="CollisionArea" type="StaticBody2D" parent="." unique_id=128625050]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=2128369453]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_xcdpw")
+debug_color = Color(0.8608618, 0.29449794, 0.54426104, 0.41960785)
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=179392719]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_100s2")
+shop_stock = Array[ExtResource("2_ge4d2")]([ExtResource("3_xcdpw"), ExtResource("4_tp26b"), ExtResource("5_vk20h"), ExtResource("6_8qn5i"), ExtResource("7_dww4p")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1185125735]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_shop")
+debug_color = Color(0.60398483, 0.36713856, 0.9998005, 0.41960785)

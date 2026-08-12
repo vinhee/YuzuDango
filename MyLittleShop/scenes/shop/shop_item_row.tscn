@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b4qi6rgas6swq"]
+
+[ext_resource type="FontFile" uid="uid://bb8qrkk0rvfsp" path="res://assets/font/GamjaFlower-Regular.ttf" id="2_font"]
+
+[node name="ShopItemRow" type="Panel" unique_id=1385905256]
+custom_minimum_size = Vector2(220, 32)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=411367434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1270385991]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=747105700]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Item Name"
+
+[node name="BuyPriceLabel" type="Label" parent="HBoxContainer" unique_id=1891388299]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Buy: 0"
+
+[node name="SellPriceLabel" type="Label" parent="HBoxContainer" unique_id=56010361]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Sell: 0"
+
+[node name="BuyButton" type="Button" parent="HBoxContainer" unique_id=1007727188]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Buy"
+
+[node name="SellButton" type="Button" parent="HBoxContainer" unique_id=1426235645]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Sell"

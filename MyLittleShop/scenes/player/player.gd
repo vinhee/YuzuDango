@@ -9,11 +9,27 @@ var forageable_in_area = null
 # e.g. chopping -> cannot move
 var is_busy: bool = false
 const TILE_SIZE: int = 16
+signal gold_changed(new_amount: int)
 
 @onready var hit_area: HitArea = $HitArea
 @export var inventory: Inventory
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
-
+@export var gold: int = 0:
+	set(value):
+		gold = max(value, 0)
+		gold_changed.emit(gold)
+ 
+func add_gold(amount: int) -> void:
+	if amount <= 0:
+		return
+	gold += amount
+ 
+func remove_gold(amount: int) -> bool:
+	if amount <= 0 or gold < amount:
+		return false
+	gold -= amount
+	return true
+	
 func _ready() -> void:
 	ToolManager.tool_selected.connect(on_tool_selected)
 	

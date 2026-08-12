@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bpp5sfcuxj8xa"]
+[gd_scene format=3 uid="uid://bxpt7pvta4ug1"]
 
 [node name="CraftingUi" type="Control" unique_id=1464643722]
 process_mode = 3
