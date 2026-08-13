@@ -1,13 +1,17 @@
-[gd_scene format=3 uid="uid://drihgplouotmm"]
+[gd_scene format=3 uid="uid://do45qkllnqm86"]
 
-[ext_resource type="Script" uid="uid://day4oev012m5y" path="res://scenes/shop/shop_interact.gd" id="1_100s2"]
 [ext_resource type="Texture2D" uid="uid://v6ee1fq4t8u1" path="res://assets/Objects/selling_board.png" id="1_xcdpw"]
 [ext_resource type="Script" uid="uid://1av5x5in6v2c" path="res://scripts/item_data.gd" id="2_ge4d2"]
+[ext_resource type="Script" uid="uid://cdlqqg2qkpfu5" path="res://scenes/shop/shop_interact.gd" id="2_shop_script"]
 [ext_resource type="Resource" uid="uid://ccprbwio8jegb" path="res://resources/items/seedpacks/blueberry_seed.tres" id="3_xcdpw"]
 [ext_resource type="Resource" uid="uid://dfsofoy4heaiv" path="res://resources/items/seedpacks/carrot_seed.tres" id="4_tp26b"]
 [ext_resource type="Resource" uid="uid://1f72jswqkpuj" path="res://resources/items/seedpacks/corn_seed.tres" id="5_vk20h"]
-[ext_resource type="Resource" uid="uid://srdlwcsgb7xp" path="res://resources/items/products/blueberry_prod.tres" id="6_8qn5i"]
-[ext_resource type="Resource" uid="uid://drvt6c0015738" path="res://resources/items/products/carrot_prod.tres" id="7_dww4p"]
+[ext_resource type="Resource" uid="uid://dsx3pc16r1ca" path="res://resources/items/seedpacks/lettuce_seed.tres" id="7_dww4p"]
+[ext_resource type="Resource" uid="uid://7qohbj8in4wp" path="res://resources/items/seedpacks/potato_seed.tres" id="8_g6lcs"]
+[ext_resource type="Resource" uid="uid://364vwry8msbe" path="res://resources/items/seedpacks/rice_seed.tres" id="9_131kw"]
+[ext_resource type="Resource" uid="uid://cofx35ewoagun" path="res://resources/items/seedpacks/strawberry_seed.tres" id="10_xoc10"]
+[ext_resource type="Resource" uid="uid://bltnpfnrajlx6" path="res://resources/items/seedpacks/watermelon_seed.tres" id="11_k5co3"]
+[ext_resource type="Resource" uid="uid://cipp8y2g6l1ms" path="res://resources/items/seedpacks/wheat_seed.tres" id="12_6kbe7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xcdpw"]
 radius = 12.0415945
@@ -33,8 +37,8 @@ debug_color = Color(0.8608618, 0.29449794, 0.54426104, 0.41960785)
 [node name="InteractionArea" type="Area2D" parent="." unique_id=179392719]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_100s2")
-shop_stock = Array[ExtResource("2_ge4d2")]([ExtResource("3_xcdpw"), ExtResource("4_tp26b"), ExtResource("5_vk20h"), ExtResource("6_8qn5i"), ExtResource("7_dww4p")])
+script = ExtResource("2_shop_script")
+shop_stock = Array[ExtResource("2_ge4d2")]([ExtResource("3_xcdpw"), ExtResource("4_tp26b"), ExtResource("5_vk20h"), ExtResource("7_dww4p"), ExtResource("8_g6lcs"), ExtResource("9_131kw"), ExtResource("10_xoc10"), ExtResource("11_k5co3"), ExtResource("12_6kbe7")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1185125735]
 position = Vector2(-1, -4)

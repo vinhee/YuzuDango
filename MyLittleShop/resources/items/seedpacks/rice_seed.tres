@@ -13,4 +13,6 @@ item_id = "6"
 item_name = "RiceSeed"
 icon = SubResource("AtlasTexture_uyt8c")
 item_type = 0
+sell_price = 5
+buy_price = 5
 metadata/_custom_type_script = "uid://1av5x5in6v2c"

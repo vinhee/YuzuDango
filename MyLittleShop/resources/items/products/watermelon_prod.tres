@@ -13,4 +13,6 @@ item_id = "18"
 item_name = "WatermelonProduct"
 icon = SubResource("AtlasTexture_xctgs")
 item_type = 1
+sell_price = 55
+buy_price = 60
 metadata/_custom_type_script = "uid://1av5x5in6v2c"

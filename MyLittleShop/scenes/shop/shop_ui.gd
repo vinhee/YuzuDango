@@ -1,57 +1,77 @@
 extends CanvasLayer
- 
+
 @onready var control: Control = $ShopUi
 @onready var title_label: Label = $ShopUi/Panel/MarginContainer/Root/TopBar/TitleLabel
 @onready var gold_label: Label = $ShopUi/Panel/MarginContainer/Root/TopBar/GoldLabel
-@onready var inventory_list: ItemList = $ShopUi/Panel/MarginContainer/Root/InventoryList
-@onready var sell_button: Button = $ShopUi/Panel/MarginContainer/Root/SellButton
+@onready var shop_list: ItemList = $ShopUi/Panel/MarginContainer/Root/Columns/ShopColumn/ShopList
+@onready var buy_button: Button = $ShopUi/Panel/MarginContainer/Root/Columns/ShopColumn/BuyButton
+@onready var inventory_list: ItemList = $ShopUi/Panel/MarginContainer/Root/Columns/SellColumn/InventoryList
+@onready var sell_button: Button = $ShopUi/Panel/MarginContainer/Root/Columns/SellColumn/SellButton
 @onready var quantity_spinbox: SpinBox = $ShopUi/Panel/MarginContainer/Root/BottomBar/QuantitySpinBox
 @onready var close_button: Button = $ShopUi/Panel/MarginContainer/Root/BottomBar/CloseButton
- 
+
+var shop_stock: Array[ItemData] = []  # items this particular shop offers to sell to the player
 var player: Player
- 
- 
+
+
 func _ready() -> void:
+	shop_list.item_selected.connect(_on_shop_item_selected)
 	inventory_list.item_selected.connect(_on_inventory_item_selected)
+	buy_button.pressed.connect(_on_buy_button_pressed)
 	sell_button.pressed.connect(_on_sell_button_pressed)
 	close_button.pressed.connect(_on_close_button_pressed)
+	buy_button.disabled = true
 	sell_button.disabled = true
- 
- 
-func open(shop_player: Player, shop_name: String = "Selling Board") -> void:
+
+
+func open(items_for_sale: Array[ItemData], shop_player: Player, shop_name: String = "Shop") -> void:
+	shop_stock = items_for_sale
 	if player != shop_player:
 		if player and player.gold_changed.is_connected(_on_player_gold_changed):
 			player.gold_changed.disconnect(_on_player_gold_changed)
 		player = shop_player
 		player.gold_changed.connect(_on_player_gold_changed)
- 
+
 	title_label.text = shop_name
 	control.visible = true
 	quantity_spinbox.min_value = 1
 	quantity_spinbox.value = 1
+	buy_button.disabled = true
 	sell_button.disabled = true
 	_refresh_all()
- 
- 
+
+
 func _refresh_all() -> void:
+	_populate_shop_list()
 	_populate_inventory_list()
 	_update_gold_label()
- 
- 
+
+
 func _on_player_gold_changed(_new_amount: int) -> void:
 	if control.visible:
 		_refresh_all()
- 
- 
+
+
 func _update_gold_label() -> void:
 	gold_label.text = "Gold: %d" % player.gold
- 
- 
+
+
+func _populate_shop_list() -> void:
+	shop_list.clear()
+	buy_button.disabled = true
+	for item in shop_stock:
+		var idx := shop_list.add_item("%s - %d g" % [item.item_name, item.buy_price], item.icon)
+		var cant_afford := player.gold < item.buy_price
+		shop_list.set_item_disabled(idx, cant_afford)
+		if cant_afford:
+			shop_list.set_item_custom_fg_color(idx, Color.GRAY)
+
+
 func _owned_slots() -> Array[InventorySlot]:
 	# Inventory has no get_all_items() — filter its slots array to non-empty ones.
 	return player.inventory.slots.filter(func(slot): return slot.item != null)
- 
- 
+
+
 func _populate_inventory_list() -> void:
 	inventory_list.clear()
 	sell_button.disabled = true
@@ -64,22 +84,39 @@ func _populate_inventory_list() -> void:
 		if item.sell_price <= 0:
 			inventory_list.set_item_disabled(idx, true)
 			inventory_list.set_item_custom_fg_color(idx, Color.GRAY)
- 
- 
+
+
 func _inventory_item_at(index: int) -> ItemData:
 	var owned := _owned_slots()
 	if index < 0 or index >= owned.size():
 		return null
 	return owned[index].item
- 
- 
+
+
+func _on_shop_item_selected(index: int) -> void:
+	var item := shop_stock[index]
+	print("DEBUG: shop item selected -> index=", index, " item=", item.item_name)
+	buy_button.disabled = false
+	buy_button.text = "Buy %s" % item.item_name
+
+
 func _on_inventory_item_selected(index: int) -> void:
 	var item := _inventory_item_at(index)
 	sell_button.disabled = item == null or item.sell_price <= 0
 	if item:
 		sell_button.text = "Sell %s" % item.item_name
- 
- 
+
+
+func _on_buy_button_pressed() -> void:
+	print("DEBUG: buy button pressed, disabled=", buy_button.disabled)
+	var selected := shop_list.get_selected_items()
+	print("DEBUG: shop_list selected items = ", selected)
+	if selected.is_empty():
+		return
+	var item := shop_stock[selected[0]]
+	_buy(item, int(quantity_spinbox.value))
+
+
 func _on_sell_button_pressed() -> void:
 	var selected := inventory_list.get_selected_items()
 	if selected.is_empty():
@@ -88,8 +125,26 @@ func _on_sell_button_pressed() -> void:
 	if item == null:
 		return
 	_sell(item, int(quantity_spinbox.value))
- 
- 
+
+
+func _buy(item: ItemData, qty: int) -> void:
+	if qty <= 0:
+		print("DEBUG: buy aborted, qty <= 0")
+		return
+	var cost := item.buy_price * qty
+	print("DEBUG: buy attempt -> item=", item.item_name, " buy_price=", item.buy_price, " cost=", cost, " player.gold=", player.gold)
+	if cost <= 0:
+		print("DEBUG: buy aborted, item.buy_price is 0 (not set on this ItemData resource)")
+		return
+	if not player.remove_gold(cost):
+		print("DEBUG: buy aborted, not enough gold")
+		return
+
+	player.inventory.add_item(item, qty)
+	print("DEBUG: buy succeeded, inventory slots now: ", player.inventory.slots.map(func(s): return "%s x%d" % [s.item.item_name if s.item else "empty", s.amount]))
+	_refresh_all()
+
+
 func _sell(item: ItemData, qty: int) -> void:
 	if qty <= 0 or item.sell_price <= 0:
 		return
@@ -97,17 +152,17 @@ func _sell(item: ItemData, qty: int) -> void:
 	qty = min(qty, have)
 	if qty <= 0:
 		return
- 
+
 	player.inventory.remove_item(item, qty)
 	player.add_gold(item.sell_price * qty)
 	_refresh_all()
- 
- 
+
+
 func _on_close_button_pressed() -> void:
 	control.visible = false
 	get_tree().paused = false
- 
- 
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not control.visible:
 		return

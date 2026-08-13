@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bj7rfi8fpgyv" path="res://scenes/inventory/inventorySlot.gd" id="2_b87cd"]
 [ext_resource type="Script" uid="uid://hmw10j0jf3iv" path="res://assets/Inventory/inventory.gd" id="2_obrv8"]
 [ext_resource type="Resource" uid="uid://srdlwcsgb7xp" path="res://resources/items/products/blueberry_prod.tres" id="3_obrv8"]
+[ext_resource type="Resource" uid="uid://drvt6c0015738" path="res://resources/items/products/carrot_prod.tres" id="4_3myh8"]
+[ext_resource type="Resource" uid="uid://bo2lai56ekcbq" path="res://resources/items/products/watermelon_prod.tres" id="5_cm8bm"]
+[ext_resource type="Resource" uid="uid://dfnln1tn335yc" path="res://resources/items/products/rice_prod.tres" id="6_e0op0"]
 
 [sub_resource type="Resource" id="Resource_obrv8"]
 script = ExtResource("2_b87cd")
@@ -12,17 +15,20 @@ metadata/_custom_type_script = "uid://bj7rfi8fpgyv"
 
 [sub_resource type="Resource" id="Resource_lrjhv"]
 script = ExtResource("2_b87cd")
-amount = null
+item = ExtResource("4_3myh8")
+amount = 1
 metadata/_custom_type_script = "uid://bj7rfi8fpgyv"
 
 [sub_resource type="Resource" id="Resource_aj2s6"]
 script = ExtResource("2_b87cd")
-amount = null
+item = ExtResource("5_cm8bm")
+amount = 5
 metadata/_custom_type_script = "uid://bj7rfi8fpgyv"
 
 [sub_resource type="Resource" id="Resource_3myh8"]
 script = ExtResource("2_b87cd")
-amount = null
+item = ExtResource("6_e0op0")
+amount = 2
 metadata/_custom_type_script = "uid://bj7rfi8fpgyv"
 
 [sub_resource type="Resource" id="Resource_cm8bm"]

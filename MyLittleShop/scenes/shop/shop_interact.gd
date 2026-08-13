@@ -2,7 +2,8 @@ extends Area2D
 
 class_name Shop
 
-@export var shop_name: String = "Selling Board"
+@export var shop_name: String = "Shop"
+@export var shop_stock: Array[ItemData] = []
 
 func interact(player: Player) -> void:
-	ShopUI.open(player, shop_name)
+	ShopUI.open(shop_stock, player, shop_name)
